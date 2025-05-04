@@ -55,18 +55,20 @@
             padding: 0.5rem 0;
             max-width: 1200px;
             margin: 0 auto;
-            position: relative;
         }
         
         .logo {
             width: 220px;
             height: auto;
-            position: absolute;
-            left: -40px;
+            margin-left: -40px;
         }
         
         .nav-links {
-            margin-left: 220px;
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 1.5rem;
         }
         
         .nav-links li {
@@ -668,11 +670,11 @@
             }
             
             .logo {
-                left: -20px;
+                margin-left: -20px;
             }
             
             .nav-links {
-                margin-left: 180px;
+                gap: 1rem;
             }
             
             .features-grid {
