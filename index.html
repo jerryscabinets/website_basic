@@ -119,6 +119,20 @@
             background-position: center;
         }
         
+        .carousel-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, 
+                rgba(0, 0, 0, 0.2) 0%,
+                rgba(0, 0, 0, 0.6) 50%,
+                rgba(0, 0, 0, 0.8) 100%);
+            z-index: 1;
+        }
+        
         .carousel-item.active {
             opacity: 1;
             z-index: 1;
@@ -134,21 +148,22 @@
             z-index: 2;
             max-width: 800px;
             padding: 2rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
         
         .carousel-caption h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            font-weight: 300;
+            font-weight: 600;
             letter-spacing: 1px;
+            line-height: 1.2;
         }
         
         .carousel-caption p {
             font-size: 1.5rem;
             margin-bottom: 2rem;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
             line-height: 1.4;
+            font-weight: 400;
         }
         
         .carousel-caption .btn {
@@ -156,6 +171,14 @@
             padding: 1rem 2.5rem;
             text-transform: uppercase;
             letter-spacing: 1px;
+            background-color: var(--caramel);
+            border: 2px solid var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        .carousel-caption .btn:hover {
+            background-color: var(--medium-brown);
+            transform: translateY(-2px);
         }
         
         .carousel-nav {
@@ -555,6 +578,11 @@
             
             .section-title {
                 font-size: 1.8rem;
+            }
+            
+            .carousel-caption {
+                padding: 1.5rem;
+                width: 90%;
             }
             
             .carousel-caption h1 {
