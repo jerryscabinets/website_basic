@@ -382,18 +382,6 @@
             max-width: 100%;
         }
         
-        .gallery .section-title {
-            font-family: 'Arial', sans-serif;
-            font-size: 2rem;
-            color: #ce7a27;
-            margin-bottom: 0.5rem;
-            padding: 0;
-        }
-        
-        .gallery .section-title span {
-            color: #ce7a27;
-        }
-        
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -404,6 +392,7 @@
             -webkit-overflow-scrolling: touch;
             max-height: 800px;
             margin: 0;
+            white-space: nowrap;
         }
         
         .gallery-item {
@@ -413,6 +402,7 @@
             height: 250px;
             min-width: 250px;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            display: inline-block;
         }
         
         .gallery-item img {
@@ -889,8 +879,8 @@
 
     <!-- Gallery Section -->
     <section class="gallery" id="gallery">
+        <h2 class="section-title">Our <span>Gallery</span></h2>
         <div class="container">
-            <h2 class="section-title">Our <span>Gallery</span></h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=600&q=80" alt="Home Office">
@@ -953,6 +943,27 @@
                     <div class="gallery-overlay">
                         <h3>Bathroom Vanity</h3>
                         <p>Double sink vanity with custom storage</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=600&q=80" alt="Wine Cellar">
+                    <div class="gallery-overlay">
+                        <h3>Wine Cellar</h3>
+                        <p>Custom wine storage solution</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&w=600&q=80" alt="Mudroom">
+                    <div class="gallery-overlay">
+                        <h3>Mudroom</h3>
+                        <p>Custom storage for entryway</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1590311825124-73ec5233cb0e?auto=format&fit=crop&w=600&q=80" alt="Home Library">
+                    <div class="gallery-overlay">
+                        <h3>Home Library</h3>
+                        <p>Custom built-in bookshelves</p>
                     </div>
                 </div>
             </div>
