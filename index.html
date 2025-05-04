@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jerry's Cabinets - Quality Custom Cabinetry</title>
+    <script>
+        const debug = true; // Set to false to disable debug logging
+        
+        function logDebug(message) {
+            if (debug) {
+                console.log(`[DEBUG] ${message}`);
+            }
+        }
+        
+        function logError(message) {
+            console.error(`[ERROR] ${message}`);
+        }
+    </script>
     <style>
         :root {
             --dark-brown: #3d3224;
@@ -743,6 +756,31 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
 </head>
 <body>
+    <script>
+        // Log page load
+        logDebug('Page loaded');
+        
+        // Track image loading
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.gallery-item img');
+            logDebug(`Found ${images.length} gallery images`);
+            
+            images.forEach((img, index) => {
+                // Log image source and alt text
+                logDebug(`Image ${index + 1}: ${img.src} (${img.alt})`);
+                
+                // Add error handling
+                img.onerror = function() {
+                    logError(`Failed to load image: ${img.src}`);
+                };
+                
+                // Add load success logging
+                img.onload = function() {
+                    logDebug(`Successfully loaded image: ${img.src}`);
+                };
+            });
+        });
+    </script>
     <!-- Header -->
     <header>
         <div class="container">
