@@ -45,7 +45,6 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            padding: 0;
         }
         
         .navbar {
@@ -69,12 +68,13 @@
         
         .nav-links li {
             margin-left: 30px;
-            font-weight: 500;
+            font-weight: 700;
         }
         
         .nav-links a {
             color: var(--dark-brown);
             transition: color 0.3s;
+            font-weight: 700;
         }
         
         .nav-links a:hover {
@@ -111,6 +111,9 @@
             position: relative;
             width: 100%;
             height: 100%;
+            margin: 0 auto;
+            max-width: 1200px;
+            padding: 0 40px;
         }
         
         .carousel-item {
@@ -155,6 +158,7 @@
             max-width: 800px;
             padding: 2rem;
             margin: 0 auto;
+            width: 100%;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
         
@@ -298,7 +302,6 @@
             margin-bottom: 3rem;
             font-size: 2.2rem;
             color: var(--dark-brown);
-            padding: 0 20px;
         }
         
         .section-title span {
@@ -344,7 +347,6 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 1.5rem;
-            padding: 0 20px;
         }
         
         .gallery-item {
@@ -392,7 +394,6 @@
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
             align-items: center;
-            padding: 0 20px;
         }
         
         .about-image {
@@ -426,7 +427,6 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
-            padding: 0 20px;
         }
         
         .contact-info h3 {
@@ -487,7 +487,6 @@
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
             margin-bottom: 2rem;
-            padding: 0 20px;
         }
         
         .footer-column h3 {
@@ -614,10 +613,13 @@
                 padding: 0 20px;
             }
             
+            .carousel-inner {
+                padding: 0 20px;
+            }
+            
             .about-content,
             .contact-content {
                 grid-template-columns: 1fr;
-                padding: 0 10px;
             }
             
             .gallery-grid {
