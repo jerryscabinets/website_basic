@@ -87,18 +87,17 @@
         }
         
         .nav-quote-btn {
-            background-color: var(--caramel);
-            color: var(--white);
-            padding: 0.5rem 1.5rem;
-            border-radius: 4px;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            border: 2px solid var(--white);
+            display: none;
         }
         
-        .nav-quote-btn:hover {
-            background-color: var(--medium-brown);
-            transform: translateY(-2px);
+        .nav-tag {
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 101;
+            width: 120px;
+            height: auto;
+            transform: translateY(-20px);
         }
         
         .nav-links li {
@@ -770,6 +769,11 @@
                 display: none;
             }
             
+            .nav-tag {
+                width: 100px;
+                transform: translateY(-15px);
+            }
+            
             .about {
                 padding: 1.5rem 0;
                 margin: 0.5rem 0;
@@ -838,8 +842,8 @@
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="#contact" class="nav-quote-btn">Get a Free Quote</a></li>
                 </ul>
+                <img src="branding/tag.png" alt="Free Quote Tag" class="nav-tag">
             </nav>
         </div>
     </header>
