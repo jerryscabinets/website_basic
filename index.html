@@ -374,6 +374,7 @@
             margin: 0.25rem 0;
             overflow-x: hidden;
             border-radius: 8px;
+            position: relative;
         }
         
         .gallery .container {
@@ -393,6 +394,40 @@
             max-height: 800px;
             margin: 0;
             white-space: nowrap;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        
+        .gallery-grid::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .gallery-scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: background-color 0.3s;
+        }
+        
+        .gallery-scroll-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+        
+        .gallery-scroll-btn.prev {
+            left: 0;
+        }
+        
+        .gallery-scroll-btn.next {
+            right: 0;
         }
         
         .gallery-item {
@@ -751,6 +786,14 @@
                 grid-template-columns: repeat(2, 1fr);
             }
         }
+        
+        .gallery .section-title {
+            color: var(--white);
+        }
+        
+        .gallery .section-title span {
+            color: var(--white);
+        }
     </style>
     <!-- Font Awesome for icons -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
@@ -878,94 +921,98 @@
     </section>
 
     <!-- Gallery Section -->
-    <section class="gallery" id="gallery">
+    <section id="gallery">
         <h2 class="section-title">Our <span>Gallery</span></h2>
-        <div class="container">
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=600&q=80" alt="Home Office">
-                    <div class="gallery-overlay">
-                        <h3>Home Office</h3>
-                        <p>Built-in cabinetry for an organized workspace</p>
+        <div class="gallery">
+            <div class="container">
+                <button class="gallery-scroll-btn prev">&lt;</button>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=600&q=80" alt="Home Office">
+                        <div class="gallery-overlay">
+                            <h3>Home Office</h3>
+                            <p>Built-in cabinetry for an organized workspace</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Home Bar">
+                        <div class="gallery-overlay">
+                            <h3>Home Bar</h3>
+                            <p>Custom built-in bar cabinetry</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Bathroom Storage">
+                        <div class="gallery-overlay">
+                            <h3>Bathroom Storage</h3>
+                            <p>Custom bathroom storage solutions</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80" alt="Kitchen Pantry">
+                        <div class="gallery-overlay">
+                            <h3>Kitchen Pantry</h3>
+                            <p>Custom kitchen pantry organization</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=600&q=80" alt="Modern Kitchen">
+                        <div class="gallery-overlay">
+                            <h3>Modern Kitchen</h3>
+                            <p>Custom built kitchen cabinets with premium finishes</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80" alt="Luxury Bathroom">
+                        <div class="gallery-overlay">
+                            <h3>Luxury Bathroom</h3>
+                            <p>Elegant bathroom vanity with marble countertop</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1617104551722-3b2d51366400?auto=format&fit=crop&w=600&q=80" alt="Walk-in Closet">
+                        <div class="gallery-overlay">
+                            <h3>Walk-in Closet</h3>
+                            <p>Custom closet organization system</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?auto=format&fit=crop&w=600&q=80" alt="Entertainment Center">
+                        <div class="gallery-overlay">
+                            <h3>Entertainment Center</h3>
+                            <p>Custom built entertainment wall unit</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=600&q=80" alt="Bathroom Vanity">
+                        <div class="gallery-overlay">
+                            <h3>Bathroom Vanity</h3>
+                            <p>Double sink vanity with custom storage</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=600&q=80" alt="Wine Cellar">
+                        <div class="gallery-overlay">
+                            <h3>Wine Cellar</h3>
+                            <p>Custom wine storage solution</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&w=600&q=80" alt="Mudroom">
+                        <div class="gallery-overlay">
+                            <h3>Mudroom</h3>
+                            <p>Custom storage for entryway</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1590311825124-73ec5233cb0e?auto=format&fit=crop&w=600&q=80" alt="Home Library">
+                        <div class="gallery-overlay">
+                            <h3>Home Library</h3>
+                            <p>Custom built-in bookshelves</p>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Home Bar">
-                    <div class="gallery-overlay">
-                        <h3>Home Bar</h3>
-                        <p>Custom built-in bar cabinetry</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Bathroom Storage">
-                    <div class="gallery-overlay">
-                        <h3>Bathroom Storage</h3>
-                        <p>Custom bathroom storage solutions</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80" alt="Kitchen Pantry">
-                    <div class="gallery-overlay">
-                        <h3>Kitchen Pantry</h3>
-                        <p>Custom kitchen pantry organization</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=600&q=80" alt="Modern Kitchen">
-                    <div class="gallery-overlay">
-                        <h3>Modern Kitchen</h3>
-                        <p>Custom built kitchen cabinets with premium finishes</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80" alt="Luxury Bathroom">
-                    <div class="gallery-overlay">
-                        <h3>Luxury Bathroom</h3>
-                        <p>Elegant bathroom vanity with marble countertop</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1617104551722-3b2d51366400?auto=format&fit=crop&w=600&q=80" alt="Walk-in Closet">
-                    <div class="gallery-overlay">
-                        <h3>Walk-in Closet</h3>
-                        <p>Custom closet organization system</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?auto=format&fit=crop&w=600&q=80" alt="Entertainment Center">
-                    <div class="gallery-overlay">
-                        <h3>Entertainment Center</h3>
-                        <p>Custom built entertainment wall unit</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=600&q=80" alt="Bathroom Vanity">
-                    <div class="gallery-overlay">
-                        <h3>Bathroom Vanity</h3>
-                        <p>Double sink vanity with custom storage</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=600&q=80" alt="Wine Cellar">
-                    <div class="gallery-overlay">
-                        <h3>Wine Cellar</h3>
-                        <p>Custom wine storage solution</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&w=600&q=80" alt="Mudroom">
-                    <div class="gallery-overlay">
-                        <h3>Mudroom</h3>
-                        <p>Custom storage for entryway</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1590311825124-73ec5233cb0e?auto=format&fit=crop&w=600&q=80" alt="Home Library">
-                    <div class="gallery-overlay">
-                        <h3>Home Library</h3>
-                        <p>Custom built-in bookshelves</p>
-                    </div>
-                </div>
+                <button class="gallery-scroll-btn next">&gt;</button>
             </div>
         </div>
     </section>
@@ -1128,6 +1175,25 @@
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Thank you for your message! This is a demo form. On a live site, this would be connected to a form processing service.');
+        });
+        
+        // Gallery scroll functionality
+        const galleryGrid = document.querySelector('.gallery-grid');
+        const galleryPrevBtn = document.querySelector('.gallery-scroll-btn.prev');
+        const galleryNextBtn = document.querySelector('.gallery-scroll-btn.next');
+        
+        galleryPrevBtn.addEventListener('click', () => {
+            galleryGrid.scrollBy({
+                left: -galleryGrid.offsetWidth,
+                behavior: 'smooth'
+            });
+        });
+        
+        galleryNextBtn.addEventListener('click', () => {
+            galleryGrid.scrollBy({
+                left: galleryGrid.offsetWidth,
+                behavior: 'smooth'
+            });
         });
     </script>
 </body>
