@@ -24,6 +24,7 @@
             background-color: var(--light-cream);
             color: var(--dark-brown);
             line-height: 1.6;
+            padding: 0 40px;
         }
         
         a {
@@ -32,10 +33,9 @@
         }
         
         .container {
-            width: 90%;
-            max-width: 1000px;
+            width: 100%;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
         }
         
         /* Header */
@@ -45,6 +45,8 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            margin: 0 -40px;
+            padding: 0 40px;
         }
         
         .navbar {
@@ -289,6 +291,9 @@
         .features {
             padding: 5rem 0;
             background-color: var(--white);
+            border-radius: 20px;
+            margin: 2rem 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
         .section-title {
@@ -310,20 +315,30 @@
         
         .feature-card {
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem;
             background-color: var(--light-cream);
-            border-radius: 8px;
-            transition: transform 0.3s;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
         }
         
         .feature-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
         
         .feature-icon {
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: var(--caramel);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            background: rgba(192, 127, 53, 0.1);
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
         }
         
         .feature-card h3 {
@@ -339,15 +354,16 @@
         
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
         }
         
         .gallery-item {
             position: relative;
             overflow: hidden;
-            border-radius: 8px;
-            height: 250px;
+            border-radius: 15px;
+            height: 300px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
         .gallery-item img {
@@ -366,9 +382,9 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(61, 50, 36, 0.8);
+            background: rgba(61, 50, 36, 0.9);
             color: var(--white);
-            padding: 1rem;
+            padding: 1.5rem;
             transform: translateY(100%);
             transition: transform 0.3s;
         }
@@ -381,6 +397,9 @@
         .about {
             padding: 5rem 0;
             background-color: var(--white);
+            border-radius: 20px;
+            margin: 2rem 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
         .about-content {
@@ -392,7 +411,8 @@
         
         .about-image {
             overflow: hidden;
-            border-radius: 8px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
         .about-image img {
@@ -440,8 +460,8 @@
         
         .contact-form {
             background-color: var(--white);
-            padding: 2rem;
-            border-radius: 8px;
+            padding: 2.5rem;
+            border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
@@ -458,15 +478,17 @@
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
             font-size: 1rem;
+            transition: border-color 0.3s;
         }
         
-        .form-group textarea {
-            height: 150px;
-            resize: vertical;
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--caramel);
+            outline: none;
         }
         
         /* Footer */
@@ -474,6 +496,8 @@
             background-color: var(--dark-brown);
             color: var(--white);
             padding: 3rem 0 1rem;
+            margin: 0 -40px;
+            padding: 3rem 40px 1rem;
         }
         
         .footer-content {
@@ -618,11 +642,25 @@
             }
             
             .gallery-grid {
-                padding: 0 10px;
+                grid-template-columns: 1fr;
             }
             
             .section-title {
                 padding: 0 10px;
+            }
+            
+            body {
+                padding: 0 20px;
+            }
+            
+            header {
+                margin: 0 -20px;
+                padding: 0 20px;
+            }
+            
+            footer {
+                margin: 0 -20px;
+                padding: 3rem 20px 1rem;
             }
         }
     </style>
