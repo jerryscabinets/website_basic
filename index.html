@@ -35,7 +35,7 @@
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 40px;
         }
         
         /* Header */
@@ -45,6 +45,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            padding: 0;
         }
         
         .navbar {
@@ -56,11 +57,14 @@
         
         .logo {
             width: 220px;
+            height: auto;
         }
         
         .nav-links {
             display: flex;
             list-style: none;
+            margin: 0;
+            padding: 0;
         }
         
         .nav-links li {
@@ -91,6 +95,8 @@
             height: 80vh;
             position: relative;
             overflow: hidden;
+            margin: 0;
+            padding: 0;
         }
         
         .carousel {
@@ -148,6 +154,7 @@
             z-index: 2;
             max-width: 800px;
             padding: 2rem;
+            margin: 0 auto;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
         
@@ -291,6 +298,7 @@
             margin-bottom: 3rem;
             font-size: 2.2rem;
             color: var(--dark-brown);
+            padding: 0 20px;
         }
         
         .section-title span {
@@ -336,6 +344,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 1.5rem;
+            padding: 0 20px;
         }
         
         .gallery-item {
@@ -383,6 +392,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
             align-items: center;
+            padding: 0 20px;
         }
         
         .about-image {
@@ -416,6 +426,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
+            padding: 0 20px;
         }
         
         .contact-info h3 {
@@ -476,6 +487,7 @@
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
             margin-bottom: 2rem;
+            padding: 0 20px;
         }
         
         .footer-column h3 {
@@ -596,6 +608,24 @@
             .carousel-caption .btn {
                 font-size: 1rem;
                 padding: 0.8rem 2rem;
+            }
+            
+            .container {
+                padding: 0 20px;
+            }
+            
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                padding: 0 10px;
+            }
+            
+            .gallery-grid {
+                padding: 0 10px;
+            }
+            
+            .section-title {
+                padding: 0 10px;
             }
         }
     </style>
