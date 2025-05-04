@@ -69,6 +69,22 @@
             margin: 0;
             padding: 0;
             gap: 1.5rem;
+            align-items: center;
+        }
+        
+        .nav-quote-btn {
+            background-color: var(--caramel);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: 2px solid var(--white);
+        }
+        
+        .nav-quote-btn:hover {
+            background-color: var(--medium-brown);
+            transform: translateY(-2px);
         }
         
         .nav-links li {
@@ -177,18 +193,7 @@
         }
         
         .carousel-caption .btn {
-            font-size: 1.2rem;
-            padding: 1rem 2.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            background-color: var(--caramel);
-            border: 2px solid var(--white);
-            transition: all 0.3s ease;
-        }
-        
-        .carousel-caption .btn:hover {
-            background-color: var(--medium-brown);
-            transform: translateY(-2px);
+            display: none;
         }
         
         .carousel-nav {
@@ -352,8 +357,20 @@
         .gallery {
             padding: 5rem 0;
             background-color: #3a311b;
-            margin: 2rem -40px;
-            padding: 5rem 40px;
+            margin: 2rem 0;
+            padding: 5rem 0;
+        }
+        
+        .gallery .section-title {
+            font-family: 'Georgia', serif;
+            font-size: 2.5rem;
+            color: var(--white);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 3rem;
+        }
+        
+        .gallery .section-title span {
+            color: var(--caramel);
         }
         
         .gallery-grid {
@@ -687,8 +704,16 @@
             }
             
             .gallery {
-                margin: 2rem -20px;
-                padding: 3rem 20px;
+                margin: 2rem 0;
+                padding: 3rem 0;
+            }
+            
+            .gallery .section-title {
+                font-size: 2rem;
+            }
+            
+            .nav-quote-btn {
+                display: none;
             }
         }
     </style>
@@ -710,6 +735,7 @@
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact" class="nav-quote-btn">Get a Free Quote</a></li>
                 </ul>
             </nav>
         </div>
