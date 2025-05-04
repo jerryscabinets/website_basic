@@ -60,7 +60,7 @@
         .logo {
             width: 220px;
             height: auto;
-            margin-left: -25px;
+            margin-left: -35px;
         }
         
         .nav-links {
@@ -293,8 +293,6 @@
         /* Features Section */
         .features {
             padding: 3rem 0;
-            background-color: var(--white);
-            border-radius: 15px;
             margin: 1.5rem 0;
         }
         
@@ -309,19 +307,20 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
-            padding: 0 1rem;
         }
         
         .feature-card {
             text-align: center;
             padding: 1.5rem;
-            background-color: var(--light-cream);
+            background-color: rgba(61, 50, 36, 0.05);
             border-radius: 12px;
             transition: all 0.3s ease;
+            border: 1px solid rgba(61, 50, 36, 0.1);
         }
         
         .feature-card:hover {
             transform: translateY(-5px);
+            background-color: rgba(61, 50, 36, 0.08);
         }
         
         .feature-icon {
@@ -672,7 +671,6 @@
             .features-grid {
                 grid-template-columns: 1fr;
                 gap: 1rem;
-                padding: 0;
             }
             
             .feature-card {
@@ -680,7 +678,7 @@
             }
             
             .logo {
-                margin-left: -15px;
+                margin-left: -20px;
             }
         }
     </style>
