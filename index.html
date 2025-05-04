@@ -124,6 +124,30 @@
             z-index: 1;
         }
         
+        .carousel-caption {
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            color: var(--white);
+            text-align: center;
+            max-width: 80%;
+            z-index: 2;
+        }
+        
+        .carousel-caption h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .carousel-caption p {
+            font-size: 1.2rem;
+            margin-bottom: 0;
+        }
+        
         .carousel-controls {
             position: absolute;
             bottom: 20px;
@@ -145,6 +169,33 @@
         
         .carousel-control.active {
             background-color: var(--white);
+        }
+        
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            z-index: 2;
+        }
+        
+        .carousel-nav button {
+            background: rgba(255, 255, 255, 0.3);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .carousel-nav button:hover {
+            background: rgba(255, 255, 255, 0.5);
         }
         
         .hero::before {
@@ -520,10 +571,34 @@
     <section class="hero" id="home">
         <div class="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active" style="background-image: url('https://mobileimages.lowes.com/marketingimages/971c60ef-1b4c-4c87-a96f-fe51867366b8/custom-cabinets-og.png');"></div>
-                <div class="carousel-item" style="background-image: url('https://www.haasbuilding.com/wp-content/uploads/2023/11/bathroom-4.jpeg');"></div>
-                <div class="carousel-item" style="background-image: url('https://www.closetfactory.com/wp-content/uploads/2017/09/Garages_10.jpg');"></div>
-                <div class="carousel-item" style="background-image: url('https://www.tlkingcabinetmakers.com/images/computer/2044.jpg');"></div>
+                <div class="carousel-item active" style="background-image: url('https://mobileimages.lowes.com/marketingimages/971c60ef-1b4c-4c87-a96f-fe51867366b8/custom-cabinets-og.png');">
+                    <div class="carousel-caption">
+                        <h2>Custom Kitchen Cabinets</h2>
+                        <p>Transform your kitchen with our premium custom cabinetry</p>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('https://www.haasbuilding.com/wp-content/uploads/2023/11/bathroom-4.jpeg');">
+                    <div class="carousel-caption">
+                        <h2>Luxury Bathroom Vanities</h2>
+                        <p>Elegant and functional bathroom storage solutions</p>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('https://www.closetfactory.com/wp-content/uploads/2017/09/Garages_10.jpg');">
+                    <div class="carousel-caption">
+                        <h2>Garage Storage Systems</h2>
+                        <p>Organize your garage with custom storage solutions</p>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('https://www.tlkingcabinetmakers.com/images/computer/2044.jpg');">
+                    <div class="carousel-caption">
+                        <h2>Home Office Cabinetry</h2>
+                        <p>Create the perfect workspace with custom office cabinets</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-nav">
+                <button class="prev-btn">&lt;</button>
+                <button class="next-btn">&gt;</button>
             </div>
             <div class="carousel-controls">
                 <div class="carousel-control active"></div>
@@ -727,6 +802,8 @@
         // Carousel functionality
         const carouselItems = document.querySelectorAll('.carousel-item');
         const carouselControls = document.querySelectorAll('.carousel-control');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
         let currentSlide = 0;
         
         function showSlide(index) {
@@ -742,11 +819,20 @@
             let nextIndex = (currentSlide + 1) % carouselItems.length;
             showSlide(nextIndex);
         }
+
+        function prevSlide() {
+            let prevIndex = (currentSlide - 1 + carouselItems.length) % carouselItems.length;
+            showSlide(prevIndex);
+        }
         
         // Add click event to controls
         carouselControls.forEach((control, index) => {
             control.addEventListener('click', () => showSlide(index));
         });
+
+        // Add click events to navigation buttons
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
         
         // Auto-advance slides every 5 seconds
         setInterval(nextSlide, 5000);
