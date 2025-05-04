@@ -45,22 +45,22 @@
             top: 0;
             z-index: 100;
             margin: 0 -40px;
-            padding: 0 40px;
+            padding: 0;
         }
         
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.5rem 0;
+            padding: 0.5rem 40px;
             max-width: 1200px;
             margin: 0 auto;
-            padding-left: 0;
         }
         
         .logo {
             width: 220px;
             height: auto;
+            margin-left: -40px;
         }
         
         .nav-links {
@@ -656,7 +656,6 @@
             
             header {
                 margin: 0 -20px;
-                padding: 0 20px;
             }
             
             footer {
@@ -665,7 +664,11 @@
             }
             
             .navbar {
-                padding: 0.5rem 0;
+                padding: 0.5rem 20px;
+            }
+            
+            .logo {
+                margin-left: -20px;
             }
             
             .features-grid {
@@ -675,14 +678,6 @@
             
             .feature-card {
                 padding: 1.2rem;
-            }
-            
-            .logo {
-                margin-left: -20px;
-            }
-            
-            .navbar {
-                padding-left: 0;
             }
         }
     </style>
