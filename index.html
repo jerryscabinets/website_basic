@@ -24,7 +24,7 @@
             background-color: var(--light-cream);
             color: var(--dark-brown);
             line-height: 1.6;
-            padding: 0 20px;
+            padding: 0 15px;
         }
         
         a {
@@ -44,8 +44,8 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            margin: 0 -20px;
-            padding: 0 20px;
+            margin: 0 -15px;
+            padding: 0 15px;
         }
         
         .navbar {
@@ -292,61 +292,61 @@
         
         /* Features Section */
         .features {
-            padding: 5rem 0;
+            padding: 3rem 0;
             background-color: var(--white);
-            border-radius: 20px;
-            margin: 2rem 0;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 15px;
+            margin: 1.5rem 0;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            font-size: 2rem;
             color: var(--dark-brown);
-        }
-        
-        .section-title span {
-            color: var(--caramel);
         }
         
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            padding: 0 1rem;
         }
         
         .feature-card {
             text-align: center;
-            padding: 2.5rem;
+            padding: 1.5rem;
             background-color: var(--light-cream);
-            border-radius: 15px;
+            border-radius: 12px;
             transition: all 0.3s ease;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
         }
         
         .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
         }
         
         .feature-icon {
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             color: var(--caramel);
-            margin-bottom: 1.5rem;
             background: rgba(192, 127, 53, 0.1);
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            margin: 0 auto 1.5rem;
+            margin: 0 auto 1rem;
         }
         
         .feature-card h3 {
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+            color: var(--dark-brown);
+        }
+        
+        .feature-card p {
+            font-size: 0.95rem;
+            color: var(--medium-brown);
+            line-height: 1.5;
         }
         
         /* Gallery Section */
@@ -668,6 +668,16 @@
             
             .navbar {
                 padding: 0.5rem 0;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding: 0;
+            }
+            
+            .feature-card {
+                padding: 1.2rem;
             }
         }
     </style>
