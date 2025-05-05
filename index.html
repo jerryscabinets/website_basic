@@ -381,10 +381,39 @@
         .gallery-section .section-title {
             color: var(--caramel);
             margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .gallery-section .section-title span {
             color: var(--caramel);
+        }
+
+        .gallery-filters {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .gallery-filter-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: var(--white);
+            font-size: 0.9rem;
+        }
+
+        .gallery-filter-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .gallery-filter-btn.active {
+            background: var(--caramel);
+            border-color: var(--caramel);
         }
 
         .gallery-ribbon {
@@ -994,32 +1023,41 @@
     <!-- Gallery Section -->
     <section id="gallery">
         <div class="gallery-section">
-            <h2 class="section-title">Our <span>Gallery</span></h2>
+            <h2 class="section-title">
+                <span>Our <span>Gallery</span></span>
+                <div class="gallery-filters">
+                    <button class="gallery-filter-btn active" data-filter="all">All</button>
+                    <button class="gallery-filter-btn" data-filter="kitchen">Kitchen</button>
+                    <button class="gallery-filter-btn" data-filter="bathroom">Bathroom</button>
+                    <button class="gallery-filter-btn" data-filter="garage">Garage</button>
+                    <button class="gallery-filter-btn" data-filter="office">Office</button>
+                </div>
+            </h2>
             <div class="gallery-ribbon">
                 <button class="gallery-control-btn prev">&lt;</button>
                 <div class="gallery-ribbon-container">
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-category="kitchen">
                         <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=600&q=80" alt="Home Office">
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-category="kitchen">
                         <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Home Bar">
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-category="bathroom">
                         <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Bathroom Storage">
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-category="kitchen">
                         <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80" alt="Kitchen Pantry">
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-category="kitchen">
                         <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=600&q=80" alt="Modern Kitchen">
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-category="bathroom">
                         <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80" alt="Luxury Bathroom">
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-category="office">
                         <img src="https://images.unsplash.com/photo-1617104551722-3b2d51366400?auto=format&fit=crop&w=600&q=80" alt="Walk-in Closet">
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-category="office">
                         <img src="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?auto=format&fit=crop&w=600&q=80" alt="Entertainment Center">
                     </div>
                 </div>
@@ -1218,6 +1256,29 @@
                 galleryExpandBtn.textContent = galleryRibbon.classList.contains('expanded') ? 'Collapse' : 'Expand';
             });
         }
+
+        // Gallery filter functionality
+        const filterButtons = document.querySelectorAll('.gallery-filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filter = button.dataset.filter;
+                
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
