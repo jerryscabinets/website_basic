@@ -519,37 +519,145 @@
         
         /* About Section */
         .about {
-            padding: 2rem 0;
-            margin: 0.5rem 0;
+            padding: 4rem 0;
+            margin: 2rem 0;
+            background-color: var(--light-cream);
+            position: relative;
+            overflow: hidden;
         }
-        
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(192, 127, 53, 0.05) 0%, rgba(61, 50, 36, 0.05) 100%);
+            z-index: 0;
+        }
+
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 4rem;
             align-items: center;
+            position: relative;
+            z-index: 1;
         }
-        
+
         .about-image {
             overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.3s ease;
         }
-        
+
+        .about-image:hover {
+            transform: translateY(-5px);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, 
+                rgba(0, 0, 0, 0) 0%,
+                rgba(0, 0, 0, 0.1) 100%);
+            z-index: 1;
+        }
+
         .about-image img {
             width: 100%;
             height: auto;
             display: block;
+            transition: transform 0.3s ease;
         }
-        
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text {
+            padding: 2rem;
+        }
+
         .about-text h2 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 1.5rem;
             color: var(--dark-brown);
+            position: relative;
+            display: inline-block;
         }
-        
+
+        .about-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--caramel);
+        }
+
         .about-text p {
             margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: var(--medium-brown);
+            font-size: 1.1rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(61, 50, 36, 0.1);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--caramel);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--medium-brown);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-image {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .about-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
         }
         
         /* Contact Section */
@@ -1080,6 +1188,20 @@
                     <p>At Jerry's Cabinets, we've been crafting premium custom cabinetry for over 25 years. Our journey began with a simple passion for woodworking and has evolved into a full-service cabinet company serving homeowners and contractors alike.</p>
                     <p>What sets us apart is our unwavering commitment to quality and customer satisfaction. Each project receives the same level of attention to detail, whether it's a single vanity or a complete home renovation.</p>
                     <p>Our team of skilled craftsmen combines traditional woodworking techniques with modern technology to deliver cabinetry that not only looks beautiful but stands the test of time.</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">25+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1000+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Team Members</div>
+                        </div>
+                    </div>
                     <a href="#contact" class="btn">Contact Us</a>
                 </div>
             </div>
