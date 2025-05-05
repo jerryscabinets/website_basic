@@ -995,23 +995,6 @@
 
         // Track feature images loading
         document.addEventListener('DOMContentLoaded', function() {
-            // Log gallery title image
-            const galleryTitleImg = document.querySelector('.gallery-title img');
-            if (galleryTitleImg) {
-                logDebug(`Gallery title image found: ${galleryTitleImg.src}`);
-                logDebug(`Full path: ${window.location.origin}${galleryTitleImg.src}`);
-                
-                galleryTitleImg.onerror = function() {
-                    logError(`Failed to load gallery title image: ${galleryTitleImg.src}`);
-                };
-                
-                galleryTitleImg.onload = function() {
-                    logDebug(`Successfully loaded gallery title image: ${galleryTitleImg.src}`);
-                };
-            } else {
-                logError('Gallery title image element not found');
-            }
-
             const featureImages = document.querySelectorAll('.feature-card img');
             logDebug(`Found ${featureImages.length} feature images`);
             
