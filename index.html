@@ -416,6 +416,16 @@
             background-color: var(--caramel);
         }
 
+        /* Remove all animations and transitions */
+        .gallery-title,
+        .gallery-title span,
+        .gallery-title::after,
+        .gallery-section .section-title,
+        .gallery-section .section-title span {
+            transition: none !important;
+            animation: none !important;
+        }
+
         .gallery-filters {
             display: flex;
             justify-content: center;
