@@ -416,13 +416,6 @@
             background-color: var(--caramel);
         }
 
-        /* Remove all hover effects and animations */
-        .gallery-title-text:hover,
-        .gallery-title-text span:hover,
-        .gallery-title-text::after:hover {
-            all: unset;
-        }
-
         .gallery-filters {
             display: flex;
             justify-content: center;
@@ -1433,7 +1426,7 @@
         const galleryExpandBtn = document.querySelector('.gallery-expand-btn');
         
         function scrollGallery(direction) {
-            const scrollAmount = 300; // Match the width of gallery-item
+            const scrollAmount = 300;
             const currentScroll = galleryContainer.scrollLeft;
             const targetScroll = currentScroll + (direction * scrollAmount);
             
@@ -1461,9 +1454,7 @@
         
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
-                // Remove active class from all buttons
                 filterButtons.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
                 button.classList.add('active');
                 
                 const filter = button.dataset.filter;
