@@ -371,25 +371,13 @@
         
         /* Gallery Section */
         .gallery-section {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
+            width: 100%;
             margin-bottom: 2rem;
-        }
-
-        .gallery-title {
-            flex-shrink: 0;
-            margin: 0;
-        }
-
-        .gallery-title img {
-            max-width: 200px;
-            height: auto;
         }
 
         .gallery-ribbon {
             position: relative;
-            flex-grow: 1;
+            width: 100%;
             overflow: hidden;
         }
 
@@ -411,7 +399,7 @@
         }
 
         .gallery-item {
-            flex: 0 0 250px;
+            flex: 0 0 300px;
             height: 250px;
             position: relative;
             overflow: hidden;
@@ -973,9 +961,7 @@
     <!-- Gallery Section -->
     <section id="gallery">
         <div class="gallery-section">
-            <div class="gallery-title">
-                <img src="./branding/our_gallery.png" alt="Our Gallery">
-            </div>
+            <h2 class="section-title">Our <span>Gallery</span></h2>
             <div class="gallery-ribbon">
                 <div class="gallery-ribbon-container">
                     <div class="gallery-item">
