@@ -392,14 +392,16 @@
             width: 100%;
             overflow: hidden;
             padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
 
         .gallery-controls {
             position: static;
             display: flex;
-            justify-content: space-between;
-            margin-bottom: 1rem;
-            padding: 0 1rem;
+            align-items: center;
+            gap: 1rem;
         }
 
         .gallery-control-btn {
@@ -415,6 +417,7 @@
             transition: background-color 0.3s;
             color: var(--white);
             z-index: 10;
+            flex-shrink: 0;
         }
 
         .gallery-control-btn:hover {
@@ -430,10 +433,21 @@
             scroll-behavior: smooth;
             scrollbar-width: none;
             -ms-overflow-style: none;
+            flex: 1;
         }
 
         .gallery-ribbon-container::-webkit-scrollbar {
             display: none;
+        }
+
+        .gallery-ribbon.expanded .gallery-ribbon-container {
+            flex-wrap: wrap;
+            max-height: none;
+        }
+
+        .gallery-ribbon:not(.expanded) .gallery-ribbon-container {
+            flex-wrap: nowrap;
+            max-height: 250px;
         }
 
         .gallery-item {
@@ -467,6 +481,7 @@
             cursor: pointer;
             transition: background-color 0.3s;
             color: var(--white);
+            z-index: 10;
         }
 
         .gallery-expand-btn:hover {
@@ -980,10 +995,7 @@
         <div class="gallery-section">
             <h2 class="section-title">Our <span>Gallery</span></h2>
             <div class="gallery-ribbon">
-                <div class="gallery-controls">
-                    <button class="gallery-control-btn prev">&lt;</button>
-                    <button class="gallery-control-btn next">&gt;</button>
-                </div>
+                <button class="gallery-control-btn prev">&lt;</button>
                 <div class="gallery-ribbon-container">
                     <div class="gallery-item">
                         <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=600&q=80" alt="Home Office">
@@ -1010,6 +1022,7 @@
                         <img src="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?auto=format&fit=crop&w=600&q=80" alt="Entertainment Center">
                     </div>
                 </div>
+                <button class="gallery-control-btn next">&gt;</button>
                 <button class="gallery-expand-btn">Expand</button>
             </div>
         </div>
