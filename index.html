@@ -398,11 +398,13 @@
             display: inline-block;
             position: relative;
             margin-bottom: 1rem;
+            pointer-events: none;
         }
 
         .gallery-title span {
             color: var(--white);
             font-weight: 400;
+            pointer-events: none;
         }
 
         .gallery-title::after {
@@ -414,9 +416,10 @@
             width: 80px;
             height: 3px;
             background-color: var(--caramel);
+            pointer-events: none;
         }
 
-        /* Remove all animations and transitions */
+        /* Remove all hover effects and ensure text visibility */
         .gallery-title,
         .gallery-title span,
         .gallery-title::after,
@@ -424,6 +427,8 @@
         .gallery-section .section-title span {
             transition: none !important;
             animation: none !important;
+            opacity: 1 !important;
+            visibility: visible !important;
         }
 
         .gallery-filters {
