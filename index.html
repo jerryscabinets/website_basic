@@ -320,8 +320,15 @@
         .section-title {
             text-align: center;
             margin-bottom: 2rem;
-            font-size: 2rem;
-            color: var(--dark-brown);
+            padding: 0 2rem;
+            font-size: 2.8rem;
+            font-weight: 600;
+            position: relative;
+        }
+        
+        .section-title span {
+            color: var(--caramel);
+            font-weight: 400;
         }
         
         .features-grid {
@@ -382,6 +389,11 @@
             text-align: center;
             margin-bottom: 2rem;
             padding: 0 2rem;
+            color: var(--white);
+        }
+
+        .gallery-section .section-title span {
+            color: var(--caramel);
         }
 
         .gallery-title-text {
@@ -861,7 +873,7 @@
             }
             
             .section-title {
-                font-size: 1.8rem;
+                font-size: 2.4rem;
             }
             
             .carousel-caption {
@@ -1039,6 +1051,16 @@
             .gallery-title-text {
                 font-size: 2rem;
             }
+        }
+
+        /* Remove all animations and complex styling */
+        .gallery-title-text::after,
+        .gallery-title-text:hover,
+        .gallery-title-text span:hover,
+        .gallery-section .section-title span::before,
+        .gallery-section .section-title span::after,
+        .gallery-section .section-title span:hover {
+            all: unset;
         }
     </style>
     <!-- Font Awesome for icons -->
