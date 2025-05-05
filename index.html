@@ -379,75 +379,41 @@
         }
 
         .gallery-section .section-title {
-            color: var(--caramel);
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            text-align: center;
+            margin-bottom: 2rem;
             padding: 0 2rem;
-            position: relative;
         }
 
-        .gallery-section .section-title span {
+        .gallery-title-text {
+            font-size: 2.8rem;
+            font-weight: 600;
             color: var(--caramel);
-            font-size: 2.2rem;
+            display: inline-block;
             position: relative;
-            padding: 0.5rem 1.5rem;
-            background: linear-gradient(135deg, 
-                rgba(192, 127, 53, 0.1) 0%,
-                rgba(61, 50, 36, 0.1) 100%);
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(192, 127, 53, 0.2);
-            transition: all 0.3s ease;
+            margin-bottom: 1rem;
         }
 
-        .gallery-section .section-title span:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-            background: linear-gradient(135deg, 
-                rgba(192, 127, 53, 0.15) 0%,
-                rgba(61, 50, 36, 0.15) 100%);
+        .gallery-title-text span {
+            color: var(--white);
+            font-weight: 400;
         }
 
-        .gallery-section .section-title span::before {
+        .gallery-title-text::after {
             content: '';
             position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, 
-                var(--caramel) 0%,
-                var(--dark-brown) 100%);
-            border-radius: 14px;
-            z-index: -1;
-            opacity: 0.3;
-            transition: opacity 0.3s ease;
-        }
-
-        .gallery-section .section-title span:hover::before {
-            opacity: 0.5;
-        }
-
-        .gallery-section .section-title span::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, 
-                rgba(255, 255, 255, 0.1) 0%,
-                rgba(255, 255, 255, 0) 100%);
-            border-radius: 12px;
-            z-index: 1;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--caramel);
         }
 
         .gallery-filters {
             display: flex;
+            justify-content: center;
             gap: 1.2rem;
-            align-items: center;
+            margin-top: 1.5rem;
         }
 
         .gallery-filter-btn {
