@@ -416,6 +416,13 @@
             background-color: var(--caramel);
         }
 
+        /* Remove all hover effects and animations */
+        .gallery-title-text:hover,
+        .gallery-title-text span:hover,
+        .gallery-title-text::after:hover {
+            all: unset;
+        }
+
         .gallery-filters {
             display: flex;
             justify-content: center;
