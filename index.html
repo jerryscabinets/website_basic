@@ -607,23 +607,8 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             position: relative;
             transition: transform 0.3s ease;
-        }
-
-        .about-image:hover {
-            transform: translateY(-5px);
-        }
-
-        .about-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, 
-                rgba(0, 0, 0, 0) 0%,
-                rgba(0, 0, 0, 0.1) 100%);
-            z-index: 1;
+            background: linear-gradient(135deg, rgba(192, 127, 53, 0.1) 0%, rgba(61, 50, 36, 0.1) 100%);
+            padding: 1rem;
         }
 
         .about-image img {
@@ -631,10 +616,16 @@
             height: auto;
             display: block;
             transition: transform 0.3s ease;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image:hover {
+            transform: translateY(-5px);
         }
 
         .about-image:hover img {
-            transform: scale(1.05);
+            transform: scale(1.02);
         }
 
         .about-text {
@@ -1018,7 +1009,8 @@
         .gallery-title-image {
             height: 60px;
             width: auto;
-            margin-bottom: 1rem;
+            margin: 0 auto 1rem;
+            display: block;
         }
 
         @media (max-width: 768px) {
@@ -1203,38 +1195,14 @@
                     <div class="gallery-item" data-category="kitchen">
                         <img src="branding/gallery/kitchen/kitchen1.jpg" alt="Modern Kitchen Cabinets">
                     </div>
-                    <div class="gallery-item" data-category="kitchen">
-                        <img src="branding/gallery/kitchen/kitchen2.jpg" alt="Custom Kitchen Island">
-                    </div>
                     <div class="gallery-item" data-category="bathroom">
                         <img src="branding/gallery/bathroom/bathroom1.jpg" alt="Luxury Bathroom Vanity">
-                    </div>
-                    <div class="gallery-item" data-category="bathroom">
-                        <img src="branding/gallery/bathroom/bathroom2.jpg" alt="Double Sink Bathroom">
                     </div>
                     <div class="gallery-item" data-category="office">
                         <img src="branding/gallery/office/office1.jpg" alt="Home Office Cabinets">
                     </div>
-                    <div class="gallery-item" data-category="office">
-                        <img src="branding/gallery/office/office2.jpg" alt="Built-in Office Storage">
-                    </div>
                     <div class="gallery-item" data-category="garage">
                         <img src="branding/gallery/garage/garage1.jpg" alt="Garage Storage System">
-                    </div>
-                    <div class="gallery-item" data-category="garage">
-                        <img src="branding/gallery/garage/garage2.jpg" alt="Custom Garage Cabinets">
-                    </div>
-                    <div class="gallery-item" data-category="kitchen">
-                        <img src="branding/gallery/kitchen/kitchen3.jpg" alt="Traditional Kitchen">
-                    </div>
-                    <div class="gallery-item" data-category="bathroom">
-                        <img src="branding/gallery/bathroom/bathroom3.jpg" alt="Modern Bathroom">
-                    </div>
-                    <div class="gallery-item" data-category="office">
-                        <img src="branding/gallery/office/office3.jpg" alt="Executive Office">
-                    </div>
-                    <div class="gallery-item" data-category="garage">
-                        <img src="branding/gallery/garage/garage3.jpg" alt="Workshop Storage">
                     </div>
                 </div>
                 <button class="gallery-control-btn next">&gt;</button>
@@ -1249,7 +1217,7 @@
             <h2 class="section-title">About <span>Us</span></h2>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="images/workshop.jpg" alt="Our Workshop">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Modern Workshop">
                 </div>
                 <div class="about-text">
                     <h2>Jerry's Cabinets: Quality Since 1995</h2>
