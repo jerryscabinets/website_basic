@@ -328,6 +328,7 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 1.5rem;
+            padding: 0 1rem;
         }
         
         .feature-card {
@@ -338,6 +339,9 @@
             transition: all 0.3s ease;
             border: none;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
         .feature-card:hover {
@@ -346,7 +350,7 @@
         
         .feature-card img {
             width: 100%;
-            height: 300px;
+            height: 250px;
             object-fit: cover;
             border-radius: 12px;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
@@ -357,12 +361,14 @@
             margin-bottom: 0.5rem;
             font-size: 1.3rem;
             color: var(--dark-brown);
+            padding: 0 1rem;
         }
         
         .feature-card p {
             font-size: 0.95rem;
             color: var(--medium-brown);
             line-height: 1.5;
+            padding: 0 1rem;
         }
         
         /* Gallery Section */
@@ -634,6 +640,10 @@
             .gallery-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
+            
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
         
         @media (max-width: 768px) {
@@ -790,6 +800,10 @@
             .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
         }
         
         .gallery .section-title {
@@ -901,22 +915,22 @@
             <h2 class="section-title">Our <span>Features</span></h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <img src="images/features/feature1.jpg" alt="Custom Design">
+                    <img src="/images/features/feature1.jpg" alt="Custom Design">
                     <h3>Custom Design</h3>
                     <p>Personalized designs that perfectly fit your space and style preferences.</p>
                 </div>
                 <div class="feature-card">
-                    <img src="images/features/feature2.jpg" alt="Premium Quality">
+                    <img src="/images/features/feature2.jpg" alt="Premium Quality">
                     <h3>Premium Quality</h3>
                     <p>Only the finest materials selected for durability and aesthetic appeal.</p>
                 </div>
                 <div class="feature-card">
-                    <img src="images/features/feature3.jpg" alt="Expert Craftsmanship">
+                    <img src="/images/features/feature3.jpg" alt="Expert Craftsmanship">
                     <h3>Expert Craftsmanship</h3>
                     <p>Skilled artisans with years of experience in cabinet making.</p>
                 </div>
                 <div class="feature-card">
-                    <img src="images/features/feature4.jpg" alt="Quality Materials">
+                    <img src="/images/features/feature4.jpg" alt="Quality Materials">
                     <h3>Quality Materials</h3>
                     <p>Premium materials and finishes for lasting beauty and durability.</p>
                 </div>
