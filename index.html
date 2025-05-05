@@ -379,7 +379,7 @@
         }
 
         .gallery-section .section-title {
-            color: var(--white);
+            color: var(--caramel);
             margin-bottom: 2rem;
         }
 
@@ -1188,20 +1188,24 @@
         const galleryExpandBtn = document.querySelector('.gallery-expand-btn');
         
         function scrollGallery(direction) {
-            const scrollAmount = galleryContainer.offsetWidth / 2;
+            const scrollAmount = 300; // Match the width of gallery-item
             galleryContainer.scrollBy({
                 left: direction * scrollAmount,
                 behavior: 'smooth'
             });
         }
         
-        galleryPrevBtn.addEventListener('click', () => scrollGallery(-1));
-        galleryNextBtn.addEventListener('click', () => scrollGallery(1));
+        if (galleryPrevBtn && galleryNextBtn) {
+            galleryPrevBtn.addEventListener('click', () => scrollGallery(-1));
+            galleryNextBtn.addEventListener('click', () => scrollGallery(1));
+        }
         
-        galleryExpandBtn.addEventListener('click', () => {
-            galleryRibbon.classList.toggle('expanded');
-            galleryExpandBtn.textContent = galleryRibbon.classList.contains('expanded') ? 'Collapse' : 'Expand';
-        });
+        if (galleryExpandBtn) {
+            galleryExpandBtn.addEventListener('click', () => {
+                galleryRibbon.classList.toggle('expanded');
+                galleryExpandBtn.textContent = galleryRibbon.classList.contains('expanded') ? 'Collapse' : 'Expand';
+            });
+        }
     </script>
 </body>
 </html>
