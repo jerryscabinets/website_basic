@@ -326,55 +326,47 @@
         
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
-            padding: 0;
-            width: 100%;
         }
         
         .feature-card {
             text-align: center;
-            padding: 0;
-            background-color: transparent;
+            padding: 1.5rem;
+            background-color: rgba(61, 50, 36, 0.05);
             border-radius: 12px;
             transition: all 0.3s ease;
-            border: none;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
+            border: 1px solid rgba(61, 50, 36, 0.1);
         }
         
         .feature-card:hover {
             transform: translateY(-5px);
+            background-color: rgba(61, 50, 36, 0.08);
         }
         
-        .feature-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: contain;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-            background-color: var(--light-cream);
-            padding: 0;
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--caramel);
+            background: rgba(192, 127, 53, 0.1);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
         }
         
         .feature-card h3 {
-            margin-top: 1rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
             font-size: 1.3rem;
             color: var(--dark-brown);
-            padding: 0;
-            width: 100%;
         }
         
         .feature-card p {
             font-size: 0.95rem;
             color: var(--medium-brown);
             line-height: 1.5;
-            padding: 0;
-            width: 100%;
         }
         
         /* Gallery Section */
@@ -475,6 +467,16 @@
         
         .gallery-item:hover .gallery-overlay {
             transform: translateY(0);
+        }
+        
+        .gallery-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .gallery-title img {
+            max-width: 300px;
+            height: auto;
         }
         
         /* About Section */
@@ -947,24 +949,25 @@
             <h2 class="section-title">Our <span>Features</span></h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <img src="images/features/custom_design.png" alt="Custom Design">
+                    <div class="feature-icon">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
                     <h3>Custom Design</h3>
                     <p>Personalized designs that perfectly fit your space and style preferences.</p>
                 </div>
                 <div class="feature-card">
-                    <img src="images/features/premium_materials.png" alt="Premium Materials">
-                    <h3>Premium Materials</h3>
+                    <div class="feature-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Premium Quality</h3>
                     <p>Only the finest materials selected for durability and aesthetic appeal.</p>
                 </div>
                 <div class="feature-card">
-                    <img src="images/features/expert_craftsmanship.png" alt="Expert Craftsmanship">
+                    <div class="feature-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
                     <h3>Expert Craftsmanship</h3>
                     <p>Skilled artisans with years of experience in cabinet making.</p>
-                </div>
-                <div class="feature-card">
-                    <img src="images/features/local_manufacturing.png" alt="Local Manufacturing">
-                    <h3>Local Manufacturing</h3>
-                    <p>Proudly crafted in our local workshop with attention to detail.</p>
                 </div>
             </div>
         </div>
@@ -972,7 +975,9 @@
 
     <!-- Gallery Section -->
     <section id="gallery">
-        <h2 class="section-title">Our <span>Gallery</span></h2>
+        <div class="gallery-title">
+            <img src="images/our_gallery.png" alt="Our Gallery">
+        </div>
         <div class="gallery">
             <div class="container">
                 <button class="gallery-scroll-btn prev">&lt;</button>
