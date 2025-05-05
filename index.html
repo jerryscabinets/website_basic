@@ -394,21 +394,46 @@
             padding: 0 2rem;
         }
 
+        .gallery-controls {
+            position: static;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding: 0 1rem;
+        }
+
+        .gallery-control-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            color: var(--white);
+            z-index: 10;
+        }
+
+        .gallery-control-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
         .gallery-ribbon-container {
             display: flex;
             gap: 1rem;
             transition: transform 0.3s ease;
             padding: 0.5rem;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
         }
 
-        .gallery-ribbon.expanded .gallery-ribbon-container {
-            flex-wrap: wrap;
-            max-height: none;
-        }
-
-        .gallery-ribbon:not(.expanded) .gallery-ribbon-container {
-            flex-wrap: nowrap;
-            max-height: 250px;
+        .gallery-ribbon-container::-webkit-scrollbar {
+            display: none;
         }
 
         .gallery-item {
@@ -429,36 +454,6 @@
 
         .gallery-item:hover img {
             transform: scale(1.1);
-        }
-
-        .gallery-controls {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            pointer-events: none;
-        }
-
-        .gallery-control-btn {
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            pointer-events: auto;
-            transition: background-color 0.3s;
-            z-index: 10;
-            color: var(--white);
-        }
-
-        .gallery-control-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
         }
 
         .gallery-expand-btn {
@@ -985,6 +980,10 @@
         <div class="gallery-section">
             <h2 class="section-title">Our <span>Gallery</span></h2>
             <div class="gallery-ribbon">
+                <div class="gallery-controls">
+                    <button class="gallery-control-btn prev">&lt;</button>
+                    <button class="gallery-control-btn next">&gt;</button>
+                </div>
                 <div class="gallery-ribbon-container">
                     <div class="gallery-item">
                         <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=600&q=80" alt="Home Office">
@@ -1010,10 +1009,6 @@
                     <div class="gallery-item">
                         <img src="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?auto=format&fit=crop&w=600&q=80" alt="Entertainment Center">
                     </div>
-                </div>
-                <div class="gallery-controls">
-                    <button class="gallery-control-btn prev">&lt;</button>
-                    <button class="gallery-control-btn next">&gt;</button>
                 </div>
                 <button class="gallery-expand-btn">Expand</button>
             </div>
@@ -1189,8 +1184,11 @@
         
         function scrollGallery(direction) {
             const scrollAmount = 300; // Match the width of gallery-item
-            galleryContainer.scrollBy({
-                left: direction * scrollAmount,
+            const currentScroll = galleryContainer.scrollLeft;
+            const targetScroll = currentScroll + (direction * scrollAmount);
+            
+            galleryContainer.scrollTo({
+                left: targetScroll,
                 behavior: 'smooth'
             });
         }
