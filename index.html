@@ -370,113 +370,109 @@
         }
         
         /* Gallery Section */
-        .gallery {
-            padding: 0.25rem 0;
-            background-color: #3a311b;
-            margin: 0.25rem 0;
-            overflow-x: hidden;
-            border-radius: 8px;
-            position: relative;
+        .gallery-section {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
-        
-        .gallery .container {
-            padding-left: 1rem !important;
-            padding-right: 1rem !important;
-            max-width: 100%;
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.5rem;
-            padding: 0;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-            max-height: 800px;
+
+        .gallery-title {
+            flex-shrink: 0;
             margin: 0;
-            white-space: nowrap;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
         }
-        
-        .gallery-grid::-webkit-scrollbar {
-            display: none;
+
+        .gallery-title img {
+            max-width: 200px;
+            height: auto;
         }
-        
-        .gallery-scroll-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            z-index: 10;
-            transition: background-color 0.3s;
+
+        .gallery-ribbon {
+            position: relative;
+            flex-grow: 1;
+            overflow: hidden;
         }
-        
-        .gallery-scroll-btn:hover {
-            background: rgba(255, 255, 255, 0.4);
+
+        .gallery-ribbon-container {
+            display: flex;
+            gap: 1rem;
+            transition: transform 0.3s ease;
+            padding: 0.5rem;
         }
-        
-        .gallery-scroll-btn.prev {
-            left: 0;
+
+        .gallery-ribbon.expanded .gallery-ribbon-container {
+            flex-wrap: wrap;
+            max-height: none;
         }
-        
-        .gallery-scroll-btn.next {
-            right: 0;
+
+        .gallery-ribbon:not(.expanded) .gallery-ribbon-container {
+            flex-wrap: nowrap;
+            max-height: 250px;
         }
-        
+
         .gallery-item {
+            flex: 0 0 250px;
+            height: 250px;
             position: relative;
             overflow: hidden;
             border-radius: 8px;
-            height: 250px;
-            min-width: 250px;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-            display: inline-block;
         }
-        
+
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s;
+            transition: transform 0.3s ease;
         }
-        
+
         .gallery-item:hover img {
             transform: scale(1.1);
         }
-        
-        .gallery-overlay {
+
+        .gallery-controls {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.8);
-            color: var(--white);
-            padding: 1.5rem;
-            transform: translateY(100%);
-            transition: transform 0.3s;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
         }
-        
-        .gallery-item:hover .gallery-overlay {
-            transform: translateY(0);
+
+        .gallery-control-btn {
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            pointer-events: auto;
+            transition: background-color 0.3s;
+            z-index: 10;
         }
-        
-        .gallery-title {
-            text-align: center;
-            margin-bottom: 2rem;
+
+        .gallery-control-btn:hover {
+            background: rgba(255, 255, 255, 1);
         }
-        
-        .gallery-title img {
-            max-width: 300px;
-            height: auto;
+
+        .gallery-expand-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .gallery-expand-btn:hover {
+            background: rgba(255, 255, 255, 1);
         }
         
         /* About Section */
@@ -645,8 +641,9 @@
                 font-size: 2.5rem;
             }
             
-            .gallery-grid {
-                grid-template-columns: repeat(3, 1fr);
+            .gallery-ribbon-container {
+                flex-wrap: wrap;
+                max-height: none;
             }
             
             .features-grid {
@@ -736,8 +733,9 @@
                 grid-template-columns: 1fr;
             }
             
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .gallery-ribbon-container {
+                flex-wrap: wrap;
+                max-height: none;
             }
             
             .section-title {
@@ -778,28 +776,9 @@
                 padding: 1.2rem;
             }
             
-            .gallery {
-                margin: 0.5rem 0;
-                padding: 2rem 0;
-            }
-            
-            .gallery .section-title {
-                font-size: 2rem;
-            }
-            
-            .nav-quote-btn {
-                display: none;
-            }
-            
-            .nav-tag {
-                width: 120px;
-                transform: translateY(-20px);
-                margin-right: 0.5rem;
-            }
-            
-            .about {
-                padding: 1.5rem 0;
-                margin: 0.5rem 0;
+            .gallery-ribbon-container {
+                flex-wrap: wrap;
+                max-height: none;
             }
             
             .gallery-item {
@@ -809,8 +788,9 @@
         }
         
         @media (max-width: 576px) {
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .gallery-ribbon-container {
+                flex-wrap: wrap;
+                max-height: none;
             }
             
             .features-grid {
@@ -992,99 +972,42 @@
 
     <!-- Gallery Section -->
     <section id="gallery">
-        <div class="gallery-title">
-            <img src="./branding/our_gallery.png" alt="Our Gallery">
-        </div>
-        <div class="gallery">
-            <div class="container">
-                <button class="gallery-scroll-btn prev">&lt;</button>
-                <div class="gallery-grid">
+        <div class="gallery-section">
+            <div class="gallery-title">
+                <img src="./branding/our_gallery.png" alt="Our Gallery">
+            </div>
+            <div class="gallery-ribbon">
+                <div class="gallery-ribbon-container">
                     <div class="gallery-item">
                         <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=600&q=80" alt="Home Office">
-                        <div class="gallery-overlay">
-                            <h3>Home Office</h3>
-                            <p>Built-in cabinetry for an organized workspace</p>
-                        </div>
                     </div>
                     <div class="gallery-item">
                         <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Home Bar">
-                        <div class="gallery-overlay">
-                            <h3>Home Bar</h3>
-                            <p>Custom built-in bar cabinetry</p>
-                        </div>
                     </div>
                     <div class="gallery-item">
                         <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Bathroom Storage">
-                        <div class="gallery-overlay">
-                            <h3>Bathroom Storage</h3>
-                            <p>Custom bathroom storage solutions</p>
-                        </div>
                     </div>
                     <div class="gallery-item">
                         <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80" alt="Kitchen Pantry">
-                        <div class="gallery-overlay">
-                            <h3>Kitchen Pantry</h3>
-                            <p>Custom kitchen pantry organization</p>
-                        </div>
                     </div>
                     <div class="gallery-item">
                         <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=600&q=80" alt="Modern Kitchen">
-                        <div class="gallery-overlay">
-                            <h3>Modern Kitchen</h3>
-                            <p>Custom built kitchen cabinets with premium finishes</p>
-                        </div>
                     </div>
                     <div class="gallery-item">
                         <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80" alt="Luxury Bathroom">
-                        <div class="gallery-overlay">
-                            <h3>Luxury Bathroom</h3>
-                            <p>Elegant bathroom vanity with marble countertop</p>
-                        </div>
                     </div>
                     <div class="gallery-item">
                         <img src="https://images.unsplash.com/photo-1617104551722-3b2d51366400?auto=format&fit=crop&w=600&q=80" alt="Walk-in Closet">
-                        <div class="gallery-overlay">
-                            <h3>Walk-in Closet</h3>
-                            <p>Custom closet organization system</p>
-                        </div>
                     </div>
                     <div class="gallery-item">
                         <img src="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?auto=format&fit=crop&w=600&q=80" alt="Entertainment Center">
-                        <div class="gallery-overlay">
-                            <h3>Entertainment Center</h3>
-                            <p>Custom built entertainment wall unit</p>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=600&q=80" alt="Bathroom Vanity">
-                        <div class="gallery-overlay">
-                            <h3>Bathroom Vanity</h3>
-                            <p>Double sink vanity with custom storage</p>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=600&q=80" alt="Wine Cellar">
-                        <div class="gallery-overlay">
-                            <h3>Wine Cellar</h3>
-                            <p>Custom wine storage solution</p>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&w=600&q=80" alt="Mudroom">
-                        <div class="gallery-overlay">
-                            <h3>Mudroom</h3>
-                            <p>Custom storage for entryway</p>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1590311825124-73ec5233cb0e?auto=format&fit=crop&w=600&q=80" alt="Home Library">
-                        <div class="gallery-overlay">
-                            <h3>Home Library</h3>
-                            <p>Custom built-in bookshelves</p>
-                        </div>
                     </div>
                 </div>
-                <button class="gallery-scroll-btn next">&gt;</button>
+                <div class="gallery-controls">
+                    <button class="gallery-control-btn prev">&lt;</button>
+                    <button class="gallery-control-btn next">&gt;</button>
+                </div>
+                <button class="gallery-expand-btn">Expand</button>
             </div>
         </div>
     </section>
@@ -1249,23 +1172,27 @@
             alert('Thank you for your message! This is a demo form. On a live site, this would be connected to a form processing service.');
         });
         
-        // Gallery scroll functionality
-        const galleryGrid = document.querySelector('.gallery-grid');
-        const galleryPrevBtn = document.querySelector('.gallery-scroll-btn.prev');
-        const galleryNextBtn = document.querySelector('.gallery-scroll-btn.next');
+        // Gallery ribbon functionality
+        const galleryRibbon = document.querySelector('.gallery-ribbon');
+        const galleryContainer = document.querySelector('.gallery-ribbon-container');
+        const galleryPrevBtn = document.querySelector('.gallery-control-btn.prev');
+        const galleryNextBtn = document.querySelector('.gallery-control-btn.next');
+        const galleryExpandBtn = document.querySelector('.gallery-expand-btn');
         
-        galleryPrevBtn.addEventListener('click', () => {
-            galleryGrid.scrollBy({
-                left: -galleryGrid.offsetWidth,
+        function scrollGallery(direction) {
+            const scrollAmount = galleryContainer.offsetWidth / 2;
+            galleryContainer.scrollBy({
+                left: direction * scrollAmount,
                 behavior: 'smooth'
             });
-        });
+        }
         
-        galleryNextBtn.addEventListener('click', () => {
-            galleryGrid.scrollBy({
-                left: galleryGrid.offsetWidth,
-                behavior: 'smooth'
-            });
+        galleryPrevBtn.addEventListener('click', () => scrollGallery(-1));
+        galleryNextBtn.addEventListener('click', () => scrollGallery(1));
+        
+        galleryExpandBtn.addEventListener('click', () => {
+            galleryRibbon.classList.toggle('expanded');
+            galleryExpandBtn.textContent = galleryRibbon.classList.contains('expanded') ? 'Collapse' : 'Expand';
         });
     </script>
 </body>
