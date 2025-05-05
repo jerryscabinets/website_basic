@@ -1014,6 +1014,24 @@
         .gallery .section-title span {
             color: var(--white);
         }
+
+        .gallery-title-image {
+            height: 60px;
+            width: auto;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-title-image {
+                height: 50px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .gallery-title-image {
+                height: 40px;
+            }
+        }
     </style>
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -1170,7 +1188,7 @@
     <section id="gallery">
         <div class="gallery-section">
             <h2 class="section-title">
-                <span>Our <span>Gallery</span></span>
+                <img src="branding/our_work.png" alt="Our Work" class="gallery-title-image">
                 <div class="gallery-filters">
                     <button class="gallery-filter-btn active" data-filter="all">All</button>
                     <button class="gallery-filter-btn" data-filter="kitchen">Kitchen</button>
