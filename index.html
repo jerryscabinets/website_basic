@@ -728,323 +728,106 @@
             outline: none;
         }
         
-        /* Footer */
-        footer {
+        /* Footer Styles */
+        .footer {
             background-color: var(--dark-brown);
-            color: var(--white);
-            padding: 3rem 0 1rem;
-            margin: 0 -40px;
-            padding: 3rem 40px 1rem;
+            color: var(--light-cream);
+            padding: 4rem 0 2rem;
+            position: relative;
         }
-        
+
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            margin-bottom: 3rem;
         }
-        
+
         .footer-column h3 {
-            font-size: 1.2rem;
+            color: var(--caramel);
+            font-size: 1.4rem;
             margin-bottom: 1.5rem;
-            color: var(--caramel);
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.8rem;
-        }
-        
-        .footer-links a {
-            color: var(--white);
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: var(--caramel);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-        
-        .social-links a {
-            color: var(--white);
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-        
-        .social-links a:hover {
-            color: var(--caramel);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .gallery-ribbon-container {
-                flex-wrap: wrap;
-                max-height: none;
-            }
-            
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .feature-card img {
-                height: 180px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background-color: var(--white);
-                flex-direction: column;
-                padding: 2rem;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-                transition: 0.5s ease;
-                margin-right: 0;
-            }
-            
-            .nav-links.active {
-                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            }
-            
-            .nav-links li {
-                margin: 1rem 0;
-            }
-            
-            .hero {
-                height: 60vh;
-            }
-            
-            .hero-content {
-                padding: 1rem;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .section-title {
-                font-size: 2.4rem;
-            }
-            
-            .carousel-caption {
-                padding: 1.5rem;
-                width: 90%;
-            }
-            
-            .carousel-caption h1 {
-                font-size: 2.5rem;
-            }
-            
-            .carousel-caption p {
-                font-size: 1.2rem;
-            }
-            
-            .carousel-caption .btn {
-                font-size: 1rem;
-                padding: 0.8rem 2rem;
-            }
-            
-            .container {
-                padding: 0 10px;
-            }
-            
-            .carousel-inner {
-                padding: 0 20px;
-            }
-            
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .gallery-ribbon-container {
-                flex-wrap: wrap;
-                max-height: none;
-            }
-            
-            .section-title {
-                padding: 0 10px;
-            }
-            
-            body {
-                padding: 0 20px;
-            }
-            
-            header {
-                margin: 0 -20px;
-            }
-            
-            footer {
-                margin: 0 -40px;
-                padding: 3rem 40px 1rem;
-            }
-            
-            .navbar {
-                padding: 0.5rem 20px;
-            }
-            
-            .logo {
-                margin-left: -30px;
-            }
-            
-            .nav-links {
-                gap: 1rem;
-            }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            
-            .feature-card {
-                padding: 1.2rem;
-            }
-            
-            .gallery-ribbon-container {
-                flex-wrap: wrap;
-                max-height: none;
-            }
-            
-            .gallery-item {
-                height: 200px;
-                min-width: 200px;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .gallery-ribbon-container {
-                flex-wrap: wrap;
-                max-height: none;
-            }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .feature-card img {
-                height: 160px;
-            }
-        }
-        
-        .gallery .section-title {
-            color: var(--white);
-        }
-        
-        .gallery .section-title span {
-            color: var(--white);
-        }
-
-        .gallery-title-image {
-            height: 60px;
-            width: auto;
-            margin: 0 auto 1rem;
-            display: block;
-        }
-
-        @media (max-width: 768px) {
-            .gallery-title-image {
-                height: 50px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .gallery-title-image {
-                height: 40px;
-            }
-        }
-
-        .gallery-title-text {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--white);
-            text-align: center;
-            display: block;
-            margin-bottom: 2rem;
             position: relative;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            padding-bottom: 0.8rem;
         }
 
-        .gallery-title-text span {
-            color: var(--caramel);
-            position: relative;
-            display: inline-block;
-            padding: 0 0.5rem;
-        }
-
-        .gallery-title-text span::after {
+        .footer-column h3::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: 0;
             left: 0;
-            width: 100%;
+            width: 40px;
             height: 2px;
-            background: linear-gradient(90deg, 
-                var(--caramel) 0%,
-                rgba(192, 127, 53, 0.3) 100%);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
+            background-color: var(--caramel);
         }
 
-        .gallery-title-text:hover span::after {
-            transform: scaleX(1);
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
         }
 
-        @media (max-width: 768px) {
-            .gallery-title-text {
-                font-size: 2.5rem;
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-column ul li a {
+            color: var(--light-cream);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--caramel);
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 1rem;
+            color: var(--light-cream);
+        }
+
+        .footer-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .footer-logos img {
+            height: 60px;
+            width: auto;
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-logos img:hover {
+            opacity: 1;
+        }
+
+        @media (max-width: 992px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (max-width: 576px) {
-            .gallery-title-text {
-                font-size: 2rem;
+            .footer-content {
+                grid-template-columns: 1fr;
             }
-        }
-
-        /* Remove all animations and complex styling */
-        .gallery-title-text::after,
-        .gallery-title-text:hover,
-        .gallery-title-text span:hover,
-        .gallery-section .section-title span::before,
-        .gallery-section .section-title span::after,
-        .gallery-section .section-title span:hover {
-            all: unset;
+            
+            .footer-logos {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
         }
     </style>
     <!-- Font Awesome for icons -->
@@ -1307,45 +1090,51 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>Jerry's Cabinets</h3>
-                    <p>Custom cabinetry for kitchens, bathrooms, offices, and more. Quality craftsmanship you can trust.</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#features">Features</a></li>
+                    <h3>About Us</h3>
+                    <ul>
+                        <li><a href="#about">Our Story</a></li>
+                        <li><a href="#services">Services</a></li>
                         <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#about">About</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Kitchen Cabinets</a></li>
-                        <li><a href="#">Bathroom Vanities</a></li>
-                        <li><a href="#">Entertainment Centers</a></li>
-                        <li><a href="#">Office Furniture</a></li>
-                        <li><a href="#">Custom Projects</a></li>
+                    <ul>
+                        <li><a href="#services">Custom Cabinets</a></li>
+                        <li><a href="#services">Kitchen Remodeling</a></li>
+                        <li><a href="#services">Bathroom Cabinets</a></li>
+                        <li><a href="#services">Commercial Solutions</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Connect With Us</h3>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                        <a href="#"><i class="fab fa-houzz"></i></a>
-                    </div>
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="tel:+1234567890">(123) 456-7890</a></li>
+                        <li><a href="mailto:info@jerryscabinets.com">info@jerryscabinets.com</a></li>
+                        <li>123 Cabinet Lane</li>
+                        <li>Woodworking City, ST 12345</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Hours</h3>
+                    <ul>
+                        <li>Monday - Friday: 8am - 6pm</li>
+                        <li>Saturday: 9am - 4pm</li>
+                        <li>Sunday: Closed</li>
+                    </ul>
                 </div>
             </div>
+            <div class="footer-logos">
+                <img src="branding/ICC-ES-Logo.png" alt="ICC-ES Certified" title="ICC-ES Certified">
+                <img src="branding/Made_In_USA_badge@2x.png" alt="Made in USA" title="Made in USA">
+            </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Jerry's Cabinets. All Rights Reserved.</p>
+                <p>&copy; 2024 Jerry's Cabinets. All rights reserved.</p>
             </div>
         </div>
     </footer>
