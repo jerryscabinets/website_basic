@@ -734,6 +734,44 @@
             color: var(--light-cream);
             padding: 4rem 0 2rem;
             position: relative;
+            margin: 0 -40px;
+            padding: 4rem 40px 2rem;
+        }
+
+        .footer-logos {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+
+        .footer-logos img {
+            height: 80px;
+            width: auto;
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-logos img:hover {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .footer-logos {
+                position: static;
+                transform: none;
+                justify-content: center;
+                margin-bottom: 2rem;
+            }
+            
+            .footer-logos img {
+                height: 60px;
+            }
         }
 
         .footer-content {
@@ -791,43 +829,6 @@
         .footer-bottom p {
             margin-bottom: 1rem;
             color: var(--light-cream);
-        }
-
-        .footer-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .footer-logos img {
-            height: 60px;
-            width: auto;
-            filter: brightness(0) invert(1);
-            opacity: 0.9;
-            transition: opacity 0.3s ease;
-        }
-
-        .footer-logos img:hover {
-            opacity: 1;
-        }
-
-        @media (max-width: 992px) {
-            .footer-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 576px) {
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-logos {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
         }
     </style>
     <!-- Font Awesome for icons -->
@@ -1091,6 +1092,10 @@
 
     <!-- Footer -->
     <footer class="footer">
+        <div class="footer-logos">
+            <img src="branding/ICC-ES-Logo.png" alt="ICC-ES Certified" title="ICC-ES Certified">
+            <img src="branding/Made_In_USA_badge@2x.png" alt="Made in USA" title="Made in USA">
+        </div>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
@@ -1128,10 +1133,6 @@
                         <li>Sunday: Closed</li>
                     </ul>
                 </div>
-            </div>
-            <div class="footer-logos">
-                <img src="branding/ICC-ES-Logo.png" alt="ICC-ES Certified" title="ICC-ES Certified">
-                <img src="branding/Made_In_USA_badge@2x.png" alt="Made in USA" title="Made in USA">
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2024 Jerry's Cabinets. All rights reserved.</p>
