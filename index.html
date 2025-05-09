@@ -562,7 +562,7 @@
         
         /* About Section */
         .about {
-            padding: 4rem 0;
+            padding: 5rem 0;
             margin: 2rem 0;
             background-color: var(--light-cream);
             position: relative;
@@ -576,6 +576,13 @@
             position: relative;
         }
 
+        .about-images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            position: relative;
+        }
+
         .about-image {
             position: relative;
             border-radius: 15px;
@@ -585,9 +592,24 @@
 
         .about-image img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
             display: block;
             border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-image.large {
+            grid-column: span 2;
+            height: 300px;
+        }
+
+        .about-image.small {
+            height: 200px;
         }
 
         .about-text {
@@ -630,6 +652,15 @@
 
         .stat-item {
             text-align: center;
+            padding: 1.5rem;
+            background: rgba(61, 50, 36, 0.05);
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            background: rgba(61, 50, 36, 0.08);
         }
 
         .stat-number {
@@ -652,17 +683,21 @@
                 gap: 3rem;
             }
 
-            .about-image {
-                max-width: 600px;
+            .about-images {
+                max-width: 800px;
                 margin: 0 auto;
-            }
-
-            .about-stats {
-                grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (max-width: 576px) {
+            .about-images {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image.large {
+                grid-column: span 1;
+            }
+
             .about-stats {
                 grid-template-columns: 1fr;
             }
@@ -1033,18 +1068,26 @@
         <div class="container">
             <h2 class="section-title">About <span>Us</span></h2>
             <div class="about-content">
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Modern Workshop">
+                <div class="about-images">
+                    <div class="about-image large">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Modern Workshop">
+                    </div>
+                    <div class="about-image small">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=400&q=80" alt="Craftsman at Work">
+                    </div>
+                    <div class="about-image small">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=400&q=80" alt="Quality Materials">
+                    </div>
                 </div>
                 <div class="about-text">
-                    <h2>Jerry's Cabinets: Quality Since 1995</h2>
-                    <p>At Jerry's Cabinets, we've been crafting premium custom cabinetry for over 25 years. Our journey began with a simple passion for woodworking and has evolved into a full-service cabinet company serving homeowners and contractors alike.</p>
-                    <p>What sets us apart is our unwavering commitment to quality and customer satisfaction. Each project receives the same level of attention to detail, whether it's a single vanity or a complete home renovation.</p>
-                    <p>Our team of skilled craftsmen combines traditional woodworking techniques with modern technology to deliver cabinetry that not only looks beautiful but stands the test of time.</p>
+                    <h2>Jerry's Cabinets: Excellence in Craftsmanship Since 1995</h2>
+                    <p>For over 25 years, Jerry's Cabinets has been at the forefront of custom cabinetry, transforming spaces with our commitment to quality and innovation. What began as a small family workshop has grown into a respected name in the industry, known for our attention to detail and customer-focused approach.</p>
+                    <p>Our team of master craftsmen combines traditional woodworking techniques with cutting-edge technology to create cabinetry that's both beautiful and built to last. Each project is a testament to our dedication to excellence, whether it's a kitchen renovation, bathroom vanity, or custom storage solution.</p>
+                    <p>We take pride in our local manufacturing process, using only the finest materials and sustainable practices. Our state-of-the-art facility allows us to maintain complete control over every aspect of production, ensuring the highest quality standards in every piece we create.</p>
                     <div class="about-stats">
                         <div class="stat-item">
                             <div class="stat-number">25+</div>
-                            <div class="stat-label">Years Experience</div>
+                            <div class="stat-label">Years of Excellence</div>
                         </div>
                         <div class="stat-item">
                             <div class="stat-number">1000+</div>
@@ -1052,10 +1095,10 @@
                         </div>
                         <div class="stat-item">
                             <div class="stat-number">50+</div>
-                            <div class="stat-label">Team Members</div>
+                            <div class="stat-label">Expert Craftsmen</div>
                         </div>
                     </div>
-                    <a href="#contact" class="btn">Contact Us</a>
+                    <a href="#contact" class="btn">Schedule a Consultation</a>
                 </div>
             </div>
         </div>
