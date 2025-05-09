@@ -752,26 +752,12 @@
         .footer-logos img {
             height: 80px;
             width: auto;
-            filter: brightness(0) invert(1);
             opacity: 0.9;
             transition: opacity 0.3s ease;
         }
 
         .footer-logos img:hover {
             opacity: 1;
-        }
-
-        @media (max-width: 768px) {
-            .footer-logos {
-                position: static;
-                transform: none;
-                justify-content: center;
-                margin-bottom: 2rem;
-            }
-            
-            .footer-logos img {
-                height: 60px;
-            }
         }
 
         .footer-content {
@@ -829,6 +815,31 @@
         .footer-bottom p {
             margin-bottom: 1rem;
             color: var(--light-cream);
+        }
+
+        @media (max-width: 992px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-logos {
+                position: static;
+                transform: none;
+                justify-content: center;
+                margin-bottom: 2rem;
+            }
+            
+            .footer-logos img {
+                height: 60px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
     <!-- Font Awesome for icons -->
