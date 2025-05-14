@@ -1,0 +1,242 @@
+<!-- Common Styles -->
+<link rel="stylesheet" href="common-styles.css">
+
+<!-- Debug logging configuration -->
+<script>
+    const HEADER_DEBUG = true;
+    
+    function logDebug(message, data = null) {
+        if (HEADER_DEBUG) {
+            if (data) {
+                console.log(`[DEBUG][Header] ${message}`, data);
+            } else {
+                console.log(`[DEBUG][Header] ${message}`);
+            }
+        }
+    }
+    
+    function logError(message, error = null) {
+        if (error) {
+            console.error(`[ERROR][Header] ${message}`, error);
+        } else {
+            console.error(`[ERROR][Header] ${message}`);
+        }
+    }
+    
+    function logInfo(message, data = null) {
+        if (data) {
+            console.info(`[INFO][Header] ${message}`, data);
+        } else {
+            console.info(`[INFO][Header] ${message}`);
+        }
+    }
+    
+    // Track header initialization
+    const headerMetrics = {
+        startTime: performance.now(),
+        menuItems: [],
+        activeItem: null,
+        mobileMenuState: false
+    };
+    
+    // Initialize header functionality
+    function initializeHeader() {
+        try {
+            logDebug('Initializing header functionality');
+            
+            // Track menu items
+            const menuItems = document.querySelectorAll('.nav-links a');
+            headerMetrics.menuItems = Array.from(menuItems).map(item => ({
+                text: item.textContent,
+                href: item.getAttribute('href')
+            }));
+            
+            logDebug('Found menu items:', headerMetrics.menuItems);
+            
+            // Track active menu item
+            const activeItem = document.querySelector('.nav-links a.active');
+            if (activeItem) {
+                headerMetrics.activeItem = {
+                    text: activeItem.textContent,
+                    href: activeItem.getAttribute('href')
+                };
+                logDebug('Active menu item:', headerMetrics.activeItem);
+            }
+            
+            // Mobile menu functionality
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            if (mobileMenuBtn) {
+                logDebug('Setting up mobile menu button');
+                mobileMenuBtn.addEventListener('click', () => {
+                    headerMetrics.mobileMenuState = !headerMetrics.mobileMenuState;
+                    logDebug('Mobile menu toggled:', {
+                        newState: headerMetrics.mobileMenuState
+                    });
+                });
+            }
+            
+            // Track navigation events
+            menuItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    logDebug('Menu item clicked:', {
+                        text: e.target.textContent,
+                        href: e.target.getAttribute('href')
+                    });
+                });
+            });
+            
+            logInfo('Header initialization completed', {
+                loadTime: `${(performance.now() - headerMetrics.startTime).toFixed(2)}ms`,
+                menuItems: headerMetrics.menuItems.length,
+                hasActiveItem: !!headerMetrics.activeItem,
+                hasMobileMenu: !!mobileMenuBtn
+            });
+        } catch (error) {
+            logError('Error initializing header:', error);
+        }
+    }
+    
+    // Initialize when the header is loaded
+    document.addEventListener('DOMContentLoaded', initializeHeader);
+    
+    // Export metrics for external monitoring
+    window.headerMetrics = headerMetrics;
+</script>
+
+<!-- Header Content -->
+<header>
+    <div class="container">
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="branding/horizontal_logo.png" alt="Jerry's Cabinets Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="store.html">Store</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <img src="branding/tag.png" alt="Free Quote Tag" class="nav-tag">
+        </nav>
+    </div>
+</header>
+
+<style>
+    /* Header-specific styles */
+    .navbar {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 1rem 0;
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 2rem;
+        margin-left: 2rem;
+        margin-right: 160px;
+    }
+
+    .nav-links li {
+        position: relative;
+    }
+
+    .nav-links a {
+        color: var(--dark-brown);
+        text-decoration: none;
+        font-weight: 700;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: var(--caramel);
+    }
+
+    .nav-tag {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 140px;
+        height: auto;
+        transform: translateY(-25px);
+    }
+
+    .logo {
+        margin-right: 2rem;
+    }
+
+    .logo img {
+        width: 220px;
+        height: auto;
+    }
+
+    .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--dark-brown);
+    }
+
+    @media (max-width: 768px) {
+        .nav-links {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            padding: 1rem;
+            flex-direction: column;
+            gap: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 0;
+        }
+
+        .nav-links.active {
+            display: flex;
+        }
+
+        .mobile-menu-btn {
+            display: block;
+        }
+
+        .nav-tag {
+            display: none;
+        }
+    }
+</style>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" style="display: none;">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#gallery">Gallery</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="store.html">Store</a></li>
+    </ul>
+</div>
+
+<!-- Mobile Menu Script -->
+<script>
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+        document.querySelector('.nav-links').classList.toggle('active');
+    });
+    
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.remove('active');
+        });
+    });
+</script> 
