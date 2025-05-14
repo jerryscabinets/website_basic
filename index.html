@@ -1261,12 +1261,6 @@
         // Auto-advance slides every 5 seconds
         setInterval(nextSlide, 5000);
         
-        // Simple form handling (for GitHub Pages, you'd need a third-party service for actual submission)
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! This is a demo form. On a live site, this would be connected to a form processing service.');
-        });
-        
         // Gallery ribbon functionality
         const galleryRibbon = document.querySelector('.gallery-ribbon');
         const galleryContainer = document.querySelector('.gallery-ribbon-container');
@@ -1318,7 +1312,7 @@
             });
         });
 
-        // Add this to your existing JavaScript
+        // Update the form submission function
         async function submitForm(e) {
             e.preventDefault();
             
