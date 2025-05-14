@@ -895,6 +895,155 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .nav-links {
+                margin-right: 100px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--light-cream);
+                padding: 20px;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-tag {
+                display: none;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 0 20px;
+            }
+
+            .carousel-caption h1 {
+                font-size: 2.5rem;
+            }
+
+            .carousel-caption p {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .features-grid {
+                gap: 1rem;
+            }
+
+            .gallery-ribbon-container {
+                padding: 0.5rem;
+            }
+
+            .gallery-item {
+                flex: 0 0 250px;
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-filters {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .gallery-filter-btn {
+                margin: 5px;
+            }
+
+            .carousel-caption h1 {
+                font-size: 2rem;
+            }
+
+            .carousel-caption p {
+                font-size: 1rem;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Ensure images are responsive */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Ensure text is readable on all devices */
+        body {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Ensure buttons are easily tappable on mobile */
+        .btn, 
+        .gallery-filter-btn,
+        .gallery-control-btn {
+            min-height: 44px;
+            min-width: 44px;
+        }
+
+        /* Ensure form inputs are easily tappable on mobile */
+        input,
+        textarea,
+        select {
+            font-size: 16px; /* Prevents zoom on iOS */
+        }
     </style>
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
