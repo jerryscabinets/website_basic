@@ -578,7 +578,7 @@
 
         .about-images {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 1rem;
             position: relative;
         }
@@ -588,6 +588,7 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            aspect-ratio: 4/3;
         }
 
         .about-image img {
@@ -605,15 +606,15 @@
 
         .about-image.large {
             grid-column: span 2;
-            height: 250px;
+            grid-row: span 2;
         }
 
         .about-image.small {
-            height: 180px;
+            height: auto;
         }
 
         .about-cta {
-            grid-column: span 2;
+            grid-column: span 3;
             margin-top: 1.5rem;
             text-align: center;
             display: flex;
