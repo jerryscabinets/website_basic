@@ -1481,60 +1481,42 @@
         }
 
         // Gallery image configuration
-        const galleryConfig = {
-            kitchen: {
-                path: 'branding/gallery/kitchen/',
-                altPrefix: 'Kitchen Cabinets - '
-            },
-            bathroom: {
-                path: 'branding/gallery/bathroom/',
-                altPrefix: 'Bathroom Vanity - '
-            },
-            office: {
-                path: 'branding/gallery/office/',
-                altPrefix: 'Office Cabinets - '
-            },
-            garage: {
-                path: 'branding/gallery/garage/',
-                altPrefix: 'Garage Storage - '
-            }
+        const galleryImages = {
+            kitchen: [
+                { src: 'branding/gallery/kitchen/kitchen1.jpg', alt: 'Kitchen Cabinets - Modern Design' },
+                { src: 'branding/gallery/kitchen/kitchen2.jpg', alt: 'Kitchen Cabinets - Custom Design' },
+                { src: 'branding/gallery/kitchen/kitchen3.jpg', alt: 'Kitchen Cabinets - Luxury Style' },
+                { src: 'branding/gallery/kitchen/kitchen4.jpg', alt: 'Kitchen Cabinets - Contemporary Look' }
+            ],
+            bathroom: [
+                { src: 'branding/gallery/bathroom/bathroom1.jpg', alt: 'Bathroom Vanity - Modern Style' }
+            ],
+            office: [
+                { src: 'branding/gallery/office/office1.jpg', alt: 'Office Cabinets - Professional Design' }
+            ],
+            garage: [
+                { src: 'branding/gallery/garage/garage1.jpg', alt: 'Garage Storage - Custom Organization' }
+            ]
         };
 
         // Function to load gallery images
-        async function loadGalleryImages() {
+        function loadGalleryImages() {
             const container = document.getElementById('galleryContainer');
             
             // For each category
-            for (const [category, config] of Object.entries(galleryConfig)) {
-                try {
-                    // Fetch the directory listing
-                    const response = await fetch(config.path);
-                    const text = await response.text();
+            for (const [category, images] of Object.entries(galleryImages)) {
+                images.forEach(image => {
+                    const galleryItem = document.createElement('div');
+                    galleryItem.className = 'gallery-item';
+                    galleryItem.setAttribute('data-category', category);
                     
-                    // Parse the directory listing to find image files
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(text, 'text/html');
-                    const links = doc.querySelectorAll('a');
+                    const img = document.createElement('img');
+                    img.src = image.src;
+                    img.alt = image.alt;
                     
-                    // Filter for image files and create gallery items
-                    links.forEach(link => {
-                        const href = link.getAttribute('href');
-                        if (href && /\.(jpg|jpeg|png|gif)$/i.test(href)) {
-                            const galleryItem = document.createElement('div');
-                            galleryItem.className = 'gallery-item';
-                            galleryItem.setAttribute('data-category', category);
-                            
-                            const img = document.createElement('img');
-                            img.src = config.path + href;
-                            img.alt = config.altPrefix + href.replace(/\.[^/.]+$/, '').replace(/-/g, ' ');
-                            
-                            galleryItem.appendChild(img);
-                            container.appendChild(galleryItem);
-                        }
-                    });
-                } catch (error) {
-                    console.error(`Error loading images for ${category}:`, error);
-                }
+                    galleryItem.appendChild(img);
+                    container.appendChild(galleryItem);
+                });
             }
             
             // Initialize gallery functionality after images are loaded
