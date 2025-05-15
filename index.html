@@ -1211,19 +1211,8 @@
             </h2>
             <div class="gallery-ribbon">
                 <button class="gallery-control-btn prev">&lt;</button>
-                <div class="gallery-ribbon-container">
-                    <div class="gallery-item" data-category="kitchen">
-                        <img src="branding/gallery/kitchen/kitchen1.jpg" alt="Modern Kitchen Cabinets">
-                    </div>
-                    <div class="gallery-item" data-category="bathroom">
-                        <img src="branding/gallery/bathroom/bathroom1.jpg" alt="Luxury Bathroom Vanity">
-                    </div>
-                    <div class="gallery-item" data-category="office">
-                        <img src="branding/gallery/office/office1.jpg" alt="Home Office Cabinets">
-                    </div>
-                    <div class="gallery-item" data-category="garage">
-                        <img src="branding/gallery/garage/garage1.jpg" alt="Garage Storage System">
-                    </div>
+                <div class="gallery-ribbon-container" id="galleryContainer">
+                    <!-- Images will be loaded dynamically -->
                 </div>
                 <button class="gallery-control-btn next">&gt;</button>
             </div>
@@ -1490,6 +1479,93 @@
                 console.error('Error:', error);
             }
         }
+
+        // Gallery image configuration
+        const galleryConfig = {
+            kitchen: {
+                path: 'branding/gallery/kitchen/',
+                altPrefix: 'Kitchen Cabinets - '
+            },
+            bathroom: {
+                path: 'branding/gallery/bathroom/',
+                altPrefix: 'Bathroom Vanity - '
+            },
+            office: {
+                path: 'branding/gallery/office/',
+                altPrefix: 'Office Cabinets - '
+            },
+            garage: {
+                path: 'branding/gallery/garage/',
+                altPrefix: 'Garage Storage - '
+            }
+        };
+
+        // Function to load gallery images
+        async function loadGalleryImages() {
+            const container = document.getElementById('galleryContainer');
+            
+            // For each category
+            for (const [category, config] of Object.entries(galleryConfig)) {
+                try {
+                    // Fetch the directory listing
+                    const response = await fetch(config.path);
+                    const text = await response.text();
+                    
+                    // Parse the directory listing to find image files
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(text, 'text/html');
+                    const links = doc.querySelectorAll('a');
+                    
+                    // Filter for image files and create gallery items
+                    links.forEach(link => {
+                        const href = link.getAttribute('href');
+                        if (href && /\.(jpg|jpeg|png|gif)$/i.test(href)) {
+                            const galleryItem = document.createElement('div');
+                            galleryItem.className = 'gallery-item';
+                            galleryItem.setAttribute('data-category', category);
+                            
+                            const img = document.createElement('img');
+                            img.src = config.path + href;
+                            img.alt = config.altPrefix + href.replace(/\.[^/.]+$/, '').replace(/-/g, ' ');
+                            
+                            galleryItem.appendChild(img);
+                            container.appendChild(galleryItem);
+                        }
+                    });
+                } catch (error) {
+                    console.error(`Error loading images for ${category}:`, error);
+                }
+            }
+            
+            // Initialize gallery functionality after images are loaded
+            initializeGallery();
+        }
+
+        // Function to initialize gallery functionality
+        function initializeGallery() {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const filterButtons = document.querySelectorAll('.gallery-filter-btn');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    const filter = button.dataset.filter;
+                    
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.dataset.category === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+
+        // Load gallery images when the page loads
+        document.addEventListener('DOMContentLoaded', loadGalleryImages);
     </script>
 </body>
 </html>
