@@ -3,8 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jerry's Cabinets - Quality Custom Cabinetry</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Jerry's Cabinets - Premium Custom Cabinetry & Cabinet Makers in Phoenix, AZ</title>
+    
+    <!-- Primary Meta Tags -->
+    <meta name="description" content="Expert custom cabinet makers in Phoenix, AZ. Specializing in kitchen cabinets, bathroom vanities, garage storage, and office cabinetry. Free consultation and quotes available.">
+    <meta name="keywords" content="custom cabinets, cabinet makers, kitchen cabinets, bathroom vanities, garage storage, office cabinetry, Phoenix AZ, custom woodworking">
+    <meta name="author" content="Jerry's Cabinets">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jerryscabinets.com">
+    <meta property="og:title" content="Jerry's Cabinets - Premium Custom Cabinetry in Phoenix, AZ">
+    <meta property="og:description" content="Expert custom cabinet makers specializing in kitchen cabinets, bathroom vanities, garage storage, and office cabinetry. Free consultation available.">
+    <meta property="og:image" content="https://jerryscabinets.com/branding/horizontal_logo.png">
+    <meta property="og:image:alt" content="Jerry's Cabinets - Custom Cabinet Makers in Phoenix">
+    <meta property="og:site_name" content="Jerry's Cabinets">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@jerryscabinets">
+    <meta name="twitter:title" content="Jerry's Cabinets - Custom Cabinet Makers in Phoenix">
+    <meta name="twitter:description" content="Expert custom cabinet makers in Phoenix, AZ. Specializing in kitchen cabinets, bathroom vanities, garage storage, and office cabinetry.">
+    <meta name="twitter:image" content="https://jerryscabinets.com/branding/horizontal_logo.png">
+    <meta name="twitter:image:alt" content="Jerry's Cabinets - Custom Cabinet Makers in Phoenix">
+    
+    <!-- Pinterest -->
+    <meta name="pinterest-rich-pin" content="true">
+    <meta name="pinterest-verification" content="YOUR_PINTEREST_VERIFICATION_CODE">
+    
+    <!-- LinkedIn -->
+    <meta property="linkedin:title" content="Jerry's Cabinets - Custom Cabinet Makers in Phoenix">
+    <meta property="linkedin:description" content="Expert custom cabinet makers in Phoenix, AZ. Specializing in kitchen cabinets, bathroom vanities, garage storage, and office cabinetry.">
+    <meta property="linkedin:image" content="https://jerryscabinets.com/branding/horizontal_logo.png">
+    
+    <!-- Bing -->
+    <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE">
+    
+    <!-- Google -->
+    <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#3d3224">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Jerry's Cabinets">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://jerryscabinets.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="branding/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="branding/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="branding/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Jerry's Cabinets",
+        "image": "branding/horizontal_logo.png",
+        "description": "Expert custom cabinet makers in Phoenix, AZ specializing in kitchen cabinets, bathroom vanities, garage storage, and office cabinetry.",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "3317 E Bell Rd Ste 101121",
+            "addressLocality": "Phoenix",
+            "addressRegion": "AZ",
+            "postalCode": "85032-0421",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "33.6407",
+            "longitude": "-112.0123"
+        },
+        "url": "https://jerryscabinets.com",
+        "telephone": "+18032728236",
+        "priceRange": "$$$",
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "08:00",
+                "closes": "17:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "09:00",
+                "closes": "14:00"
+            }
+        ],
+        "sameAs": [
+            "https://www.facebook.com/jerryscabinets",
+            "https://www.instagram.com/jerryscabinets"
+        ]
+    }
+    </script>
     <script>
         const debug = true; // Set to false to disable debug logging
         
@@ -541,6 +640,48 @@
 
         .gallery-item:hover img {
             transform: scale(1.1);
+        }
+
+        .gallery-item-metadata {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(61, 50, 36, 0.9);
+            color: var(--white);
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-item-metadata {
+            transform: translateY(0);
+        }
+
+        .gallery-item-metadata h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--caramel);
+        }
+
+        .gallery-item-metadata p {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .gallery-item-metadata .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .gallery-item-metadata .tag {
+            background: var(--caramel);
+            color: var(--white);
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
         }
 
         .gallery-expand-btn {
@@ -1114,99 +1255,99 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero" id="home" aria-label="Main Banner">
         <div class="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" style="background-image: url('https://mobileimages.lowes.com/marketingimages/971c60ef-1b4c-4c87-a96f-fe51867366b8/custom-cabinets-og.png');">
                     <div class="carousel-caption">
-                        <h1>Custom Kitchen Cabinets</h1>
-                        <p>Transform your kitchen with our premium custom cabinetry</p>
-                        <a href="#contact" class="btn">Schedule a Consultation</a>
+                        <h1>Custom Kitchen Cabinets in Phoenix, AZ</h1>
+                        <p>Transform your kitchen with our premium custom cabinetry and expert craftsmanship</p>
+                        <a href="#contact" class="btn">Schedule a Free Consultation</a>
                     </div>
                 </div>
                 <div class="carousel-item" style="background-image: url('https://www.haasbuilding.com/wp-content/uploads/2023/11/bathroom-4.jpeg');">
                     <div class="carousel-caption">
-                        <h1>Luxury Bathroom Vanities</h1>
-                        <p>Elegant and functional bathroom storage solutions</p>
+                        <h1>Custom Bathroom Vanities</h1>
+                        <p>Elegant and functional bathroom storage solutions tailored to your space</p>
                         <a href="#contact" class="btn">Get a Free Quote</a>
                     </div>
                 </div>
                 <div class="carousel-item" style="background-image: url('https://www.closetfactory.com/wp-content/uploads/2017/09/Garages_10.jpg');">
                     <div class="carousel-caption">
-                        <h1>Garage Storage Systems</h1>
-                        <p>Organize your garage with custom storage solutions</p>
+                        <h1>Custom Garage Storage Systems</h1>
+                        <p>Professional garage organization with custom storage solutions</p>
                         <a href="#contact" class="btn">Get a Free Quote</a>
                     </div>
                 </div>
                 <div class="carousel-item" style="background-image: url('https://www.tlkingcabinetmakers.com/images/computer/2044.jpg');">
                     <div class="carousel-caption">
-                        <h1>Home Office Cabinetry</h1>
-                        <p>Create the perfect workspace with custom office cabinets</p>
+                        <h1>Custom Office Cabinetry</h1>
+                        <p>Create the perfect workspace with custom office cabinets and storage solutions</p>
                         <a href="#contact" class="btn">Get a Free Quote</a>
                     </div>
                 </div>
             </div>
             <div class="carousel-nav">
-                <button class="prev-btn">&lt;</button>
-                <button class="next-btn">&gt;</button>
+                <button class="prev-btn" aria-label="Previous slide">&lt;</button>
+                <button class="next-btn" aria-label="Next slide">&gt;</button>
             </div>
             <div class="carousel-controls">
-                <div class="carousel-control active"></div>
-                <div class="carousel-control"></div>
-                <div class="carousel-control"></div>
-                <div class="carousel-control"></div>
+                <div class="carousel-control active" aria-label="Slide 1"></div>
+                <div class="carousel-control" aria-label="Slide 2"></div>
+                <div class="carousel-control" aria-label="Slide 3"></div>
+                <div class="carousel-control" aria-label="Slide 4"></div>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section class="features" id="services">
+    <section class="features" id="services" aria-label="Our Services">
         <div class="container">
-            <h2 class="section-title">Our <span>Services</span></h2>
+            <h2 class="section-title">Our <span>Custom Cabinet Services</span></h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-pencil-ruler"></i>
+                        <i class="fas fa-pencil-ruler" aria-hidden="true"></i>
                     </div>
-                    <h3>Design</h3>
-                    <p>Custom cabinet designs tailored to your space and style preferences, with expert consultation and 3D visualization.</p>
+                    <h3>Custom Design</h3>
+                    <p>Professional cabinet designs tailored to your space and style preferences, with expert consultation and 3D visualization for your custom cabinetry needs.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-hammer"></i>
+                        <i class="fas fa-hammer" aria-hidden="true"></i>
                     </div>
-                    <h3>Build</h3>
-                    <p>Premium quality construction using the finest materials and expert craftsmanship in our local workshop.</p>
+                    <h3>Expert Craftsmanship</h3>
+                    <p>Premium quality construction using the finest materials and expert craftsmanship in our local Phoenix workshop for your custom cabinets.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-tools"></i>
+                        <i class="fas fa-tools" aria-hidden="true"></i>
                     </div>
-                    <h3>Install</h3>
-                    <p>Professional installation by our experienced team, ensuring perfect fit and finish in your space.</p>
+                    <h3>Professional Installation</h3>
+                    <p>Professional cabinet installation by our experienced team, ensuring perfect fit and finish in your Phoenix home or business.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-wrench"></i>
+                        <i class="fas fa-wrench" aria-hidden="true"></i>
                     </div>
-                    <h3>Repair</h3>
-                    <p>Expert repair and maintenance services to keep your cabinets looking and functioning like new.</p>
+                    <h3>Maintenance & Repair</h3>
+                    <p>Expert cabinet repair and maintenance services to keep your custom cabinetry looking and functioning like new for years to come.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery">
+    <section id="gallery" aria-label="Our Work Gallery">
         <div class="gallery-section">
             <h2 class="section-title">
-                <span class="gallery-title">Our <span>Work</span></span>
+                <span class="gallery-title">Our <span>Custom Cabinet Portfolio</span></span>
                 <div class="gallery-filters">
-                    <button class="gallery-filter-btn active" data-filter="all">All</button>
-                    <button class="gallery-filter-btn" data-filter="kitchen">Kitchen</button>
-                    <button class="gallery-filter-btn" data-filter="bathroom">Bathroom</button>
-                    <button class="gallery-filter-btn" data-filter="garage">Garage</button>
-                    <button class="gallery-filter-btn" data-filter="office">Office</button>
+                    <button class="gallery-filter-btn active" data-filter="all">All Projects</button>
+                    <button class="gallery-filter-btn" data-filter="kitchen">Kitchen Cabinets</button>
+                    <button class="gallery-filter-btn" data-filter="bathroom">Bathroom Vanities</button>
+                    <button class="gallery-filter-btn" data-filter="garage">Garage Storage</button>
+                    <button class="gallery-filter-btn" data-filter="office">Office Cabinetry</button>
                 </div>
             </h2>
             <div class="gallery-ribbon">
@@ -1221,74 +1362,100 @@
     </section>
 
     <!-- About Section -->
-    <section class="about" id="about">
+    <section class="about" id="about" aria-label="About Our Company">
         <div class="container">
-            <h2 class="section-title">About <span>Us</span></h2>
             <div class="about-content">
-                <div class="about-images">
-                    <div class="about-image large">
-                        <img src="images/about/about_us.png" alt="About Jerry's Cabinets">
-                    </div>
-                    <div class="about-cta">
-                        <a href="#contact" class="btn">Schedule a Consultation</a>
-                    </div>
-                </div>
                 <div class="about-text">
-                    <h2>Excellence in Custom Cabinetry Since 1995</h2>
-                    <p>For over 25 years, Jerry's Cabinets has been at the forefront of custom cabinetry, transforming spaces with our commitment to quality and innovation. What began as a small family workshop has grown into a respected name in the industry, known for our attention to detail and customer-focused approach.</p>
-                    <p>Our team of master craftsmen combines traditional woodworking techniques with cutting-edge technology to create cabinetry that's both beautiful and built to last. Each project is a testament to our dedication to excellence, whether it's a kitchen renovation, bathroom vanity, or custom storage solution.</p>
-                    <p>We take pride in our local manufacturing process, using only the finest materials and sustainable practices. Our state-of-the-art facility allows us to maintain complete control over every aspect of production, ensuring the highest quality standards in every piece we create.</p>
+                    <h2 class="section-title">About <span>Jerry's Cabinets</span></h2>
+                    <p>With over 20 years of experience in custom cabinetry, Jerry's Cabinets has been serving the Phoenix metropolitan area with exceptional craftsmanship and personalized service. Our team of skilled cabinet makers specializes in creating custom cabinets that perfectly match your vision and requirements.</p>
+                    <p>We take pride in our attention to detail and commitment to quality, using only the finest materials and latest techniques in cabinet making. From kitchen cabinets to bathroom vanities, garage storage to office cabinetry, we deliver custom solutions that enhance both the functionality and aesthetics of your space.</p>
                     <div class="about-stats">
                         <div class="stat-item">
-                            <div class="stat-number">25+</div>
-                            <div class="stat-label">Years of Excellence</div>
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Years Experience</span>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">1000+</div>
-                            <div class="stat-label">Projects Completed</div>
+                            <span class="stat-number">1000+</span>
+                            <span class="stat-label">Projects Completed</span>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">50+</div>
-                            <div class="stat-label">Expert Craftsmen</div>
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Satisfaction</span>
                         </div>
                     </div>
+                </div>
+                <div class="about-images">
+                    <img src="branding/about/about1.jpg" alt="Custom Cabinet Workshop in Phoenix" class="about-img">
+                    <img src="branding/about/about2.jpg" alt="Expert Cabinet Maker at Work" class="about-img">
+                    <img src="branding/about/about3.jpg" alt="Custom Cabinet Installation Process" class="about-img">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <section class="contact" id="contact" aria-label="Contact Us">
         <div class="container">
             <h2 class="section-title">Contact <span>Us</span></h2>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Get In Touch</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 3317 E Bell Rd Ste 101121 Phoenix, AZ, 85032-0421 United States</p>
-                    <p><i class="fas fa-phone"></i> (803) 272-8236</p>
-                    <p><i class="fas fa-envelope"></i> info@jerryscabinets.com</p>
-                    <h3>Hours of Operation</h3>
-                    <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
-                    <p>Saturday: 9:00 AM - 2:00 PM</p>
-                    <p>Sunday: Closed</p>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <div>
+                            <h3>Visit Our Showroom</h3>
+                            <p>1234 Cabinet Way<br>Phoenix, AZ 85001</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                        <div>
+                            <h3>Call Us</h3>
+                            <p><a href="tel:+1234567890">(123) 456-7890</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <div>
+                            <h3>Email Us</h3>
+                            <p><a href="mailto:info@jerryscabinets.com">info@jerryscabinets.com</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock" aria-hidden="true"></i>
+                        <div>
+                            <h3>Business Hours</h3>
+                            <p>Monday - Friday: 8:00 AM - 5:00 PM<br>Saturday: 9:00 AM - 2:00 PM<br>Sunday: Closed</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contactForm" onsubmit="submitForm(event)">
+                    <form id="contactForm" action="https://script.google.com/macros/s/AKfycbzXXXXXXXXXXXXXXXXXXXXX/exec" method="POST">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
+                            <input type="text" id="name" name="name" required aria-required="true">
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" required aria-required="true">
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone</label>
-                            <input type="tel" id="phone" name="phone">
+                            <input type="tel" id="phone" name="phone" required aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" name="service" required aria-required="true">
+                                <option value="">Select a Service</option>
+                                <option value="kitchen">Kitchen Cabinets</option>
+                                <option value="bathroom">Bathroom Vanities</option>
+                                <option value="garage">Garage Storage</option>
+                                <option value="office">Office Cabinetry</option>
+                                <option value="other">Other</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" required></textarea>
+                            <textarea id="message" name="message" required aria-required="true"></textarea>
                         </div>
                         <button type="submit" class="btn">Send Message</button>
                     </form>
@@ -1463,7 +1630,7 @@
             };
 
             try {
-                const response = await fetch('https://script.google.com/macros/s/AKfycbxVL9qX-TXa83O2j3867DAs8thNP_nSjZY8-A9PoXPRVNdws2rmEK82TU8YZfAf0zuE/exec', {
+                const response = await fetch('https://script.google.com/macros/s/AKfycbzXXXXXXXXXXXXXXXXXXXXX/exec', {
                     method: 'POST',
                     mode: 'no-cors',
                     headers: {
@@ -1480,32 +1647,123 @@
             }
         }
 
-        // Gallery image configuration
+        // Gallery image configuration with detailed metadata
         const galleryImages = {
             kitchen: [
-                { src: 'branding/gallery/kitchen/kitchen1.jpg', alt: 'Kitchen Cabinets - Modern Design' },
-                { src: 'branding/gallery/kitchen/kitchen2.jpg', alt: 'Kitchen Cabinets - Custom Design' },
-                { src: 'branding/gallery/kitchen/kitchen3.jpg', alt: 'Kitchen Cabinets - Luxury Style' },
-                { src: 'branding/gallery/kitchen/kitchen4.jpg', alt: 'Kitchen Cabinets - Contemporary Look' }
+                { 
+                    src: 'branding/gallery/kitchen/kitchen1.jpg',
+                    alt: 'Modern Kitchen Cabinets with Custom Storage Solutions',
+                    title: 'Contemporary Kitchen Cabinets',
+                    description: 'Custom-built kitchen cabinets featuring modern design, soft-close hinges, and pull-out storage solutions. Perfect for Phoenix homes seeking a contemporary look.',
+                    category: 'kitchen',
+                    tags: ['modern', 'storage', 'custom', 'kitchen']
+                },
+                { 
+                    src: 'branding/gallery/kitchen/kitchen2.jpg',
+                    alt: 'Luxury Kitchen Cabinets with Custom Design Elements',
+                    title: 'Luxury Kitchen Cabinetry',
+                    description: 'High-end kitchen cabinets showcasing premium materials and custom design elements. Features include built-in wine storage and specialized appliance spaces.',
+                    category: 'kitchen',
+                    tags: ['luxury', 'custom', 'kitchen', 'storage']
+                },
+                { 
+                    src: 'branding/gallery/kitchen/kitchen3.jpg',
+                    alt: 'Traditional Kitchen Cabinets with Classic Design',
+                    title: 'Traditional Kitchen Design',
+                    description: 'Classic kitchen cabinets with traditional styling and timeless appeal. Includes custom crown molding and decorative hardware.',
+                    category: 'kitchen',
+                    tags: ['traditional', 'classic', 'kitchen', 'custom']
+                },
+                { 
+                    src: 'branding/gallery/kitchen/kitchen4.jpg',
+                    alt: 'Contemporary Kitchen Cabinets with Modern Features',
+                    title: 'Modern Kitchen Solutions',
+                    description: 'Contemporary kitchen cabinets with innovative storage solutions and modern design elements. Perfect for today\'s busy households.',
+                    category: 'kitchen',
+                    tags: ['modern', 'contemporary', 'kitchen', 'storage']
+                }
             ],
             bathroom: [
-                { src: 'branding/gallery/bathroom/bathroom1.jpg', alt: 'Bathroom Vanity - Mid-Century Modern Design' },
-                { src: 'branding/gallery/bathroom/bathroom2.jpg', alt: 'Bathroom Vanity - Contemporary Style' },
-                { src: 'branding/gallery/bathroom/bathroom3.png', alt: 'Bathroom Vanity - Modern Elegance' }
+                { 
+                    src: 'branding/gallery/bathroom/bathroom1.jpg',
+                    alt: 'Mid-Century Modern Bathroom Vanity with Custom Storage',
+                    title: 'Mid-Century Bathroom Vanity',
+                    description: 'Custom bathroom vanity featuring mid-century modern design elements and ample storage space. Includes custom mirror and lighting solutions.',
+                    category: 'bathroom',
+                    tags: ['mid-century', 'vanity', 'bathroom', 'custom']
+                },
+                { 
+                    src: 'branding/gallery/bathroom/bathroom2.jpg',
+                    alt: 'Contemporary Bathroom Vanity with Modern Design',
+                    title: 'Contemporary Bathroom Design',
+                    description: 'Modern bathroom vanity with sleek design and practical storage solutions. Features custom countertop and integrated lighting.',
+                    category: 'bathroom',
+                    tags: ['contemporary', 'modern', 'bathroom', 'vanity']
+                },
+                { 
+                    src: 'branding/gallery/bathroom/bathroom3.png',
+                    alt: 'Luxury Bathroom Vanity with Custom Features',
+                    title: 'Luxury Bathroom Vanity',
+                    description: 'High-end bathroom vanity with premium materials and custom features. Includes specialized storage and elegant design elements.',
+                    category: 'bathroom',
+                    tags: ['luxury', 'custom', 'bathroom', 'vanity']
+                }
             ],
             office: [
-                { src: 'branding/gallery/office/office1.jpg', alt: 'Office Cabinets - Custom Built' },
-                { src: 'branding/gallery/office/office2.png', alt: 'Office Cabinets - Modern Design' },
-                { src: 'branding/gallery/office/office3.jpg', alt: 'Office Cabinets - Professional Setup' }
+                { 
+                    src: 'branding/gallery/office/office1.jpg',
+                    alt: 'Custom Office Cabinets with Professional Design',
+                    title: 'Professional Office Storage',
+                    description: 'Custom office cabinets designed for maximum efficiency and professional appearance. Features include file storage and display shelving.',
+                    category: 'office',
+                    tags: ['office', 'professional', 'storage', 'custom']
+                },
+                { 
+                    src: 'branding/gallery/office/office2.png',
+                    alt: 'Modern Office Cabinets with Contemporary Style',
+                    title: 'Modern Office Solutions',
+                    description: 'Contemporary office cabinets with modern design and practical storage solutions. Perfect for home offices and professional spaces.',
+                    category: 'office',
+                    tags: ['modern', 'office', 'contemporary', 'storage']
+                },
+                { 
+                    src: 'branding/gallery/office/office3.jpg',
+                    alt: 'Custom Office Storage Solutions with Built-in Features',
+                    title: 'Custom Office Storage',
+                    description: 'Specialized office cabinets with custom features and built-in organization solutions. Designed for maximum productivity.',
+                    category: 'office',
+                    tags: ['custom', 'office', 'storage', 'organization']
+                }
             ],
             garage: [
-                { src: 'branding/gallery/garage/garage1.jpg', alt: 'Garage Storage - Custom Wood Cabinets' },
-                { src: 'branding/gallery/garage/garage2.jpg', alt: 'Garage Storage - Pewter Cabinets' },
-                { src: 'branding/gallery/garage/garage3.jpg', alt: 'Garage Storage - Modern Organization' }
+                { 
+                    src: 'branding/gallery/garage/garage1.jpg',
+                    alt: 'Custom Garage Storage Cabinets with Wood Construction',
+                    title: 'Custom Garage Storage',
+                    description: 'Premium garage storage cabinets built with high-quality materials and custom features. Perfect for organizing tools and equipment.',
+                    category: 'garage',
+                    tags: ['garage', 'storage', 'custom', 'organization']
+                },
+                { 
+                    src: 'branding/gallery/garage/garage2.jpg',
+                    alt: 'Modern Garage Storage Solutions with Pewter Finish',
+                    title: 'Modern Garage Organization',
+                    description: 'Contemporary garage storage solutions with durable construction and modern design. Features specialized storage for tools and equipment.',
+                    category: 'garage',
+                    tags: ['modern', 'garage', 'storage', 'organization']
+                },
+                { 
+                    src: 'branding/gallery/garage/garage3.jpg',
+                    alt: 'Custom Garage Cabinets with Modern Organization Features',
+                    title: 'Custom Garage Solutions',
+                    description: 'Custom-built garage cabinets with innovative storage solutions and durable construction. Designed for maximum organization and efficiency.',
+                    category: 'garage',
+                    tags: ['custom', 'garage', 'storage', 'organization']
+                }
             ]
         };
 
-        // Function to load gallery images
+        // Function to load gallery images with metadata
         function loadGalleryImages() {
             const container = document.getElementById('galleryContainer');
             
@@ -1515,12 +1773,26 @@
                     const galleryItem = document.createElement('div');
                     galleryItem.className = 'gallery-item';
                     galleryItem.setAttribute('data-category', category);
+                    galleryItem.setAttribute('data-tags', image.tags.join(','));
                     
                     const img = document.createElement('img');
                     img.src = image.src;
                     img.alt = image.alt;
+                    img.title = image.title;
+                    img.loading = 'lazy';
+                    
+                    // Add image metadata
+                    const metadata = document.createElement('div');
+                    metadata.className = 'gallery-item-metadata';
+                    metadata.style.display = 'none';
+                    metadata.innerHTML = `
+                        <h3>${image.title}</h3>
+                        <p>${image.description}</p>
+                        <div class="tags">${image.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
+                    `;
                     
                     galleryItem.appendChild(img);
+                    galleryItem.appendChild(metadata);
                     container.appendChild(galleryItem);
                 });
             }
