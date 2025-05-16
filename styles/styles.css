@@ -858,8 +858,7 @@ header {
     color: var(--light-cream);
     padding: 4rem 0 2rem;
     position: relative;
-    margin: 0 -40px;
-    padding: 4rem 40px 2rem;
+    margin: 0;
 }
 
 .footer-logos {
