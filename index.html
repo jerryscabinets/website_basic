@@ -162,7 +162,7 @@
         
         .navbar {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             padding: 0.5rem 40px;
             max-width: 1200px;
@@ -174,8 +174,7 @@
         .logo {
             width: 220px;
             height: auto;
-            position: relative;
-            left: 0;
+            flex-shrink: 0;
         }
         
         .nav-links {
@@ -185,7 +184,7 @@
             padding: 0;
             gap: 1.5rem;
             align-items: center;
-            margin-left: 260px;
+            margin-left: 2rem;
         }
         
         .nav-quote-btn {
@@ -1068,10 +1067,6 @@
             
             .navbar {
                 padding: 0.5rem 20px;
-            }
-            
-            .nav-links {
-                margin-left: 240px;
             }
         }
 
