@@ -138,6 +138,11 @@ header {
     position: relative;
     overflow: hidden;
     margin-top: 90px;
+    width: 100%;
+}
+
+.hero .page-container {
+    padding: 0;
 }
 
 .carousel {
