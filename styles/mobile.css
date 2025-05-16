@@ -1,46 +1,45 @@
 /* Mobile Styles (max-width: 576px) */
 @media (max-width: 576px) {
     body {
-        padding: 0 15px;
-    }
-
-    .container {
         padding: 0;
     }
 
-    /* Header and Navigation */
+    .page-container {
+        padding: 0 20px;
+    }
+
+    /* Header */
     .navbar {
-        padding: 0 15px;
+        padding: 0 20px;
     }
 
     .logo {
         width: 150px;
-        margin-left: 0;
+        margin: 0;
+    }
+
+    .nav-tag {
+        display: none;
     }
 
     .mobile-menu-btn {
         display: flex !important;
-        align-items: center;
-        justify-content: center;
-        width: 44px;
-        height: 44px;
-        padding: 0;
-        margin: 0;
-        position: absolute;
-        right: 80px;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 102;
         background: none;
         border: none;
         cursor: pointer;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        align-items: center;
+        justify-content: center;
     }
 
-    .nav-tag {
-        position: absolute;
-        right: 15px;
-        width: 100px;
-        transform: translateY(5px);
+    .mobile-menu-btn i {
+        font-size: 24px;
+        color: var(--dark-brown);
     }
 
     .nav-links {
