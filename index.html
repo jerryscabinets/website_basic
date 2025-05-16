@@ -170,6 +170,7 @@
             margin: 0 auto;
             background-color: var(--light-cream);
             height: 100%;
+            position: relative;
         }
         
         .logo {
@@ -200,12 +201,10 @@
             padding: 0;
             gap: 1.5rem;
             align-items: center;
-            height: 100%;
-            display: flex;
-            align-items: center;
             position: absolute;
             left: 50%;
-            transform: translateX(-50%);
+            top: 50%;
+            transform: translate(-50%, -50%);
         }
         
         .nav-quote-btn {
@@ -215,18 +214,12 @@
         .nav-links li {
             margin-left: 0;
             font-weight: 700;
-            height: 100%;
-            display: flex;
-            align-items: center;
         }
         
         .nav-links a {
             color: var(--dark-brown);
             transition: color 0.3s;
             font-weight: 700;
-            display: flex;
-            align-items: center;
-            height: 100%;
         }
         
         .nav-links a:hover {
