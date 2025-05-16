@@ -884,6 +884,16 @@
 
             .about-text {
                 order: 1;
+                text-align: center;
+            }
+
+            .about-text h2::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .about-stats {
+                justify-content: center;
             }
         }
 
@@ -1089,6 +1099,29 @@
             .footer-logos img {
                 height: 60px;
             }
+
+            .footer-content {
+                text-align: center;
+            }
+
+            .footer-column h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .footer-column ul li a:hover {
+                transform: none;
+            }
+
+            .footer-bottom {
+                text-align: center;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+                max-width: 300px;
+                margin: 2rem auto 0;
+            }
         }
 
         @media (max-width: 576px) {
@@ -1178,8 +1211,8 @@
             .logo {
                 position: fixed;
                 left: 20px;
-                width: 160px;
-                padding: 0.5rem 0 0 0;
+                width: 140px;
+                padding: 0.4rem 0 0 0;
             }
 
             .carousel-caption h1 {
