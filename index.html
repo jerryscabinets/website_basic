@@ -167,7 +167,7 @@
         
         .navbar {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             padding: 0.25rem 40px;
             max-width: 1200px;
@@ -210,6 +210,8 @@
             top: 50%;
             margin-top: 2rem;
             z-index: 102;
+            background-color: var(--light-cream);
+            width: auto;
         }
         
         .nav-quote-btn {
@@ -219,12 +221,14 @@
         .nav-links li {
             margin-left: 0;
             font-weight: 700;
+            white-space: nowrap;
         }
         
         .nav-links a {
             color: var(--dark-brown);
             transition: color 0.3s;
             font-weight: 700;
+            display: block;
         }
         
         .nav-links a:hover {
