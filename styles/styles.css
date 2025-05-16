@@ -82,11 +82,11 @@ header {
 .nav-tag {
     position: fixed;
     right: 40px;
-    bottom: 0;
+    top: 0;
     z-index: 101;
     width: 140px;
     height: auto;
-    transform: none;
+    transform: translateY(-25px);
     padding-top: 10px;
 }
 

@@ -5,55 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jerry's Cabinets - Premium Custom Cabinetry & Cabinet Makers in Phoenix, AZ</title>
     
-    <!-- Primary Meta Tags -->
-    <meta name="description" content="Expert custom cabinet makers in Phoenix, AZ. Specializing in kitchen cabinets, bathroom vanities, garage storage, and office cabinetry. Free consultation and quotes available.">
-    <meta name="keywords" content="custom cabinets, cabinet makers, kitchen cabinets, bathroom vanities, garage storage, office cabinetry, Phoenix AZ, custom woodworking">
-    <meta name="author" content="Jerry's Cabinets">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jerryscabinets.com">
-    <meta property="og:title" content="Jerry's Cabinets - Premium Custom Cabinetry in Phoenix, AZ">
-    <meta property="og:description" content="Expert custom cabinet makers specializing in kitchen cabinets, bathroom vanities, garage storage, and office cabinetry. Free consultation available.">
-    <meta property="og:image" content="https://jerryscabinets.com/branding/horizontal_logo.png">
-    <meta property="og:image:alt" content="Jerry's Cabinets - Custom Cabinet Makers in Phoenix">
-    <meta property="og:site_name" content="Jerry's Cabinets">
-    <meta property="og:locale" content="en_US">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@jerryscabinets">
-    <meta name="twitter:title" content="Jerry's Cabinets - Custom Cabinet Makers in Phoenix">
-    <meta name="twitter:description" content="Expert custom cabinet makers in Phoenix, AZ. Specializing in kitchen cabinets, bathroom vanities, garage storage, and office cabinetry.">
-    <meta name="twitter:image" content="https://jerryscabinets.com/branding/horizontal_logo.png">
-    <meta name="twitter:image:alt" content="Jerry's Cabinets - Custom Cabinet Makers in Phoenix">
-    
-    <!-- Pinterest -->
-    <meta name="pinterest-rich-pin" content="true">
-    <meta name="pinterest-verification" content="YOUR_PINTEREST_VERIFICATION_CODE">
-    
-    <!-- LinkedIn -->
-    <meta property="linkedin:title" content="Jerry's Cabinets - Custom Cabinet Makers in Phoenix">
-    <meta property="linkedin:description" content="Expert custom cabinet makers in Phoenix, AZ. Specializing in kitchen cabinets, bathroom vanities, garage storage, and office cabinetry.">
-    <meta property="linkedin:image" content="https://jerryscabinets.com/branding/horizontal_logo.png">
-    
-    <!-- Bing -->
-    <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE">
-    
-    <!-- Google -->
-    <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE">
-    
-    <!-- Additional Meta Tags -->
-    <meta name="format-detection" content="telephone=no">
-    <meta name="theme-color" content="#3d3224">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Jerry's Cabinets">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://jerryscabinets.com">
+    <!-- Include Meta Tags -->
+    <script>
+        fetch('meta.html')
+            .then(response => response.text())
+            .then(data => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(data, 'text/html');
+                const metaTags = doc.head.children;
+                for (let tag of metaTags) {
+                    document.head.appendChild(tag.cloneNode(true));
+                }
+            });
+    </script>
     
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico">
