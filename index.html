@@ -27,35 +27,73 @@
     
     <!-- Device-specific CSS -->
     <script>
+        function logDeviceInfo() {
+            const userAgent = navigator.userAgent;
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
+            const devicePixelRatio = window.devicePixelRatio;
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(userAgent);
+            const isTablet = /iPad|Android/i.test(userAgent) && !/Mobile/i.test(userAgent);
+            
+            console.log('=== Device Information ===');
+            console.log('User Agent:', userAgent);
+            console.log('Screen Width:', screenWidth);
+            console.log('Screen Height:', screenHeight);
+            console.log('Device Pixel Ratio:', devicePixelRatio);
+            console.log('Is Mobile:', isMobile);
+            console.log('Is Tablet:', isTablet);
+            console.log('=======================');
+        }
+
         function loadDeviceSpecificCSS() {
             const width = window.innerWidth;
             const link = document.createElement('link');
             link.rel = 'stylesheet';
             
+            console.log('=== CSS Loading ===');
+            console.log('Window Width:', width);
+            
             if (width <= 576) {
+                console.log('Loading: mobile.css');
                 link.href = 'styles/mobile.css';
             } else if (width <= 992) {
+                console.log('Loading: tablet.css');
                 link.href = 'styles/tablet.css';
+            } else {
+                console.log('Loading: styles.css only (desktop)');
             }
             
-            document.head.appendChild(link);
+            if (link.href) {
+                console.log('CSS File:', link.href);
+                document.head.appendChild(link);
+            }
+            console.log('==================');
         }
         
-        // Load appropriate CSS on page load
-        window.addEventListener('load', loadDeviceSpecificCSS);
+        // Log device info on page load
+        window.addEventListener('load', function() {
+            logDeviceInfo();
+            loadDeviceSpecificCSS();
+        });
         
-        // Update CSS when window is resized
+        // Update CSS and log when window is resized
         let resizeTimer;
         window.addEventListener('resize', function() {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(function() {
+                console.log('=== Window Resize ===');
+                console.log('New Width:', window.innerWidth);
+                
                 // Remove existing device-specific CSS
                 const existingCSS = document.querySelector('link[href="styles/mobile.css"], link[href="styles/tablet.css"]');
                 if (existingCSS) {
+                    console.log('Removing:', existingCSS.href);
                     existingCSS.remove();
                 }
+                
                 // Load new device-specific CSS
                 loadDeviceSpecificCSS();
+                console.log('==================');
             }, 250);
         });
     </script>
