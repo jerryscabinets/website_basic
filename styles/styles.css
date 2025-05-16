@@ -34,6 +34,7 @@ body {
     margin: 0 auto;
     padding: 0 40px;
     position: relative;
+    box-sizing: border-box;
 }
 
 a {
@@ -63,6 +64,7 @@ header {
     height: 100%;
     position: relative;
     padding: 0 40px;
+    box-sizing: border-box;
 }
 
 .logo {

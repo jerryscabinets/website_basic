@@ -491,54 +491,63 @@
 
     <!-- JavaScript for Mobile Menu Toggle -->
     <script>
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
         
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', function() {
-                document.querySelector('.nav-links').classList.remove('active');
+        if (mobileMenuBtn && navLinks) {
+            mobileMenuBtn.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
             });
-        });
+            
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                });
+            });
+        }
         
         // Carousel functionality
         const carouselItems = document.querySelectorAll('.carousel-item');
         const carouselControls = document.querySelectorAll('.carousel-control');
         const prevBtn = document.querySelector('.prev-btn');
         const nextBtn = document.querySelector('.next-btn');
-        let currentSlide = 0;
         
-        function showSlide(index) {
-            carouselItems.forEach(item => item.classList.remove('active'));
-            carouselControls.forEach(control => control.classList.remove('active'));
+        if (carouselItems.length && carouselControls.length && prevBtn && nextBtn) {
+            let currentSlide = 0;
             
-            carouselItems[index].classList.add('active');
-            carouselControls[index].classList.add('active');
-            currentSlide = index;
-        }
-        
-        function nextSlide() {
-            let nextIndex = (currentSlide + 1) % carouselItems.length;
-            showSlide(nextIndex);
-        }
+            function showSlide(index) {
+                carouselItems.forEach(item => item.classList.remove('active'));
+                carouselControls.forEach(control => control.classList.remove('active'));
+                
+                carouselItems[index].classList.add('active');
+                carouselControls[index].classList.add('active');
+                currentSlide = index;
+            }
+            
+            function nextSlide() {
+                let nextIndex = (currentSlide + 1) % carouselItems.length;
+                showSlide(nextIndex);
+            }
 
-        function prevSlide() {
-            let prevIndex = (currentSlide - 1 + carouselItems.length) % carouselItems.length;
-            showSlide(prevIndex);
-        }
-        
-        // Add click event to controls
-        carouselControls.forEach((control, index) => {
-            control.addEventListener('click', () => showSlide(index));
-        });
+            function prevSlide() {
+                let prevIndex = (currentSlide - 1 + carouselItems.length) % carouselItems.length;
+                showSlide(prevIndex);
+            }
+            
+            // Add click event to controls
+            carouselControls.forEach((control, index) => {
+                control.addEventListener('click', () => showSlide(index));
+            });
 
-        // Add click events to navigation buttons
-        prevBtn.addEventListener('click', prevSlide);
-        nextBtn.addEventListener('click', nextSlide);
-        
-        // Auto-advance slides every 5 seconds
-        setInterval(nextSlide, 5000);
+            // Add click events to navigation buttons
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+            
+            // Auto-advance slides every 5 seconds
+            setInterval(nextSlide, 5000);
+        }
         
         // Gallery ribbon functionality
         const galleryRibbon = document.querySelector('.gallery-ribbon');
@@ -547,23 +556,23 @@
         const galleryNextBtn = document.querySelector('.gallery-control-btn.next');
         const galleryExpandBtn = document.querySelector('.gallery-expand-btn');
         
-        function scrollGallery(direction) {
-            const scrollAmount = 300;
-            const currentScroll = galleryContainer.scrollLeft;
-            const targetScroll = currentScroll + (direction * scrollAmount);
+        if (galleryRibbon && galleryContainer && galleryPrevBtn && galleryNextBtn) {
+            function scrollGallery(direction) {
+                const scrollAmount = 300;
+                const currentScroll = galleryContainer.scrollLeft;
+                const targetScroll = currentScroll + (direction * scrollAmount);
+                
+                galleryContainer.scrollTo({
+                    left: targetScroll,
+                    behavior: 'smooth'
+                });
+            }
             
-            galleryContainer.scrollTo({
-                left: targetScroll,
-                behavior: 'smooth'
-            });
-        }
-        
-        if (galleryPrevBtn && galleryNextBtn) {
             galleryPrevBtn.addEventListener('click', () => scrollGallery(-1));
             galleryNextBtn.addEventListener('click', () => scrollGallery(1));
         }
         
-        if (galleryExpandBtn) {
+        if (galleryExpandBtn && galleryRibbon) {
             galleryExpandBtn.addEventListener('click', () => {
                 galleryRibbon.classList.toggle('expanded');
                 galleryExpandBtn.textContent = galleryRibbon.classList.contains('expanded') ? 'Collapse' : 'Expand';
@@ -574,212 +583,7 @@
         const filterButtons = document.querySelectorAll('.gallery-filter-btn');
         const galleryItems = document.querySelectorAll('.gallery-item');
         
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                
-                const filter = button.dataset.filter;
-                
-                galleryItems.forEach(item => {
-                    if (filter === 'all' || item.dataset.category === filter) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-
-        // Update the form submission function
-        async function submitForm(e) {
-            e.preventDefault();
-            
-            const form = document.getElementById('contactForm');
-            const formData = {
-                name: form.name.value,
-                email: form.email.value,
-                phone: form.phone.value,
-                message: form.message.value
-            };
-
-            try {
-                const response = await fetch('https://script.google.com/macros/s/AKfycbzXXXXXXXXXXXXXXXXXXXXX/exec', {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formData)
-                });
-
-                alert('Thank you for your message! We will get back to you soon.');
-                form.reset();
-            } catch (error) {
-                alert('There was an error submitting your message. Please try again.');
-                console.error('Error:', error);
-            }
-        }
-
-        // Gallery image configuration with detailed metadata
-        const galleryImages = {
-            kitchen: [
-                { 
-                    src: 'branding/gallery/kitchen/kitchen1.jpg',
-                    alt: 'Modern Kitchen Cabinets with Custom Storage Solutions',
-                    title: 'Contemporary Kitchen Cabinets',
-                    description: 'Custom-built kitchen cabinets featuring modern design, soft-close hinges, and pull-out storage solutions. Perfect for Phoenix homes seeking a contemporary look.',
-                    category: 'kitchen',
-                    tags: ['modern', 'storage', 'custom', 'kitchen']
-                },
-                { 
-                    src: 'branding/gallery/kitchen/kitchen2.jpg',
-                    alt: 'Luxury Kitchen Cabinets with Custom Design Elements',
-                    title: 'Luxury Kitchen Cabinetry',
-                    description: 'High-end kitchen cabinets showcasing premium materials and custom design elements. Features include built-in wine storage and specialized appliance spaces.',
-                    category: 'kitchen',
-                    tags: ['luxury', 'custom', 'kitchen', 'storage']
-                },
-                { 
-                    src: 'branding/gallery/kitchen/kitchen3.jpg',
-                    alt: 'Traditional Kitchen Cabinets with Classic Design',
-                    title: 'Traditional Kitchen Design',
-                    description: 'Classic kitchen cabinets with traditional styling and timeless appeal. Includes custom crown molding and decorative hardware.',
-                    category: 'kitchen',
-                    tags: ['traditional', 'classic', 'kitchen', 'custom']
-                },
-                { 
-                    src: 'branding/gallery/kitchen/kitchen4.jpg',
-                    alt: 'Contemporary Kitchen Cabinets with Modern Features',
-                    title: 'Modern Kitchen Solutions',
-                    description: 'Contemporary kitchen cabinets with innovative storage solutions and modern design elements. Perfect for today\'s busy households.',
-                    category: 'kitchen',
-                    tags: ['modern', 'contemporary', 'kitchen', 'storage']
-                }
-            ],
-            bathroom: [
-                { 
-                    src: 'branding/gallery/bathroom/bathroom1.jpg',
-                    alt: 'Mid-Century Modern Bathroom Vanity with Custom Storage',
-                    title: 'Mid-Century Bathroom Vanity',
-                    description: 'Custom bathroom vanity featuring mid-century modern design elements and ample storage space. Includes custom mirror and lighting solutions.',
-                    category: 'bathroom',
-                    tags: ['mid-century', 'vanity', 'bathroom', 'custom']
-                },
-                { 
-                    src: 'branding/gallery/bathroom/bathroom2.jpg',
-                    alt: 'Contemporary Bathroom Vanity with Modern Design',
-                    title: 'Contemporary Bathroom Design',
-                    description: 'Modern bathroom vanity with sleek design and practical storage solutions. Features custom countertop and integrated lighting.',
-                    category: 'bathroom',
-                    tags: ['contemporary', 'modern', 'bathroom', 'vanity']
-                },
-                { 
-                    src: 'branding/gallery/bathroom/bathroom3.png',
-                    alt: 'Luxury Bathroom Vanity with Custom Features',
-                    title: 'Luxury Bathroom Vanity',
-                    description: 'High-end bathroom vanity with premium materials and custom features. Includes specialized storage and elegant design elements.',
-                    category: 'bathroom',
-                    tags: ['luxury', 'custom', 'bathroom', 'vanity']
-                }
-            ],
-            office: [
-                { 
-                    src: 'branding/gallery/office/office1.jpg',
-                    alt: 'Custom Office Cabinets with Professional Design',
-                    title: 'Professional Office Storage',
-                    description: 'Custom office cabinets designed for maximum efficiency and professional appearance. Features include file storage and display shelving.',
-                    category: 'office',
-                    tags: ['office', 'professional', 'storage', 'custom']
-                },
-                { 
-                    src: 'branding/gallery/office/office2.png',
-                    alt: 'Modern Office Cabinets with Contemporary Style',
-                    title: 'Modern Office Solutions',
-                    description: 'Contemporary office cabinets with modern design and practical storage solutions. Perfect for home offices and professional spaces.',
-                    category: 'office',
-                    tags: ['modern', 'office', 'contemporary', 'storage']
-                },
-                { 
-                    src: 'branding/gallery/office/office3.jpg',
-                    alt: 'Custom Office Storage Solutions with Built-in Features',
-                    title: 'Custom Office Storage',
-                    description: 'Specialized office cabinets with custom features and built-in organization solutions. Designed for maximum productivity.',
-                    category: 'office',
-                    tags: ['custom', 'office', 'storage', 'organization']
-                }
-            ],
-            garage: [
-                { 
-                    src: 'branding/gallery/garage/garage1.jpg',
-                    alt: 'Custom Garage Storage Cabinets with Wood Construction',
-                    title: 'Custom Garage Storage',
-                    description: 'Premium garage storage cabinets built with high-quality materials and custom features. Perfect for organizing tools and equipment.',
-                    category: 'garage',
-                    tags: ['garage', 'storage', 'custom', 'organization']
-                },
-                { 
-                    src: 'branding/gallery/garage/garage2.jpg',
-                    alt: 'Modern Garage Storage Solutions with Pewter Finish',
-                    title: 'Modern Garage Organization',
-                    description: 'Contemporary garage storage solutions with durable construction and modern design. Features specialized storage for tools and equipment.',
-                    category: 'garage',
-                    tags: ['modern', 'garage', 'storage', 'organization']
-                },
-                { 
-                    src: 'branding/gallery/garage/garage3.jpg',
-                    alt: 'Custom Garage Cabinets with Modern Organization Features',
-                    title: 'Custom Garage Solutions',
-                    description: 'Custom-built garage cabinets with innovative storage solutions and durable construction. Designed for maximum organization and efficiency.',
-                    category: 'garage',
-                    tags: ['custom', 'garage', 'storage', 'organization']
-                }
-            ]
-        };
-
-        // Function to load gallery images with metadata
-        function loadGalleryImages() {
-            const container = document.getElementById('galleryContainer');
-            
-            // For each category
-            for (const [category, images] of Object.entries(galleryImages)) {
-                images.forEach(image => {
-                    const galleryItem = document.createElement('div');
-                    galleryItem.className = 'gallery-item';
-                    galleryItem.setAttribute('data-category', category);
-                    galleryItem.setAttribute('data-tags', image.tags.join(','));
-                    
-                    const img = document.createElement('img');
-                    img.src = image.src;
-                    img.alt = image.alt;
-                    img.title = image.title;
-                    img.loading = 'lazy';
-                    
-                    // Add image metadata
-                    const metadata = document.createElement('div');
-                    metadata.className = 'gallery-item-metadata';
-                    metadata.style.display = 'none';
-                    metadata.innerHTML = `
-                        <h3>${image.title}</h3>
-                        <p>${image.description}</p>
-                        <div class="tags">${image.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
-                    `;
-                    
-                    galleryItem.appendChild(img);
-                    galleryItem.appendChild(metadata);
-                    container.appendChild(galleryItem);
-                });
-            }
-            
-            // Initialize gallery functionality after images are loaded
-            initializeGallery();
-        }
-
-        // Function to initialize gallery functionality
-        function initializeGallery() {
-            const galleryItems = document.querySelectorAll('.gallery-item');
-            const filterButtons = document.querySelectorAll('.gallery-filter-btn');
-            
+        if (filterButtons.length && galleryItems.length) {
             filterButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     filterButtons.forEach(btn => btn.classList.remove('active'));
@@ -795,6 +599,38 @@
                         }
                     });
                 });
+            });
+        }
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const formData = {
+                    name: this.name.value,
+                    email: this.email.value,
+                    phone: this.phone.value,
+                    message: this.message.value
+                };
+
+                try {
+                    const response = await fetch('https://script.google.com/macros/s/AKfycbzXXXXXXXXXXXXXXXXXXXXX/exec', {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(formData)
+                    });
+
+                    alert('Thank you for your message! We will get back to you soon.');
+                    this.reset();
+                } catch (error) {
+                    alert('There was an error submitting your message. Please try again.');
+                    console.error('Error:', error);
+                }
             });
         }
 
