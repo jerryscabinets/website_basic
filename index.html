@@ -634,6 +634,158 @@
             });
         }
 
+        // Gallery image configuration with detailed metadata
+        const galleryImages = {
+            kitchen: [
+                { 
+                    src: 'branding/gallery/kitchen/kitchen1.jpg',
+                    alt: 'Modern Kitchen Cabinets with Custom Storage Solutions',
+                    title: 'Contemporary Kitchen Cabinets',
+                    description: 'Custom-built kitchen cabinets featuring modern design, soft-close hinges, and pull-out storage solutions. Perfect for Phoenix homes seeking a contemporary look.',
+                    category: 'kitchen',
+                    tags: ['modern', 'storage', 'custom', 'kitchen']
+                },
+                { 
+                    src: 'branding/gallery/kitchen/kitchen2.jpg',
+                    alt: 'Luxury Kitchen Cabinets with Custom Design Elements',
+                    title: 'Luxury Kitchen Cabinetry',
+                    description: 'High-end kitchen cabinets showcasing premium materials and custom design elements. Features include built-in wine storage and specialized appliance spaces.',
+                    category: 'kitchen',
+                    tags: ['luxury', 'custom', 'kitchen', 'storage']
+                },
+                { 
+                    src: 'branding/gallery/kitchen/kitchen3.jpg',
+                    alt: 'Traditional Kitchen Cabinets with Classic Design',
+                    title: 'Traditional Kitchen Design',
+                    description: 'Classic kitchen cabinets with traditional styling and timeless appeal. Includes custom crown molding and decorative hardware.',
+                    category: 'kitchen',
+                    tags: ['traditional', 'classic', 'kitchen', 'custom']
+                },
+                { 
+                    src: 'branding/gallery/kitchen/kitchen4.jpg',
+                    alt: 'Contemporary Kitchen Cabinets with Modern Features',
+                    title: 'Modern Kitchen Solutions',
+                    description: 'Contemporary kitchen cabinets with innovative storage solutions and modern design elements. Perfect for today\'s busy households.',
+                    category: 'kitchen',
+                    tags: ['modern', 'contemporary', 'kitchen', 'storage']
+                }
+            ],
+            bathroom: [
+                { 
+                    src: 'branding/gallery/bathroom/bathroom1.jpg',
+                    alt: 'Mid-Century Modern Bathroom Vanity with Custom Storage',
+                    title: 'Mid-Century Bathroom Vanity',
+                    description: 'Custom bathroom vanity featuring mid-century modern design elements and ample storage space. Includes custom mirror and lighting solutions.',
+                    category: 'bathroom',
+                    tags: ['mid-century', 'vanity', 'bathroom', 'custom']
+                },
+                { 
+                    src: 'branding/gallery/bathroom/bathroom2.jpg',
+                    alt: 'Contemporary Bathroom Vanity with Modern Design',
+                    title: 'Contemporary Bathroom Design',
+                    description: 'Modern bathroom vanity with sleek design and practical storage solutions. Features custom countertop and integrated lighting.',
+                    category: 'bathroom',
+                    tags: ['contemporary', 'modern', 'bathroom', 'vanity']
+                },
+                { 
+                    src: 'branding/gallery/bathroom/bathroom3.png',
+                    alt: 'Luxury Bathroom Vanity with Custom Features',
+                    title: 'Luxury Bathroom Vanity',
+                    description: 'High-end bathroom vanity with premium materials and custom features. Includes specialized storage and elegant design elements.',
+                    category: 'bathroom',
+                    tags: ['luxury', 'custom', 'bathroom', 'vanity']
+                }
+            ],
+            office: [
+                { 
+                    src: 'branding/gallery/office/office1.jpg',
+                    alt: 'Custom Office Cabinets with Professional Design',
+                    title: 'Professional Office Storage',
+                    description: 'Custom office cabinets designed for maximum efficiency and professional appearance. Features include file storage and display shelving.',
+                    category: 'office',
+                    tags: ['office', 'professional', 'storage', 'custom']
+                },
+                { 
+                    src: 'branding/gallery/office/office2.png',
+                    alt: 'Modern Office Cabinets with Contemporary Style',
+                    title: 'Modern Office Solutions',
+                    description: 'Contemporary office cabinets with modern design and practical storage solutions. Perfect for home offices and professional spaces.',
+                    category: 'office',
+                    tags: ['modern', 'office', 'contemporary', 'storage']
+                },
+                { 
+                    src: 'branding/gallery/office/office3.jpg',
+                    alt: 'Custom Office Storage Solutions with Built-in Features',
+                    title: 'Custom Office Storage',
+                    description: 'Specialized office cabinets with custom features and built-in organization solutions. Designed for maximum productivity.',
+                    category: 'office',
+                    tags: ['custom', 'office', 'storage', 'organization']
+                }
+            ],
+            garage: [
+                { 
+                    src: 'branding/gallery/garage/garage1.jpg',
+                    alt: 'Custom Garage Storage Cabinets with Wood Construction',
+                    title: 'Custom Garage Storage',
+                    description: 'Premium garage storage cabinets built with high-quality materials and custom features. Perfect for organizing tools and equipment.',
+                    category: 'garage',
+                    tags: ['garage', 'storage', 'custom', 'organization']
+                },
+                { 
+                    src: 'branding/gallery/garage/garage2.jpg',
+                    alt: 'Modern Garage Storage Solutions with Pewter Finish',
+                    title: 'Modern Garage Organization',
+                    description: 'Contemporary garage storage solutions with durable construction and modern design. Features specialized storage for tools and equipment.',
+                    category: 'garage',
+                    tags: ['modern', 'garage', 'storage', 'organization']
+                },
+                { 
+                    src: 'branding/gallery/garage/garage3.jpg',
+                    alt: 'Custom Garage Cabinets with Modern Organization Features',
+                    title: 'Custom Garage Solutions',
+                    description: 'Custom-built garage cabinets with innovative storage solutions and durable construction. Designed for maximum organization and efficiency.',
+                    category: 'garage',
+                    tags: ['custom', 'garage', 'storage', 'organization']
+                }
+            ]
+        };
+
+        // Function to load gallery images with metadata
+        function loadGalleryImages() {
+            const container = document.getElementById('galleryContainer');
+            if (!container) return;
+            
+            // For each category
+            for (const [category, images] of Object.entries(galleryImages)) {
+                images.forEach(image => {
+                    const galleryItem = document.createElement('div');
+                    galleryItem.className = 'gallery-item';
+                    galleryItem.setAttribute('data-category', category);
+                    galleryItem.setAttribute('data-tags', image.tags.join(','));
+                    
+                    const img = document.createElement('img');
+                    img.src = image.src;
+                    img.alt = image.alt;
+                    img.title = image.title;
+                    img.loading = 'lazy';
+                    
+                    // Add image metadata
+                    const metadata = document.createElement('div');
+                    metadata.className = 'gallery-item-metadata';
+                    metadata.style.display = 'none';
+                    metadata.innerHTML = `
+                        <h3>${image.title}</h3>
+                        <p>${image.description}</p>
+                        <div class="tags">${image.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
+                    `;
+                    
+                    galleryItem.appendChild(img);
+                    galleryItem.appendChild(metadata);
+                    container.appendChild(galleryItem);
+                });
+            }
+        }
+
         // Load gallery images when the page loads
         document.addEventListener('DOMContentLoaded', loadGalleryImages);
     </script>
