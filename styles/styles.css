@@ -49,13 +49,14 @@ header {
     height: 100px;
     display: flex;
     align-items: center;
+    padding-top: 10px;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.25rem 40px;
+    padding: 10px 40px 0;
     max-width: 1200px;
     margin: 0 auto;
     background-color: var(--light-cream);
@@ -72,24 +73,28 @@ header {
     left: 40px;
     z-index: 101;
     background-color: var(--light-cream);
-    padding: 0.5rem 0 0 0;
+    padding: 10px 0 0;
+    display: flex;
+    align-items: center;
+    height: 100px;
 }
 
 .nav-tag {
     position: fixed;
     right: 40px;
-    top: 0;
+    bottom: 0;
     z-index: 101;
     width: 140px;
     height: auto;
-    transform: translateY(-25px);
+    transform: none;
+    padding-top: 10px;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 10px 0 0;
     gap: 1.5rem;
     position: relative;
     left: 50%;
@@ -108,14 +113,19 @@ header {
     margin-left: 0;
     font-weight: 700;
     white-space: nowrap;
-    line-height: 100px;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .nav-links a {
     color: var(--dark-brown);
     transition: color 0.3s;
     font-weight: 700;
-    display: block;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 0.5rem;
 }
 
 .nav-links a:hover {
@@ -129,6 +139,9 @@ header {
     font-size: 1.5rem;
     cursor: pointer;
     color: var(--dark-brown);
+    height: 100%;
+    padding: 0 1rem;
+    align-items: center;
 }
 
 /* Hero Section */
