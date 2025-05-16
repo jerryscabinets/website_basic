@@ -571,10 +571,11 @@
             color: var(--white);
             font-size: 1rem;
             font-weight: 500;
+            position: relative;
         }
 
-        .gallery-filter-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
+        .gallery-filter-btn::after {
+            display: none;
         }
 
         .gallery-filter-btn.active {
@@ -803,7 +804,9 @@
             margin-bottom: 1.2rem;
             color: var(--dark-brown);
             position: relative;
-            display: inline-block;
+            display: block;
+            width: 100%;
+            text-align: center;
             line-height: 1.2;
         }
 
@@ -811,10 +814,16 @@
             content: '';
             position: absolute;
             bottom: -10px;
-            left: 0;
-            width: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
             height: 3px;
             background-color: var(--caramel);
+        }
+
+        .about-text h2 span {
+            color: var(--caramel);
+            font-weight: 400;
         }
 
         .about-text p {
@@ -1414,14 +1423,14 @@
         <div class="gallery-section">
             <h2 class="section-title">
                 <span class="gallery-title">Our <span>Custom Cabinet Portfolio</span></span>
-                <div class="gallery-filters">
-                    <button class="gallery-filter-btn active" data-filter="all">All Projects</button>
-                    <button class="gallery-filter-btn" data-filter="kitchen">Kitchen Cabinets</button>
-                    <button class="gallery-filter-btn" data-filter="bathroom">Bathroom Vanities</button>
-                    <button class="gallery-filter-btn" data-filter="garage">Garage Storage</button>
-                    <button class="gallery-filter-btn" data-filter="office">Office Cabinetry</button>
-                </div>
             </h2>
+            <div class="gallery-filters">
+                <button class="gallery-filter-btn active" data-filter="all">All Projects</button>
+                <button class="gallery-filter-btn" data-filter="kitchen">Kitchen Cabinets</button>
+                <button class="gallery-filter-btn" data-filter="bathroom">Bathroom Vanities</button>
+                <button class="gallery-filter-btn" data-filter="garage">Garage Storage</button>
+                <button class="gallery-filter-btn" data-filter="office">Office Cabinetry</button>
+            </div>
             <div class="gallery-ribbon">
                 <button class="gallery-control-btn prev">&lt;</button>
                 <div class="gallery-ribbon-container" id="galleryContainer">
