@@ -137,6 +137,8 @@
             line-height: 1.6;
             padding: 0 40px;
             margin: 0;
+            overflow-x: hidden;
+            width: 100%;
         }
         
         a {
@@ -149,6 +151,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0;
+            overflow-x: hidden;
         }
         
         /* Header */
@@ -871,6 +874,16 @@
         }
 
         @media (max-width: 992px) {
+            body {
+                padding: 0 20px;
+                overflow-x: hidden;
+            }
+            
+            .container {
+                padding: 0;
+                overflow-x: hidden;
+            }
+
             .about-content {
                 grid-template-columns: 1fr;
                 gap: 3rem;
@@ -1089,6 +1102,16 @@
         }
 
         @media (max-width: 768px) {
+            body {
+                padding: 0 20px;
+                overflow-x: hidden;
+            }
+            
+            .container {
+                padding: 0;
+                overflow-x: hidden;
+            }
+            
             .footer-logos {
                 position: static;
                 transform: none;
@@ -1202,42 +1225,21 @@
         @media (max-width: 768px) {
             body {
                 padding: 0 20px;
+                overflow-x: hidden;
             }
-
-            .navbar {
-                padding: 0.5rem 0;
+            
+            .container {
+                padding: 0;
+                overflow-x: hidden;
             }
-
-            .logo {
-                position: fixed;
-                left: 20px;
-                width: 140px;
-                padding: 0.3rem 0 0 0;
-            }
-
-            .carousel-caption h1 {
-                font-size: 2.5rem;
-            }
-
-            .carousel-caption p {
-                font-size: 1.2rem;
-            }
-
-            .section-title {
-                font-size: 2.2rem;
-            }
-
-            .features-grid {
-                gap: 1rem;
-            }
-
+            
             .gallery-ribbon-container {
-                padding: 0.5rem;
+                overflow-x: hidden;
             }
-
+            
             .gallery-item {
-                flex: 0 0 250px;
-                height: 200px;
+                flex: 0 0 100%;
+                max-width: 100%;
             }
         }
 
