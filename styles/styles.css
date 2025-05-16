@@ -192,7 +192,7 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: left;
+    text-align: center;
     color: var(--white);
     z-index: 2;
     max-width: 1200px;
@@ -209,6 +209,7 @@ header {
     font-weight: 600;
     letter-spacing: 1px;
     line-height: 1.2;
+    text-align: center;
 }
 
 .carousel-caption p {
@@ -216,10 +217,12 @@ header {
     margin-bottom: 2rem;
     line-height: 1.4;
     font-weight: 400;
+    text-align: center;
 }
 
 .carousel-caption .btn {
     display: inline-block;
+    margin: 0 auto;
 }
 
 .carousel-nav {
