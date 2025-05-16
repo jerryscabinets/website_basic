@@ -34,6 +34,7 @@ body {
     margin: 0 auto;
     padding: 0 40px;
     box-sizing: border-box;
+    width: 100%;
 }
 
 a {
@@ -60,6 +61,7 @@ header {
     box-sizing: border-box;
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .logo {
@@ -322,6 +324,11 @@ header {
 .features {
     padding: 4rem 0;
     width: 100%;
+    background-color: var(--white);
+}
+
+.features .page-container {
+    padding: 0 40px;
 }
 
 .section-title {
@@ -400,6 +407,7 @@ header {
 .gallery-section {
     padding: 4rem 0;
     width: 100%;
+    background-color: var(--dark-brown);
 }
 
 .gallery-section .page-container {
@@ -630,6 +638,11 @@ header {
 .about {
     padding: 4rem 0;
     width: 100%;
+    background-color: var(--white);
+}
+
+.about .page-container {
+    padding: 0 40px;
 }
 
 .about-content {
@@ -771,6 +784,11 @@ header {
 .contact {
     padding: 4rem 0;
     width: 100%;
+    background-color: var(--white);
+}
+
+.contact .page-container {
+    padding: 0 40px;
 }
 
 .contact-content {
@@ -852,6 +870,8 @@ header {
 .footer {
     padding: 4rem 0 2rem;
     width: 100%;
+    background-color: var(--dark-brown);
+    position: relative;
 }
 
 .footer .page-container {
