@@ -22,7 +22,6 @@ body {
     background-color: var(--light-cream);
     color: var(--text-color);
     line-height: 1.6;
-    padding: 0 40px;
     margin: 0;
     overflow-x: hidden;
     width: 100%;
@@ -30,17 +29,16 @@ body {
     line-height: 1.6;
 }
 
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+}
+
 a {
     text-decoration: none;
     color: inherit;
-}
-
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0;
-    overflow-x: hidden;
 }
 
 /* Header */
@@ -62,8 +60,6 @@ header {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
     height: 100%;
     position: relative;
 }
@@ -859,9 +855,10 @@ header {
 .footer {
     background-color: var(--dark-brown);
     color: var(--light-cream);
-    padding: 4rem 40px 2rem;
+    padding: 4rem 0 2rem;
     position: relative;
     margin: 0 -40px;
+    padding: 4rem 40px 2rem;
 }
 
 .footer-logos {
