@@ -162,7 +162,7 @@
         
         .navbar {
             display: flex;
-            justify-content: flex-start;
+            justify-content: flex-end;
             align-items: center;
             padding: 0.5rem 40px;
             max-width: 1200px;
@@ -174,7 +174,10 @@
         .logo {
             width: 220px;
             height: auto;
-            flex-shrink: 0;
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 101;
         }
         
         .nav-links {
@@ -184,7 +187,6 @@
             padding: 0;
             gap: 1.5rem;
             align-items: center;
-            margin-left: 2rem;
         }
         
         .nav-quote-btn {
@@ -1083,7 +1085,6 @@
                 align-items: center;
                 gap: 1rem;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                margin-left: 0;
             }
 
             .nav-links.active {
