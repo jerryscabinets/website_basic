@@ -58,8 +58,43 @@
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico">
     
-    <!-- CSS -->
+    <!-- Base CSS -->
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Device-specific CSS -->
+    <script>
+        function loadDeviceSpecificCSS() {
+            const width = window.innerWidth;
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            
+            if (width <= 576) {
+                link.href = 'mobile.css';
+            } else if (width <= 992) {
+                link.href = 'tablet.css';
+            }
+            
+            document.head.appendChild(link);
+        }
+        
+        // Load appropriate CSS on page load
+        window.addEventListener('load', loadDeviceSpecificCSS);
+        
+        // Update CSS when window is resized
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                // Remove existing device-specific CSS
+                const existingCSS = document.querySelector('link[href="mobile.css"], link[href="tablet.css"]');
+                if (existingCSS) {
+                    existingCSS.remove();
+                }
+                // Load new device-specific CSS
+                loadDeviceSpecificCSS();
+            }, 250);
+        });
+    </script>
     
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
