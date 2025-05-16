@@ -61,13 +61,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px;
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    background-color: var(--light-cream);
     height: 100%;
     position: relative;
-    width: 100%;
 }
 
 .logo {
@@ -75,19 +73,8 @@ header {
     height: auto;
     position: relative;
     z-index: 101;
-    background-color: var(--light-cream);
     display: flex;
     align-items: center;
-    margin-right: auto;
-}
-
-.nav-tag {
-    position: relative;
-    z-index: 101;
-    width: 120px;
-    height: auto;
-    transform: translateY(-5px);
-    margin-left: auto;
 }
 
 .nav-links {
@@ -96,11 +83,11 @@ header {
     margin: 0;
     padding: 0;
     gap: 2rem;
-    position: relative;
-    background-color: var(--light-cream);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     height: 100%;
     align-items: center;
-    margin: 0 auto;
 }
 
 .nav-links li {
@@ -124,6 +111,15 @@ header {
 
 .nav-links a:hover {
     color: var(--caramel);
+}
+
+.nav-tag {
+    position: relative;
+    z-index: 101;
+    width: 120px;
+    height: auto;
+    transform: translateY(10px);
+    margin-left: auto;
 }
 
 .mobile-menu-btn {
