@@ -9,7 +9,7 @@
         style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
         script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://code.jquery.com;
         font-src 'self' https://cdnjs.cloudflare.com;
-        connect-src 'self' https://script.google.com;
+        connect-src 'self' https://script.google.com/macros/s/AKfycbxVL9qX-TXa83O2j3867DAs8thNP_nSjZY8-A9PoXPRVNdws2rmEK82TU8YZfAf0zuE/exec;
     ">
     <title>Jerry's Cabinets - Premium Custom Cabinetry & Cabinet Makers in Phoenix, AZ</title>
     
@@ -170,6 +170,9 @@
             console.error(`[ERROR] ${message}`);
         }
     </script>
+    
+    <!-- Form Config -->
+    <script src="configs/form-config.js"></script>
 </head>
 <body>
     <script>
@@ -413,7 +416,7 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contactForm" action="https://script.google.com/macros/s/AKfycbzXXXXXXXXXXXXXXXXXXXXX/exec" method="POST">
+                    <form id="contactForm" action="https://script.google.com/macros/s/AKfycbxVL9qX-TXa83O2j3867DAs8thNP_nSjZY8-A9PoXPRVNdws2rmEK82TU8YZfAf0zuE/exec" method="POST">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required aria-required="true">
@@ -612,7 +615,7 @@
             });
         }
 
-        // Form submission
+        // JavaScript for form handling
         const contactForm = document.getElementById('contactForm');
         if (contactForm) {
             contactForm.addEventListener('submit', async function(e) {
@@ -622,11 +625,12 @@
                     name: this.name.value,
                     email: this.email.value,
                     phone: this.phone.value,
+                    service: this.service.value,
                     message: this.message.value
                 };
 
                 try {
-                    const response = await fetch('https://script.google.com/macros/s/AKfycbzXXXXXXXXXXXXXXXXXXXXX/exec', {
+                    const response = await fetch(FORM_CONFIG.submissionUrl, {
                         method: 'POST',
                         mode: 'no-cors',
                         headers: {
