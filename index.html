@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        img-src 'self' data: https:;
+        style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+        script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://code.jquery.com;
+        font-src 'self' https://cdnjs.cloudflare.com;
+        connect-src 'self';
+    ">
     <title>Jerry's Cabinets - Premium Custom Cabinetry & Cabinet Makers in Phoenix, AZ</title>
     
     <!-- Include Meta Tags -->
     <script>
-        fetch('meta.html')
+        fetch('pages/meta.html')
             .then(response => response.text())
             .then(data => {
                 const parser = new DOMParser();
@@ -16,6 +24,9 @@
                 for (let tag of metaTags) {
                     document.head.appendChild(tag.cloneNode(true));
                 }
+            })
+            .catch(error => {
+                console.error('Error loading meta.html:', error);
             });
     </script>
     
