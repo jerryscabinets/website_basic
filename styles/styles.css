@@ -325,7 +325,7 @@ header {
 .features {
     padding: 4rem 0;
     width: 100%;
-    background-color: var(--white);
+    background-color: var(--light-cream);
 }
 
 .features .page-container {
@@ -639,7 +639,7 @@ header {
 .about {
     padding: 4rem 0;
     width: 100%;
-    background-color: var(--white);
+    background-color: var(--light-cream);
 }
 
 .about .page-container {
@@ -785,7 +785,7 @@ header {
 .contact {
     padding: 4rem 0;
     width: 100%;
-    background-color: var(--white);
+    background-color: var(--light-cream);
 }
 
 .contact .page-container {
