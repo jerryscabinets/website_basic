@@ -206,14 +206,11 @@
             gap: 1.5rem;
             position: absolute;
             left: 50%;
-            top: 0;
-            bottom: 0;
             transform: translateX(-50%);
             z-index: 102;
             background-color: var(--light-cream);
             width: auto;
-            display: flex;
-            align-items: center;
+            margin-top: 50px;
         }
         
         .nav-quote-btn {
@@ -224,6 +221,7 @@
             margin-left: 0;
             font-weight: 700;
             white-space: nowrap;
+            line-height: 100px;
         }
         
         .nav-links a {
@@ -1185,7 +1183,11 @@
                 gap: 1rem;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                 transform: none;
-                height: auto;
+                margin-top: 0;
+            }
+
+            .nav-links li {
+                line-height: normal;
             }
 
             .nav-links.active {
