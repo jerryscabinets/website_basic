@@ -34,6 +34,7 @@ body {
     margin: 0 auto;
     padding: 0 40px;
     position: relative;
+    width: 100%;
 }
 
 a {
@@ -322,6 +323,7 @@ header {
 .features {
     padding: 3rem 0;
     margin: 1.5rem 0;
+    width: 100%;
 }
 
 .section-title {
@@ -405,10 +407,8 @@ header {
     border-radius: 8px;
 }
 
-.gallery-section .section-title {
-    text-align: center;
-    margin-bottom: 2rem;
-    padding: 0 2rem;
+.gallery-section .page-container {
+    padding: 0 40px;
 }
 
 .gallery-title {
@@ -633,6 +633,7 @@ header {
     margin: 1rem 0 0;
     background-color: var(--light-cream);
     position: relative;
+    width: 100%;
 }
 
 .about-content {
@@ -775,6 +776,7 @@ header {
     padding: 2rem 0 5rem;
     background-color: var(--light-cream);
     margin-top: 0;
+    width: 100%;
 }
 
 .contact-content {
@@ -859,6 +861,11 @@ header {
     padding: 4rem 0 2rem;
     position: relative;
     margin: 0;
+    width: 100%;
+}
+
+.footer .page-container {
+    padding: 0 40px;
 }
 
 .footer-logos {
