@@ -912,11 +912,9 @@
         // Initialize maps
         document.addEventListener('DOMContentLoaded', function() {
             // Installation Map
-            const installationMap = L.map('installation-map').setView([33.4484, -111.6513], 6);
+            const installationMap = L.map('installation-map', { attributionControl: false }).setView([33.4484, -111.6513], 6);
 
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(installationMap);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(installationMap);
 
             // Define service areas with their centers and radii (in kilometers)
             const serviceAreas = [
@@ -964,11 +962,9 @@
             });
 
             // Shipping Map
-            const shippingMap = L.map('shipping-map').setView([34.5, -115], 5);
+            const shippingMap = L.map('shipping-map', { attributionControl: false }).setView([34.5, -115], 5);
 
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(shippingMap);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(shippingMap);
 
             // Define shipping locations
             const shippingLocations = [
