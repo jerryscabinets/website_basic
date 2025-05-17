@@ -187,9 +187,17 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border: 3px solid #fd7e14;  /* Orange border */
         }
         .leaflet-container {
             border-radius: 8px;
+        }
+        .map-subtitle {
+            text-align: center;
+            color: var(--caramel);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
         }
     </style>
 </head>
@@ -381,6 +389,7 @@
                     <p>With over 20 years of experience in custom cabinetry, Jerry's Cabinets has been serving the Phoenix metropolitan area with exceptional craftsmanship and personalized service. Our team of skilled cabinet makers specializes in creating custom cabinets that perfectly match your vision and requirements.</p>
                     <p>We take pride in our attention to detail and commitment to quality, using only the finest materials and latest techniques in cabinet making. From kitchen cabinets to bathroom vanities, garage storage to office cabinetry, we deliver custom solutions that enhance both the functionality and aesthetics of your space.</p>
                     <div class="about-stats">
+                        <h3 class="map-subtitle">Where We Install</h3>
                         <div class="service-map" id="service-areas-map"></div>
                     </div>
                 </div>
@@ -782,7 +791,7 @@
     <script>
         // Initialize map
         document.addEventListener('DOMContentLoaded', function() {
-            const map = L.map('service-areas-map').setView([33.4484, -111.6513], 7);
+            const map = L.map('service-areas-map').setView([33.4484, -111.6513], 6);  // Changed zoom level from 7 to 6
 
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
