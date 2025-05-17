@@ -114,11 +114,17 @@
     </main>
 
     <!-- Footer -->
+    <footer class="footer"></footer>
     <script>
         fetch('footer.html')
             .then(response => response.text())
             .then(data => {
-                document.querySelector('footer').outerHTML = data;
+                const footer = document.querySelector('footer');
+                if (footer) {
+                    footer.outerHTML = data;
+                } else {
+                    console.error('Footer element not found');
+                }
             })
             .catch(error => {
                 console.error('Error loading footer:', error);
