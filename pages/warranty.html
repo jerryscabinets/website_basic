@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warranty - Jerry's Cabinets</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .warranty-section {
+            background: var(--light-cream);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .warranty-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .warranty-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .warranty-item i {
+            font-size: 2.5rem;
+            color: var(--caramel);
+            margin-bottom: 1rem;
+        }
+        .warranty-terms {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .warranty-terms h3 {
+            color: var(--caramel);
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <a href="../index.html"><img src="../branding/horizontal_logo.png" alt="Jerry's Cabinets Logo" class="logo"></a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#services">Services</a></li>
+                <li><a href="../index.html#gallery">Gallery</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <a href="../index.html#contact"><img src="../branding/tag.png" alt="Free Quote Tag" class="nav-tag"></a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-container" style="margin-top: 120px; padding: 40px;">
+        <h1 class="section-title">Our <span>Warranty</span></h1>
+        
+        <div class="warranty-intro" style="margin: 2rem 0;">
+            <p style="font-size: 1.2rem; line-height: 1.6;">At Jerry's Cabinets, we stand behind the quality of our work. Our comprehensive warranty ensures that your investment is protected and that you'll enjoy your cabinets for years to come.</p>
+        </div>
+
+        <div class="warranty-grid">
+            <div class="warranty-item">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Lifetime Warranty</h3>
+                <p>All our custom cabinets come with a lifetime warranty on materials and workmanship. We guarantee that your cabinets will maintain their structural integrity and finish quality for as long as you own your home.</p>
+            </div>
+            <div class="warranty-item">
+                <i class="fas fa-tools"></i>
+                <h3>Installation Guarantee</h3>
+                <p>Our installation work is guaranteed for 5 years. We ensure that your cabinets are installed correctly and will function properly for years to come.</p>
+            </div>
+            <div class="warranty-item">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Finish Protection</h3>
+                <p>Our premium finishes are guaranteed against peeling, cracking, or discoloration for 10 years under normal use and maintenance conditions.</p>
+            </div>
+            <div class="warranty-item">
+                <i class="fas fa-cogs"></i>
+                <h3>Hardware Warranty</h3>
+                <p>All hardware components, including hinges, drawer slides, and handles, are covered by a 5-year warranty against manufacturing defects.</p>
+            </div>
+        </div>
+
+        <div class="warranty-terms">
+            <h2>Warranty Terms & Conditions</h2>
+            
+            <h3>What's Covered</h3>
+            <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                <li>Structural integrity of cabinet boxes and frames</li>
+                <li>Quality of materials and workmanship</li>
+                <li>Proper installation and alignment</li>
+                <li>Finish durability and appearance</li>
+                <li>Hardware functionality</li>
+            </ul>
+
+            <h3>What's Not Covered</h3>
+            <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                <li>Damage caused by improper maintenance or cleaning</li>
+                <li>Accidental damage or abuse</li>
+                <li>Normal wear and tear</li>
+                <li>Modifications made after installation</li>
+                <li>Damage from water or moisture not related to manufacturing</li>
+            </ul>
+
+            <h3>Making a Warranty Claim</h3>
+            <p>To make a warranty claim, please contact us with the following information:</p>
+            <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                <li>Your name and contact information</li>
+                <li>Date of installation</li>
+                <li>Description of the issue</li>
+                <li>Photos of the problem area</li>
+            </ul>
+            <p>We will respond to your claim within 48 hours and schedule an inspection if necessary.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('footer').outerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error loading footer:', error);
+            });
+    </script>
+</body>
+</html> 

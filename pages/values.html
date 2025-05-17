@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Values - Jerry's Cabinets</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <a href="../index.html"><img src="../branding/horizontal_logo.png" alt="Jerry's Cabinets Logo" class="logo"></a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#services">Services</a></li>
+                <li><a href="../index.html#gallery">Gallery</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <a href="../index.html#contact"><img src="../branding/tag.png" alt="Free Quote Tag" class="nav-tag"></a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-container" style="margin-top: 120px; padding: 40px;">
+        <h1 class="section-title">Our <span>Values</span></h1>
+        
+        <div class="values-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 2rem;">
+            <div class="value-card" style="background: var(--light-cream); padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <i class="fas fa-star" style="font-size: 2.5rem; color: var(--caramel); margin-bottom: 1rem;"></i>
+                <h2>Quality Craftsmanship</h2>
+                <p>We believe in delivering the highest quality workmanship in every project. Our attention to detail and commitment to excellence ensures that every cabinet we create meets our exacting standards.</p>
+            </div>
+
+            <div class="value-card" style="background: var(--light-cream); padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <i class="fas fa-handshake" style="font-size: 2.5rem; color: var(--caramel); margin-bottom: 1rem;"></i>
+                <h2>Customer Satisfaction</h2>
+                <p>Your satisfaction is our top priority. We work closely with you throughout the entire process, from design to installation, ensuring your vision becomes reality.</p>
+            </div>
+
+            <div class="value-card" style="background: var(--light-cream); padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <i class="fas fa-leaf" style="font-size: 2.5rem; color: var(--caramel); margin-bottom: 1rem;"></i>
+                <h2>Sustainability</h2>
+                <p>We're committed to environmentally responsible practices. We source sustainable materials and implement eco-friendly manufacturing processes whenever possible.</p>
+            </div>
+
+            <div class="value-card" style="background: var(--light-cream); padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <i class="fas fa-users" style="font-size: 2.5rem; color: var(--caramel); margin-bottom: 1rem;"></i>
+                <h2>Community Focus</h2>
+                <p>As a local business, we're dedicated to supporting our community. We participate in local events and contribute to Phoenix-area initiatives that make our city a better place.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('footer').outerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error loading footer:', error);
+            });
+    </script>
+</body>
+</html> 

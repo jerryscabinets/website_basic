@@ -9,7 +9,7 @@
         style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
         script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://code.jquery.com;
         font-src 'self' https://cdnjs.cloudflare.com;
-        connect-src 'self' https://script.google.com/macros/s/AKfycbxVL9qX-TXa83O2j3867DAs8thNP_nSjZY8-A9PoXPRVNdws2rmEK82TU8YZfAf0zuE/exec;
+        connect-src 'self' https://script.google.com/macros/s/AKfycbxVL9qX-TXa83O2j3867DAs8thNP_nSjZY8-A9PoXPRVNdws2rmEK82TU8YZfAf0zuE/exec https://script.googleusercontent.com;
     ">
     <title>Jerry's Cabinets - Premium Custom Cabinetry & Cabinet Makers in Phoenix, AZ</title>
     
@@ -452,55 +452,16 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-logos">
-            <img src="branding/ICC-ES-Logo.png" alt="ICC-ES Certified" title="ICC-ES Certified">
-            <img src="branding/Made_In_USA_badge@2x.png" alt="Made in USA" title="Made in USA">
-            <img src="branding/made_in_wisconsin.png" alt="Made in Wisconsin" title="Made in Wisconsin">
-        </div>
-        <div class="page-container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>About Us</h3>
-                    <ul>
-                        <li><a href="#about">Our Story</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="#services">Design</a></li>
-                        <li><a href="#services">Build</a></li>
-                        <li><a href="#services">Install</a></li>
-                        <li><a href="#services">Repair</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact</h3>
-                    <ul>
-                        <li><a href="tel:+18032728236">(803) 272-8236</a></li>
-                        <li><a href="mailto:info@jerryscabinets.com">info@jerryscabinets.com</a></li>
-                        <li>3317 E Bell Rd Ste 101121</li>
-                        <li>Phoenix, AZ 85032-0421</li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Hours</h3>
-                    <ul>
-                        <li>Monday - Friday: 8am - 6pm</li>
-                        <li>Saturday: 9am - 4pm</li>
-                        <li>Sunday: Closed</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Jerry's Cabinets. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <script>
+        fetch('pages/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('footer').outerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error loading footer:', error);
+            });
+    </script>
 
     <!-- JavaScript for Mobile Menu Toggle -->
     <script>
