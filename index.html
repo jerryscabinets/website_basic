@@ -216,6 +216,63 @@
         .service-areas-section .section-title span {
             color: var(--caramel);
         }
+        .about {
+            background-color: var(--dark-gray);
+            padding: 4rem 0;
+            margin-top: 4rem;
+        }
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .about-images {
+            position: relative;
+        }
+        .about-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .about-image.large {
+            width: 100%;
+        }
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .about-cta {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .about-text {
+            color: white;
+        }
+        .about-text .section-title {
+            color: white;
+        }
+        .about-text .section-title span {
+            color: var(--caramel);
+        }
+        .about-text p {
+            color: #e0e0e0;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .about-images {
+                order: 2;
+            }
+            .about-text {
+                order: 1;
+            }
+        }
     </style>
 </head>
 <body>
