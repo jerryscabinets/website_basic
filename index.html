@@ -247,6 +247,32 @@
             margin-top: 2rem;
             text-align: center;
         }
+        .about-buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .about-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            aspect-ratio: 1;
+            background-color: var(--caramel);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .about-btn:hover {
+            background-color: var(--medium-brown);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
         .about-text {
             color: white;
         }
@@ -271,6 +297,11 @@
             }
             .about-text {
                 order: 1;
+            }
+            .about-buttons {
+                grid-template-columns: 1fr;
+                max-width: 300px;
+                margin: 2rem auto 0;
             }
         }
     </style>
@@ -476,6 +507,11 @@
                     </div>
                     <div class="about-cta">
                         <a href="#contact" class="btn">Schedule a Consultation</a>
+                        <div class="about-buttons">
+                            <a href="pages/values.html" class="about-btn">Our Values</a>
+                            <a href="pages/warranty.html" class="about-btn">Warranty</a>
+                            <a href="pages/careers.html" class="about-btn">Careers</a>
+                        </div>
                     </div>
                 </div>
                 <div class="about-text">
