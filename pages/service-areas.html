@@ -46,7 +46,23 @@
             margin-bottom: 1rem;
         }
         .leaflet-container {
-            border-radius: 8px 8px 0 0;
+            border-radius: 8px;
+        }
+        .service-type {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .service-type.install {
+            background-color: #28a745;
+            color: white;
+        }
+        .service-type.ship {
+            background-color: #fd7e14;
+            color: white;
         }
     </style>
 </head>
@@ -74,14 +90,19 @@
         <h1 class="section-title">Our <span>Service Areas</span></h1>
         
         <div class="service-areas-intro" style="margin: 2rem 0;">
-            <p style="font-size: 1.2rem; line-height: 1.6;">Jerry's Cabinets proudly serves the major metropolitan areas of Arizona. Our expert team brings quality craftsmanship and exceptional service to communities throughout the state.</p>
+            <p style="font-size: 1.2rem; line-height: 1.6;">Jerry's Cabinets proudly serves communities throughout Arizona and neighboring states. Our expert team brings quality craftsmanship and exceptional service to both local installations and shipping destinations.</p>
         </div>
 
         <div class="service-areas-grid">
+            <!-- Arizona Locations -->
             <div class="area-card">
                 <div id="phoenix-map" class="area-map" data-city="Phoenix" data-lat="33.4484" data-lng="-112.0740"></div>
                 <div class="area-info">
                     <h3>Phoenix, AZ</h3>
+                    <div>
+                        <span class="service-type install">Installation</span>
+                        <span class="service-type ship">Shipping</span>
+                    </div>
                     <p>Our home base and largest service area. We've been serving the Phoenix metropolitan area for over 20 years, providing custom cabinetry solutions to homes and businesses throughout the Valley.</p>
                 </div>
             </div>
@@ -90,6 +111,10 @@
                 <div id="tucson-map" class="area-map" data-city="Tucson" data-lat="32.2217" data-lng="-110.9265"></div>
                 <div class="area-info">
                     <h3>Tucson, AZ</h3>
+                    <div>
+                        <span class="service-type install">Installation</span>
+                        <span class="service-type ship">Shipping</span>
+                    </div>
                     <p>Serving the greater Tucson area with the same commitment to quality and service. Our team regularly travels to Tucson to provide custom cabinet solutions for homes and businesses.</p>
                 </div>
             </div>
@@ -98,6 +123,10 @@
                 <div id="prescott-map" class="area-map" data-city="Prescott" data-lat="34.5400" data-lng="-112.4685"></div>
                 <div class="area-info">
                     <h3>Prescott, AZ</h3>
+                    <div>
+                        <span class="service-type install">Installation</span>
+                        <span class="service-type ship">Shipping</span>
+                    </div>
                     <p>Bringing our expertise to the Prescott area, we provide custom cabinetry solutions that blend perfectly with the region's unique architectural styles and natural surroundings.</p>
                 </div>
             </div>
@@ -106,7 +135,80 @@
                 <div id="flagstaff-map" class="area-map" data-city="Flagstaff" data-lat="35.1983" data-lng="-111.6513"></div>
                 <div class="area-info">
                     <h3>Flagstaff, AZ</h3>
+                    <div>
+                        <span class="service-type install">Installation</span>
+                        <span class="service-type ship">Shipping</span>
+                    </div>
                     <p>Serving the Flagstaff community with custom cabinetry solutions that withstand the unique climate and complement the area's distinctive mountain architecture.</p>
+                </div>
+            </div>
+
+            <div class="area-card">
+                <div id="payson-map" class="area-map" data-city="Payson" data-lat="34.2309" data-lng="-111.3254"></div>
+                <div class="area-info">
+                    <h3>Payson, AZ</h3>
+                    <div>
+                        <span class="service-type ship">Shipping</span>
+                    </div>
+                    <p>Providing custom cabinetry solutions to the Payson area, known for its beautiful mountain setting and unique architectural styles.</p>
+                </div>
+            </div>
+
+            <!-- California Locations -->
+            <div class="area-card">
+                <div id="sandiego-map" class="area-map" data-city="San Diego" data-lat="32.7157" data-lng="-117.1611"></div>
+                <div class="area-info">
+                    <h3>San Diego, CA</h3>
+                    <div>
+                        <span class="service-type ship">Shipping</span>
+                    </div>
+                    <p>Delivering custom cabinetry solutions to San Diego's diverse neighborhoods, from coastal homes to urban apartments.</p>
+                </div>
+            </div>
+
+            <div class="area-card">
+                <div id="losangeles-map" class="area-map" data-city="Los Angeles" data-lat="34.0522" data-lng="-118.2437"></div>
+                <div class="area-info">
+                    <h3>Los Angeles, CA</h3>
+                    <div>
+                        <span class="service-type ship">Shipping</span>
+                    </div>
+                    <p>Serving the greater Los Angeles area with custom cabinetry solutions that meet the diverse needs of this vibrant metropolitan region.</p>
+                </div>
+            </div>
+
+            <!-- Nevada Location -->
+            <div class="area-card">
+                <div id="lasvegas-map" class="area-map" data-city="Las Vegas" data-lat="36.1699" data-lng="-115.1398"></div>
+                <div class="area-info">
+                    <h3>Las Vegas, NV</h3>
+                    <div>
+                        <span class="service-type ship">Shipping</span>
+                    </div>
+                    <p>Providing custom cabinetry solutions to Las Vegas homes and businesses, from luxury residences to commercial spaces.</p>
+                </div>
+            </div>
+
+            <!-- New Mexico Locations -->
+            <div class="area-card">
+                <div id="albuquerque-map" class="area-map" data-city="Albuquerque" data-lat="35.0844" data-lng="-106.6504"></div>
+                <div class="area-info">
+                    <h3>Albuquerque, NM</h3>
+                    <div>
+                        <span class="service-type ship">Shipping</span>
+                    </div>
+                    <p>Delivering custom cabinetry solutions to Albuquerque's unique blend of traditional and contemporary homes.</p>
+                </div>
+            </div>
+
+            <div class="area-card">
+                <div id="santafe-map" class="area-map" data-city="Santa Fe" data-lat="35.6870" data-lng="-105.9378"></div>
+                <div class="area-info">
+                    <h3>Santa Fe, NM</h3>
+                    <div>
+                        <span class="service-type ship">Shipping</span>
+                    </div>
+                    <p>Providing custom cabinetry solutions that complement Santa Fe's distinctive Southwestern architectural style.</p>
                 </div>
             </div>
         </div>
