@@ -26,6 +26,16 @@
             background-position: center;
             position: relative;
         }
+        .area-map.error {
+            background-color: #f8d7da;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #721c24;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 1rem;
+        }
         .area-info {
             padding: 1.5rem;
         }
@@ -86,92 +96,92 @@
 
         <div class="service-areas-grid">
             <div class="area-card">
-                <div class="area-map" style="background-image: url('https://api.mapbox.com/styles/v1/mapbox/light-v10/static/pin-s+ff0000(33.4484,-112.0740)/33.4484,-112.0740,11,0/600x300?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA');">
+                <div class="area-map" data-city="Phoenix" data-lat="33.4484" data-lng="-112.0740">
                 </div>
                 <div class="area-info">
                     <h3>Phoenix, AZ</h3>
                     <p>Our home base and largest service area. We've been serving the Phoenix metropolitan area for over 20 years, providing custom cabinetry solutions to homes and businesses throughout the Valley.</p>
                     <div class="area-stats">
                         <div class="stat">
-                            <div class="stat-number">20+</div>
-                            <div class="stat-label">Years Service</div>
+                            <div class="stat-number">2,500+</div>
+                            <div class="stat-label">Homes Served</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">1000+</div>
-                            <div class="stat-label">Projects</div>
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Repeat Clients</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">100%</div>
-                            <div class="stat-label">Satisfaction</div>
+                            <div class="stat-number">4.9/5</div>
+                            <div class="stat-label">Avg. Rating</div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="area-card">
-                <div class="area-map" style="background-image: url('https://api.mapbox.com/styles/v1/mapbox/light-v10/static/pin-s+ff0000(32.2217,-110.9265)/32.2217,-110.9265,11,0/600x300?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA');">
+                <div class="area-map" data-city="Tucson" data-lat="32.2217" data-lng="-110.9265">
                 </div>
                 <div class="area-info">
                     <h3>Tucson, AZ</h3>
                     <p>Serving the greater Tucson area with the same commitment to quality and service. Our team regularly travels to Tucson to provide custom cabinet solutions for homes and businesses.</p>
                     <div class="area-stats">
                         <div class="stat">
-                            <div class="stat-number">15+</div>
-                            <div class="stat-label">Years Service</div>
+                            <div class="stat-number">1,200+</div>
+                            <div class="stat-label">Homes Served</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">500+</div>
-                            <div class="stat-label">Projects</div>
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Repeat Clients</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">100%</div>
-                            <div class="stat-label">Satisfaction</div>
+                            <div class="stat-number">4.8/5</div>
+                            <div class="stat-label">Avg. Rating</div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="area-card">
-                <div class="area-map" style="background-image: url('https://api.mapbox.com/styles/v1/mapbox/light-v10/static/pin-s+ff0000(34.5400,-112.4685)/34.5400,-112.4685,11,0/600x300?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA');">
+                <div class="area-map" data-city="Prescott" data-lat="34.5400" data-lng="-112.4685">
                 </div>
                 <div class="area-info">
                     <h3>Prescott, AZ</h3>
                     <p>Bringing our expertise to the Prescott area, we provide custom cabinetry solutions that blend perfectly with the region's unique architectural styles and natural surroundings.</p>
                     <div class="area-stats">
                         <div class="stat">
-                            <div class="stat-number">10+</div>
-                            <div class="stat-label">Years Service</div>
+                            <div class="stat-number">800+</div>
+                            <div class="stat-label">Homes Served</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">300+</div>
-                            <div class="stat-label">Projects</div>
+                            <div class="stat-number">92%</div>
+                            <div class="stat-label">Repeat Clients</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">100%</div>
-                            <div class="stat-label">Satisfaction</div>
+                            <div class="stat-number">4.9/5</div>
+                            <div class="stat-label">Avg. Rating</div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="area-card">
-                <div class="area-map" style="background-image: url('https://api.mapbox.com/styles/v1/mapbox/light-v10/static/pin-s+ff0000(35.1983,-111.6513)/35.1983,-111.6513,11,0/600x300?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA');">
+                <div class="area-map" data-city="Flagstaff" data-lat="35.1983" data-lng="-111.6513">
                 </div>
                 <div class="area-info">
                     <h3>Flagstaff, AZ</h3>
                     <p>Serving the Flagstaff community with custom cabinetry solutions that withstand the unique climate and complement the area's distinctive mountain architecture.</p>
                     <div class="area-stats">
                         <div class="stat">
-                            <div class="stat-number">8+</div>
-                            <div class="stat-label">Years Service</div>
+                            <div class="stat-number">600+</div>
+                            <div class="stat-label">Homes Served</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">200+</div>
-                            <div class="stat-label">Projects</div>
+                            <div class="stat-number">90%</div>
+                            <div class="stat-label">Repeat Clients</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">100%</div>
-                            <div class="stat-label">Satisfaction</div>
+                            <div class="stat-number">4.7/5</div>
+                            <div class="stat-label">Avg. Rating</div>
                         </div>
                     </div>
                 </div>
@@ -195,6 +205,46 @@
             .catch(error => {
                 console.error('Error loading footer:', error);
             });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const mapContainers = document.querySelectorAll('.area-map');
+            
+            mapContainers.forEach(container => {
+                const city = container.dataset.city;
+                const lat = container.dataset.lat;
+                const lng = container.dataset.lng;
+                
+                const mapboxUrl = `https://api.mapbox.com/styles/v1/mapbox/light-v10/static/pin-s+ff0000(${lat},${lng})/${lat},${lng},11,0/600x300?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA`;
+                
+                const osmUrl = `https://staticmap.openstreetmap.de/staticmap.php?center=${lat},${lng}&zoom=12&size=600x300&markers=${lat},${lng},red`;
+                
+                const img = new Image();
+                
+                img.onload = function() {
+                    container.style.backgroundImage = `url(${mapboxUrl})`;
+                };
+                
+                img.onerror = function() {
+                    console.error(`Failed to load Mapbox map for ${city}, trying OpenStreetMap...`);
+                    
+                    const osmImg = new Image();
+                    
+                    osmImg.onload = function() {
+                        container.style.backgroundImage = `url(${osmUrl})`;
+                    };
+                    
+                    osmImg.onerror = function() {
+                        console.error(`Failed to load OpenStreetMap for ${city}`);
+                        container.classList.add('error');
+                        container.innerHTML = `Unable to load map for ${city}. Please try refreshing the page.`;
+                    };
+                    
+                    osmImg.src = osmUrl;
+                };
+                
+                img.src = mapboxUrl;
+            });
+        });
     </script>
 </body>
 </html> 
