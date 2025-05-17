@@ -225,7 +225,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
-            align-items: center;
+            align-items: start;
         }
         .about-images {
             position: relative;
@@ -242,10 +242,6 @@
             width: 100%;
             height: auto;
             display: block;
-        }
-        .about-cta {
-            margin-top: 2rem;
-            text-align: center;
         }
         .about-buttons {
             display: grid;
@@ -278,6 +274,7 @@
         }
         .about-text .section-title {
             color: white;
+            margin-top: 0;
         }
         .about-text .section-title span {
             color: var(--caramel);
@@ -501,23 +498,20 @@
     <section class="about" id="about" aria-label="About Our Company">
         <div class="page-container">
             <div class="about-content">
-                <div class="about-images">
-                    <div class="about-image large">
-                        <img src="images/about/about_us.png" alt="About Jerry's Cabinets">
-                    </div>
-                    <div class="about-cta">
-                        <a href="#contact" class="btn">Schedule a Consultation</a>
-                        <div class="about-buttons">
-                            <a href="pages/values.html" class="about-btn">Our Values</a>
-                            <a href="pages/warranty.html" class="about-btn">Warranty</a>
-                            <a href="pages/careers.html" class="about-btn">Careers</a>
-                        </div>
-                    </div>
-                </div>
                 <div class="about-text">
                     <h2 class="section-title">About <span>Jerry's Cabinets</span></h2>
                     <p>With over 20 years of experience in custom cabinetry, Jerry's Cabinets has been serving the Phoenix metropolitan area with exceptional craftsmanship and personalized service. Our team of skilled cabinet makers specializes in creating custom cabinets that perfectly match your vision and requirements.</p>
                     <p>We take pride in our attention to detail and commitment to quality, using only the finest materials and latest techniques in cabinet making. From kitchen cabinets to bathroom vanities, garage storage to office cabinetry, we deliver custom solutions that enhance both the functionality and aesthetics of your space.</p>
+                    <div class="about-buttons">
+                        <a href="pages/values.html" class="about-btn">Our Values</a>
+                        <a href="pages/warranty.html" class="about-btn">Warranty</a>
+                        <a href="pages/careers.html" class="about-btn">Careers</a>
+                    </div>
+                </div>
+                <div class="about-images">
+                    <div class="about-image large">
+                        <img src="images/about/about_us.png" alt="About Jerry's Cabinets">
+                    </div>
                 </div>
             </div>
         </div>
