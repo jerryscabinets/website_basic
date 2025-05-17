@@ -199,6 +199,23 @@
             margin-bottom: 1rem;
             font-weight: 500;
         }
+        .service-areas-section {
+            background-color: var(--dark-gray);
+            padding: 4rem 0;
+            margin-top: 4rem;
+        }
+        .service-areas-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .service-areas-section .section-title {
+            color: white;
+        }
+        .service-areas-section .section-title span {
+            color: var(--caramel);
+        }
     </style>
 </head>
 <body>
@@ -372,6 +389,23 @@
         </div>
     </section>
 
+    <!-- Service Areas Section -->
+    <section class="service-areas-section" id="service-areas" aria-label="Service Areas">
+        <div class="page-container">
+            <h2 class="section-title">Our <span>Service Areas</span></h2>
+            <div class="service-areas-grid">
+                <div>
+                    <h3 class="map-subtitle">Where We Install</h3>
+                    <div class="service-map" id="installation-map"></div>
+                </div>
+                <div>
+                    <h3 class="map-subtitle">Where We Ship</h3>
+                    <div class="service-map" id="shipping-map"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section class="about" id="about" aria-label="About Our Company">
         <div class="page-container">
@@ -388,10 +422,6 @@
                     <h2 class="section-title">About <span>Jerry's Cabinets</span></h2>
                     <p>With over 20 years of experience in custom cabinetry, Jerry's Cabinets has been serving the Phoenix metropolitan area with exceptional craftsmanship and personalized service. Our team of skilled cabinet makers specializes in creating custom cabinets that perfectly match your vision and requirements.</p>
                     <p>We take pride in our attention to detail and commitment to quality, using only the finest materials and latest techniques in cabinet making. From kitchen cabinets to bathroom vanities, garage storage to office cabinetry, we deliver custom solutions that enhance both the functionality and aesthetics of your space.</p>
-                    <div class="about-stats">
-                        <h3 class="map-subtitle">Where We Install</h3>
-                        <div class="service-map" id="service-areas-map"></div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -789,13 +819,14 @@
     </script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        // Initialize map
+        // Initialize maps
         document.addEventListener('DOMContentLoaded', function() {
-            const map = L.map('service-areas-map').setView([33.4484, -111.6513], 6);  // Changed zoom level from 7 to 6
+            // Installation Map
+            const installationMap = L.map('installation-map').setView([33.4484, -111.6513], 6);
 
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(map);
+            }).addTo(installationMap);
 
             // Define service areas with their centers and radii (in kilometers)
             const serviceAreas = [
@@ -833,13 +864,41 @@
                     fillColor: area.color,
                     fillOpacity: 0.2,
                     weight: 2
-                }).addTo(map)
+                }).addTo(installationMap)
                 .bindPopup(area.name);
 
                 // Add markers for city centers
                 L.marker(area.center)
-                    .addTo(map)
+                    .addTo(installationMap)
                     .bindPopup(area.name);
+            });
+
+            // Shipping Map
+            const shippingMap = L.map('shipping-map').setView([34.5, -115], 5);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(shippingMap);
+
+            // Define shipping locations
+            const shippingLocations = [
+                { name: 'Phoenix, AZ', lat: 33.4484, lng: -112.0740 },
+                { name: 'Tucson, AZ', lat: 32.2217, lng: -110.9265 },
+                { name: 'Prescott, AZ', lat: 34.5400, lng: -112.4685 },
+                { name: 'Flagstaff, AZ', lat: 35.1983, lng: -111.6513 },
+                { name: 'Payson, AZ', lat: 34.2309, lng: -111.3254 },
+                { name: 'San Diego, CA', lat: 32.7157, lng: -117.1611 },
+                { name: 'Los Angeles, CA', lat: 34.0522, lng: -118.2437 },
+                { name: 'Las Vegas, NV', lat: 36.1699, lng: -115.1398 },
+                { name: 'Albuquerque, NM', lat: 35.0844, lng: -106.6504 },
+                { name: 'Santa Fe, NM', lat: 35.6870, lng: -105.9378 }
+            ];
+
+            // Add markers for shipping locations
+            shippingLocations.forEach(location => {
+                L.marker([location.lat, location.lng])
+                    .addTo(shippingMap)
+                    .bindPopup(location.name);
             });
         });
     </script>
