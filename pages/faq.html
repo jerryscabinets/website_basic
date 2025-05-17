@@ -2,8 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        img-src 'self' data: https:;
+        style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://unpkg.com;
+        script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://code.jquery.com https://unpkg.com; /* Added unsafe-eval for potential schema script */
+        font-src 'self' https://cdnjs.cloudflare.com;
+        connect-src 'self';
+    ">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ - Jerry's Cabinets</title>
+    <title>FAQ - Custom Cabinets Answers | Jerry's Cabinets Phoenix, AZ</title>
+    <meta name="description" content="Find answers to frequently asked questions about custom cabinets, materials, process, warranty, and services at Jerry's Cabinets in Phoenix, AZ.">
+    <meta name="keywords" content="cabinet FAQ, custom cabinet questions, cabinet installation FAQ, cabinet materials, Phoenix custom cabinets, Jerry's Cabinets FAQ">
+    <link rel="canonical" href="https://jerryscabinets.com/pages/faq.html">
+
+    <!-- Page-specific Open Graph Tags -->
+    <meta property="og:title" content="FAQ - Custom Cabinets Answers | Jerry's Cabinets Phoenix, AZ">
+    <meta property="og:description" content="Find answers to frequently asked questions about custom cabinets, materials, process, warranty, and services at Jerry's Cabinets in Phoenix, AZ.">
+    <meta property="og:url" content="https://jerryscabinets.com/pages/faq.html">
+    <!-- Page-specific Twitter Tags -->
+    <meta name="twitter:title" content="FAQ - Custom Cabinets Answers | Jerry's Cabinets Phoenix, AZ">
+    <meta name="twitter:description" content="Find answers to frequently asked questions about custom cabinets at Jerry's Cabinets.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
@@ -36,6 +58,23 @@
             transform: rotate(180deg);
         }
     </style>
+    <!-- Include Common Meta Tags -->
+    <script>
+        fetch('meta.html') // Fetches meta.html from the same /pages/ directory
+            .then(response => response.text())
+            .then(data => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(data, 'text/html');
+                const metaTags = doc.head.children;
+                for (let tag of metaTags) {
+                    if (tag.tagName.toLowerCase() === 'title' && document.querySelector('title')) continue; // Don't overwrite existing title
+                    if (tag.getAttribute('name') === 'description' && document.querySelector('meta[name="description"]')) continue;
+                    if (tag.getAttribute('name') === 'keywords' && document.querySelector('meta[name="keywords"]')) continue;
+                    if (tag.getAttribute('rel') === 'canonical' && document.querySelector('link[rel="canonical"]')) continue;
+                    document.head.appendChild(tag.cloneNode(true));
+                }
+            });
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -252,6 +291,56 @@
             </div>
         </div>
     </main>
+
+    <!-- FAQPage Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does it take to complete a custom cabinet project?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The timeline for custom cabinet projects varies depending on the scope and complexity. Typically, a standard kitchen cabinet project takes 4-6 weeks from design to installation. We'll provide you with a detailed timeline during the initial consultation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What materials do you use for your cabinets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We use high-quality materials including solid hardwoods, plywood, and premium veneers. Our cabinets feature soft-close hinges, full-extension drawer slides, and durable finishes. We can work with various materials based on your preferences and budget."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer cabinet refacing services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we offer cabinet refacing services as a cost-effective alternative to full replacement. This involves replacing doors, drawer fronts, and applying new veneers to existing cabinet boxes while maintaining the current layout."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is your warranty policy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer a comprehensive warranty on all our custom cabinets. Our standard warranty covers manufacturing defects and workmanship for 5 years. For more details, please visit our warranty page."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide free estimates?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we offer free in-home consultations and estimates. During the consultation, we'll discuss your needs, take measurements, and provide you with a detailed quote for your project."
+          }
+        }
+      ]
+    }
+    </script>
 
     <!-- Footer -->
     <footer class="footer"></footer>

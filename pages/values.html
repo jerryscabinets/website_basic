@@ -2,10 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        img-src 'self' data: https:;
+        style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://unpkg.com;
+        script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://code.jquery.com https://unpkg.com;
+        font-src 'self' https://cdnjs.cloudflare.com;
+        connect-src 'self';
+    ">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Values - Jerry's Cabinets</title>
+    <title>Our Core Values - Quality & Craftsmanship | Jerry's Cabinets</title>
+    <meta name="description" content="Discover the core values that drive Jerry's Cabinets: quality craftsmanship, customer satisfaction, sustainability, and community focus in Phoenix, AZ.">
+    <meta name="keywords" content="cabinet maker values, company values, quality craftsmanship cabinets, customer satisfaction, sustainable cabinets Phoenix, Jerry's Cabinets values">
+    <link rel="canonical" href="https://jerryscabinets.com/pages/values.html">
+
+    <!-- Page-specific Open Graph Tags -->
+    <meta property="og:title" content="Our Core Values - Quality & Craftsmanship | Jerry's Cabinets">
+    <meta property="og:description" content="Discover the core values that drive Jerry's Cabinets: quality craftsmanship, customer satisfaction, sustainability, and community focus in Phoenix, AZ.">
+    <meta property="og:url" content="https://jerryscabinets.com/pages/values.html">
+    <!-- Page-specific Twitter Tags -->
+    <meta name="twitter:title" content="Our Core Values - Quality & Craftsmanship | Jerry's Cabinets">
+    <meta name="twitter:description" content="Learn about the core values at Jerry's Cabinets.">
+
+    <link rel="icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Include Common Meta Tags -->
+    <script>
+        fetch('meta.html') // Fetches meta.html from the same /pages/ directory
+            .then(response => response.text())
+            .then(data => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(data, 'text/html');
+                const metaTags = doc.head.children;
+                for (let tag of metaTags) {
+                    if (tag.tagName.toLowerCase() === 'title' && document.querySelector('title')) continue;
+                    if (tag.getAttribute('name') === 'description' && document.querySelector('meta[name="description"]')) continue;
+                    if (tag.getAttribute('name') === 'keywords' && document.querySelector('meta[name="keywords"]')) continue;
+                    if (tag.getAttribute('rel') === 'canonical' && document.querySelector('link[rel="canonical"]')) continue;
+                    document.head.appendChild(tag.cloneNode(true));
+                }
+            });
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -58,11 +96,17 @@
     </main>
 
     <!-- Footer -->
+    <footer class="footer"></footer>
     <script>
         fetch('footer.html')
             .then(response => response.text())
             .then(data => {
-                document.querySelector('footer').outerHTML = data;
+                const footerElement = document.querySelector('footer.footer');
+                if (footerElement) {
+                    footerElement.outerHTML = data;
+                } else {
+                    console.error('Footer element not found to replace.');
+                }
             })
             .catch(error => {
                 console.error('Error loading footer:', error);
