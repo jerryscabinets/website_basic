@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Color Trends for Kitchen Cabinets This Year | Jerry's Cabinets</title>
+    <meta name="description" content="Stay updated with the hottest color trends for kitchen cabinets, from bold hues to timeless neutrals, and find inspiration with Jerry's Cabinets.">
+    <meta property="og:title" content="Latest Color Trends for Kitchen Cabinets This Year | Jerry's Cabinets">
+    <meta property="og:description" content="Stay updated with the hottest color trends for kitchen cabinets, from bold hues to timeless neutrals, and find inspiration with Jerry's Cabinets.">
+    <meta property="og:image" content="../branding/horizontal_logo.png">
+    <meta property="og:url" content="https://jerryscabinets.com/blogs/color-trends-kitchen-cabinets.html">
+    <meta property="og:type" content="article">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="icon" href="../favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" defer></script>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        .blog-content-header { background-color: var(--dark-brown); color: white; padding: 1rem 0; text-align: center; margin-top: 60px; }
+        .blog-content-header h1 { margin: 0; font-size: 2.5rem; }
+        .container { max-width: 800px; margin: 2rem auto; padding: 2rem; background-color: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px; }
+        .container img.featured-blog-image { max-width: 100%; height: auto; border-radius: 4px; margin-bottom: 1rem; }
+        .breadcrumb { margin-bottom: 1.5rem; font-size: 0.9rem; }
+        .breadcrumb a { color: var(--caramel); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .back-to-home { display: inline-block; margin-top: 2rem; padding: 0.8rem 1.5rem; background-color: var(--caramel); color: white; text-decoration: none; border-radius: 4px; }
+        .back-to-home:hover { background-color: var(--medium-brown); }
+    </style>
+</head>
+<body>
+    <header id="main-header"></header>
+
+    <div class="blog-content-header">
+        <h1>Latest Color Trends for Kitchen Cabinets This Year</h1>
+    </div>
+
+    <div class="container">
+        <p class="breadcrumb"><a href="../index.html">Home</a> &gt; <a href="art-of-cabinet-making.html">Blog</a> &gt; Kitchen Cabinet Color Trends</p>
+
+        <img src="../images/gallery/placeholder_blog_image.jpg" alt="Stylish kitchen showcasing trendy cabinet colors" class="featured-blog-image">
+
+        <h2>Refreshing Your Kitchen with Color</h2>
+        <p>Cabinet color plays a pivotal role in defining the mood and style of your kitchen. Staying updated with the latest trends can inspire a fresh look for your space, whether you're planning a full remodel or a simple refresh.</p>
+
+        <h2>Trending Hues and Finishes</h2>
+        <p>This year, we're seeing a mix of bold and subtle trends. Think earthy greens, deep blues, warm wood tones, and sophisticated two-tone combinations. We'll also explore popular finishes, from matte to high-gloss, and how they impact the overall design.</p>
+        
+        <h2>Conclusion</h2>
+        <p>Jerry's Cabinets can help you choose the perfect color and finish to bring your dream kitchen to life, incorporating the latest trends or timeless classics. Contact us for a color consultation.</p>
+
+        <a href="../index.html#contact" class="back-to-home">Get a Quote</a>
+        <a href="../index.html" class="back-to-home" style="margin-left: 10px;">Back to Main Site</a>
+    </div>
+
+    <footer class="footer"></footer>
+
+    <script>
+        fetch('../pages/header.html')
+            .then(response => response.text())
+            .then(data => {
+                const headerPlaceholder = document.getElementById('main-header');
+                if (headerPlaceholder) {
+                    headerPlaceholder.innerHTML = data;
+                    initializeMobileMenu();
+                }
+            })
+            .catch(error => console.error('Error loading header:', error));
+
+        fetch('../pages/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const footerElement = document.querySelector('footer.footer');
+                if (footerElement) {
+                    footerElement.outerHTML = data;
+                }
+            })
+            .catch(error => console.error('Error loading footer:', error));
+
+        function initializeMobileMenu() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            if (mobileMenuBtn && navLinks) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                });
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        if (navLinks.classList.contains('active')) {
+                           navLinks.classList.remove('active');
+                        }
+                    });
+                });
+            }
+        }
+    </script>
+</body>
+</html>
