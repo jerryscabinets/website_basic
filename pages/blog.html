@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        img-src 'self' data: https:;
+        style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://unpkg.com;
+        script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://code.jquery.com https://unpkg.com;
+        font-src 'self' https://cdnjs.cloudflare.com;
+        connect-src 'self';
+    ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Cabinet Making Insights & Tips | Jerry's Cabinets</title>
+    <meta name="description" content="Explore our blog for expert insights on cabinet making, design tips, and industry trends from Jerry's Cabinets.">
+    <meta name="keywords" content="cabinet making blog, cabinet design tips, custom cabinets blog, cabinet trends, Jerry's Cabinets blog">
+    <link rel="canonical" href="https://jerryscabinets.com/pages/blog.html">
+
+    <!-- Page-specific Open Graph Tags -->
+    <meta property="og:title" content="Blog - Cabinet Making Insights & Tips | Jerry's Cabinets">
+    <meta property="og:description" content="Explore our blog for expert insights on cabinet making, design tips, and industry trends from Jerry's Cabinets.">
+    <meta property="og:url" content="https://jerryscabinets.com/pages/blog.html">
+    <!-- Page-specific Twitter Tags -->
+    <meta name="twitter:title" content="Blog - Cabinet Making Insights & Tips | Jerry's Cabinets">
+    <meta name="twitter:description" content="Expert insights on cabinet making, design tips, and industry trends.">
+
+    <link rel="icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .blog-card {
+            background: var(--light-cream);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .blog-content {
+            padding: 1.5rem;
+        }
+        .blog-content h3 {
+            color: var(--caramel);
+            margin-bottom: 0.5rem;
+        }
+        .blog-excerpt {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        .blog-date {
+            font-size: 0.8rem;
+            color: #888;
+        }
+        .blog-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background-color: var(--caramel);
+            color: white;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-top: 1rem;
+        }
+    </style>
+    <!-- Include Common Meta Tags -->
+    <script>
+        fetch('meta.html')
+            .then(response => response.text())
+            .then(data => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(data, 'text/html');
+                const metaTags = doc.head.children;
+                for (let tag of metaTags) {
+                    if (tag.tagName.toLowerCase() === 'title' && document.querySelector('title')) continue;
+                    if (tag.getAttribute('name') === 'description' && document.querySelector('meta[name="description"]')) continue;
+                    if (tag.getAttribute('name') === 'keywords' && document.querySelector('meta[name="keywords"]')) continue;
+                    if (tag.getAttribute('rel') === 'canonical' && document.querySelector('link[rel="canonical"]')) continue;
+                    document.head.appendChild(tag.cloneNode(true));
+                }
+            });
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <a href="../index.html"><img src="../branding/horizontal_logo.png" alt="Jerry's Cabinets Logo" class="logo"></a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#services">Services</a></li>
+                <li><a href="../index.html#gallery">Gallery</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <a href="../index.html#contact"><img src="../branding/tag.png" alt="Free Quote Tag" class="nav-tag"></a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-container" style="margin-top: 120px; padding: 40px;">
+        <h1 class="section-title">Our <span>Blog</span></h1>
+        
+        <div class="blog-intro" style="margin: 2rem 0;">
+            <p style="font-size: 1.2rem; line-height: 1.6;">Explore our collection of articles about cabinet making, design tips, and industry insights. Our expert craftsmen share their knowledge and experience to help you make informed decisions about your cabinetry projects.</p>
+        </div>
+
+        <div class="blog-grid">
+            <!-- Blog Card 1 -->
+            <a href="../blogs/art-of-cabinet-making.html" class="blog-card">
+                <img src="../images/gallery/kitchen_cabinets_phoenix.jpg" alt="Craftsman working on a cabinet" class="blog-image">
+                <div class="blog-content">
+                    <h3>The Art of Cabinet Making</h3>
+                    <p class="blog-excerpt">Explore the intricate art and craft of custom cabinet making, from design to finishing touches.</p>
+                    <span class="blog-date">March 15, 2024</span>
+                    <div class="blog-tag">Craftsmanship</div>
+                </div>
+            </a>
+
+            <!-- Blog Card 2 -->
+            <a href="../blogs/choosing-the-right-wood.html" class="blog-card">
+                <img src="../images/gallery/kitchen_cabinets_phoenix.jpg" alt="Different types of wood samples" class="blog-image">
+                <div class="blog-content">
+                    <h3>Choosing the Right Wood for Your Cabinets</h3>
+                    <p class="blog-excerpt">A comprehensive guide to selecting the perfect wood species for your custom cabinets.</p>
+                    <span class="blog-date">March 10, 2024</span>
+                    <div class="blog-tag">Materials</div>
+                </div>
+            </a>
+
+            <!-- Add more blog cards as needed -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer"></footer>
+
+    <script>
+        // Load footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const footer = document.querySelector('footer');
+                if (footer) {
+                    footer.outerHTML = data;
+                } else {
+                    console.error('Footer element not found');
+                }
+            })
+            .catch(error => {
+                console.error('Error loading footer:', error);
+            });
+    </script>
+</body>
+</html> 
