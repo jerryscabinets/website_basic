@@ -11,70 +11,125 @@
         connect-src 'self';
     ">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Cabinet Making Insights & Tips | Jerry's Cabinets</title>
-    <meta name="description" content="Explore our blog for expert insights on cabinet making, design tips, and industry trends from Jerry's Cabinets.">
-    <meta name="keywords" content="cabinet making blog, cabinet design tips, custom cabinets blog, cabinet trends, Jerry's Cabinets blog">
+    <title>Blog - Jerry's Cabinets</title>
+    <meta name="description" content="Explore our collection of articles about cabinet design, maintenance, and trends from Jerry's Cabinets.">
+    <meta name="keywords" content="cabinet blog, kitchen design blog, cabinet maintenance, cabinet trends, cabinet tips">
     <link rel="canonical" href="https://jerryscabinets.com/pages/blog.html">
 
     <!-- Page-specific Open Graph Tags -->
-    <meta property="og:title" content="Blog - Cabinet Making Insights & Tips | Jerry's Cabinets">
-    <meta property="og:description" content="Explore our blog for expert insights on cabinet making, design tips, and industry trends from Jerry's Cabinets.">
+    <meta property="og:title" content="Blog - Jerry's Cabinets">
+    <meta property="og:description" content="Explore our collection of articles about cabinet design, maintenance, and trends.">
     <meta property="og:url" content="https://jerryscabinets.com/pages/blog.html">
     <!-- Page-specific Twitter Tags -->
-    <meta name="twitter:title" content="Blog - Cabinet Making Insights & Tips | Jerry's Cabinets">
-    <meta name="twitter:description" content="Expert insights on cabinet making, design tips, and industry trends.">
+    <meta name="twitter:title" content="Blog - Jerry's Cabinets">
+    <meta name="twitter:description" content="Explore our collection of articles about cabinet design, maintenance, and trends.">
 
     <link rel="icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
+        .blog-hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/gallery/kitchen_cabinets_phoenix.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 40px;
+        }
+        .blog-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .blog-hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
         .blog-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
+            gap: 30px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         .blog-card {
-            background: var(--light-cream);
+            background: white;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
-            text-decoration: none;
-            color: inherit;
         }
         .blog-card:hover {
             transform: translateY(-5px);
         }
-        .blog-image {
+        .blog-card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
         }
-        .blog-content {
-            padding: 1.5rem;
+        .blog-card-content {
+            padding: 20px;
         }
-        .blog-content h3 {
+        .blog-card h2 {
             color: var(--caramel);
-            margin-bottom: 0.5rem;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
         }
-        .blog-excerpt {
-            font-size: 0.9rem;
+        .blog-card p {
             color: #666;
-            margin-bottom: 1rem;
+            margin-bottom: 15px;
+            line-height: 1.6;
         }
-        .blog-date {
-            font-size: 0.8rem;
+        .blog-card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             color: #888;
+            font-size: 0.9rem;
         }
-        .blog-tag {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
+        .blog-card-tag {
             background-color: var(--caramel);
             color: white;
+            padding: 4px 8px;
             border-radius: 4px;
             font-size: 0.8rem;
-            margin-top: 1rem;
+        }
+        .search-bar {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .category-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .category-button {
+            background-color: #f5f5f5;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .category-button:hover {
+            background-color: var(--caramel);
+            color: white;
+        }
+        .category-button.active {
+            background-color: var(--caramel);
+            color: white;
         }
     </style>
     <!-- Include Common Meta Tags -->
@@ -115,37 +170,107 @@
     </header>
 
     <!-- Main Content -->
-    <main class="page-container" style="margin-top: 120px; padding: 40px;">
-        <h1 class="section-title">Our <span>Blog</span></h1>
-        
-        <div class="blog-intro" style="margin: 2rem 0;">
-            <p style="font-size: 1.2rem; line-height: 1.6;">Explore our collection of articles about cabinet making, design tips, and industry insights. Our expert craftsmen share their knowledge and experience to help you make informed decisions about your cabinetry projects.</p>
+    <main>
+        <div class="blog-hero">
+            <h1>Our Blog</h1>
+            <p>Expert insights, tips, and trends in cabinet design and maintenance</p>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search articles..." id="searchInput">
+        </div>
+
+        <div class="category-buttons">
+            <button class="category-button active" data-category="all">All</button>
+            <button class="category-button" data-category="design">Design Tips</button>
+            <button class="category-button" data-category="maintenance">Maintenance</button>
+            <button class="category-button" data-category="trends">Trends</button>
         </div>
 
         <div class="blog-grid">
-            <!-- Blog Card 1 -->
-            <a href="../blogs/art-of-cabinet-making.html" class="blog-card">
-                <img src="../images/gallery/kitchen_cabinets_phoenix.jpg" alt="Craftsman working on a cabinet" class="blog-image">
-                <div class="blog-content">
-                    <h3>The Art of Cabinet Making</h3>
-                    <p class="blog-excerpt">Explore the intricate art and craft of custom cabinet making, from design to finishing touches.</p>
-                    <span class="blog-date">March 15, 2024</span>
-                    <div class="blog-tag">Craftsmanship</div>
-                </div>
-            </a>
+            <article class="blog-card" data-category="design">
+                <a href="../blogs/kitchen-layout-tips.html">
+                    <img src="../images/gallery/kitchen_cabinets_phoenix.jpg" alt="Kitchen layout tips">
+                    <div class="blog-card-content">
+                        <h2>Kitchen Layout Tips for Maximum Efficiency</h2>
+                        <p>Learn how to optimize your kitchen layout for better workflow and functionality with expert tips from Jerry's Cabinets.</p>
+                        <div class="blog-card-meta">
+                            <span>March 5, 2024</span>
+                            <span class="blog-card-tag">Design Tips</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
 
-            <!-- Blog Card 2 -->
-            <a href="../blogs/choosing-the-right-wood.html" class="blog-card">
-                <img src="../images/gallery/kitchen_cabinets_phoenix.jpg" alt="Different types of wood samples" class="blog-image">
-                <div class="blog-content">
-                    <h3>Choosing the Right Wood for Your Cabinets</h3>
-                    <p class="blog-excerpt">A comprehensive guide to selecting the perfect wood species for your custom cabinets.</p>
-                    <span class="blog-date">March 10, 2024</span>
-                    <div class="blog-tag">Materials</div>
-                </div>
-            </a>
+            <article class="blog-card" data-category="maintenance">
+                <a href="../blogs/cabinet-maintenance-guide.html">
+                    <img src="../images/gallery/kitchen_cabinets_phoenix.jpg" alt="Cabinet maintenance guide">
+                    <div class="blog-card-content">
+                        <h2>Essential Cabinet Maintenance Guide</h2>
+                        <p>Learn how to properly maintain your cabinets to ensure they last for years with this comprehensive guide.</p>
+                        <div class="blog-card-meta">
+                            <span>March 4, 2024</span>
+                            <span class="blog-card-tag">Maintenance</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
 
-            <!-- Add more blog cards as needed -->
+            <article class="blog-card" data-category="trends">
+                <a href="../blogs/modern-cabinet-trends.html">
+                    <img src="../images/gallery/kitchen_cabinets_phoenix.jpg" alt="Modern cabinet trends">
+                    <div class="blog-card-content">
+                        <h2>Modern Cabinet Trends for 2024</h2>
+                        <p>Discover the latest cabinet design trends for 2024, from sustainable materials to smart storage solutions.</p>
+                        <div class="blog-card-meta">
+                            <span>March 3, 2024</span>
+                            <span class="blog-card-tag">Trends</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="blog-card" data-category="design">
+                <a href="../blogs/cabinet-hardware-guide.html">
+                    <img src="../images/gallery/kitchen_cabinets_phoenix.jpg" alt="Cabinet hardware guide">
+                    <div class="blog-card-content">
+                        <h2>Complete Guide to Cabinet Hardware Selection</h2>
+                        <p>Learn how to choose the perfect cabinet hardware to complement your kitchen design with this comprehensive guide.</p>
+                        <div class="blog-card-meta">
+                            <span>March 2, 2024</span>
+                            <span class="blog-card-tag">Design Tips</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="blog-card" data-category="design">
+                <a href="../blogs/cabinet-color-guide.html">
+                    <img src="../images/gallery/kitchen_cabinets_phoenix.jpg" alt="Cabinet color guide">
+                    <div class="blog-card-content">
+                        <h2>Cabinet Color Selection Guide</h2>
+                        <p>Learn how to choose the perfect cabinet colors for your kitchen with this comprehensive guide.</p>
+                        <div class="blog-card-meta">
+                            <span>March 1, 2024</span>
+                            <span class="blog-card-tag">Design Tips</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="blog-card" data-category="design">
+                <a href="../blogs/art-of-cabinet-making.html">
+                    <img src="../images/gallery/kitchen_cabinets_phoenix.jpg" alt="Art of cabinet making">
+                    <div class="blog-card-content">
+                        <h2>The Art of Cabinet Making</h2>
+                        <p>Discover the craftsmanship and techniques behind creating beautiful, functional cabinets.</p>
+                        <div class="blog-card-meta">
+                            <span>February 29, 2024</span>
+                            <span class="blog-card-tag">Design Tips</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
         </div>
     </main>
 
@@ -167,6 +292,40 @@
             .catch(error => {
                 console.error('Error loading footer:', error);
             });
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        const blogCards = document.querySelectorAll('.blog-card');
+
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            blogCards.forEach(card => {
+                const title = card.querySelector('h2').textContent.toLowerCase();
+                const content = card.querySelector('p').textContent.toLowerCase();
+                if (title.includes(searchTerm) || content.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Category filtering
+        const categoryButtons = document.querySelectorAll('.category-button');
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const category = this.dataset.category;
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                blogCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html> 
