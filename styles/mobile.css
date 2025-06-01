@@ -178,8 +178,7 @@
 
     /* Footer */
     .footer {
-        padding: 3rem 15px 2rem;
-        margin: 0 -15px;
+        padding: 3rem 20px 2rem; /* Adjusted padding to align with page-container */
     }
 
     .footer-logos {

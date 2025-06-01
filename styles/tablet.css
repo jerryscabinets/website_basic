@@ -1,7 +1,6 @@
 /* Tablet Styles (max-width: 992px) */
 @media (max-width: 992px) {
     body {
-        padding: 0 20px;
         overflow-x: hidden;
     }
     
@@ -10,10 +9,17 @@
         overflow-x: hidden;
     }
 
+    .navbar {
+        padding: 0 20px;
+        margin: 0 auto;
+        max-width: 1200px;
+        position: relative; /* For positioning child elements */
+    }
+
     .nav-links {
         display: none;
-        position: fixed;
-        top: 80px;
+        position: absolute; /* Changed from fixed */
+        top: 80px; /* Positioned relative to navbar */
         left: 0;
         right: 0;
         background: var(--light-cream);
@@ -23,6 +29,7 @@
         gap: 1rem;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         transform: none;
+        z-index: 101; /* Ensure it's above other content but below mobile-menu-btn if it overlaps */
     }
 
     .nav-links.active {
@@ -32,11 +39,10 @@
     .mobile-menu-btn {
         display: block;
         position: absolute;
-        right: 20px;
+        right: 0; /* Adjusted relative to navbar */
         top: 50%;
         transform: translateY(-50%);
         z-index: 102;
-        margin-top: 2rem;
     }
 
     .nav-tag {
@@ -44,9 +50,8 @@
     }
 
     .logo {
-        position: fixed;
-        left: 20px;
         width: 180px;
+        margin-left: 0;
         padding: 0.4rem 0 0 0;
     }
 
