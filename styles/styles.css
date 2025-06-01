@@ -196,9 +196,9 @@ header {
     color: var(--white);
     z-index: 2;
     max-width: 1200px;
-    width: 100%;
+    /* width: 100%; removed */
     padding: 0 40px;
-    margin: 0 auto;
+    /* margin: 0 auto; removed */
     box-sizing: border-box;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -339,13 +339,15 @@ header {
 
 .section-title {
     text-align: center;
-    margin-bottom: 2rem;
-    padding: 0;
+    margin-bottom: 2rem; /* Preserved */
+    margin-left: auto; /* Added */
+    margin-right: auto; /* Added */
+    padding: 0; /* Preserved */
     font-size: 2.8rem;
     font-weight: 600;
     position: relative;
     display: block;
-    width: 100%;
+    /* width: 100%; Removed */
 }
 
 .section-title span {
@@ -722,7 +724,9 @@ header {
     color: var(--dark-brown);
     position: relative;
     display: block;
-    width: 100%;
+    /* width: 100%; Removed */
+    margin-left: auto; /* Added */
+    margin-right: auto; /* Added */
     text-align: center;
     line-height: 1.2;
 }
@@ -885,14 +889,12 @@ header {
 }
 
 .footer-logos {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    gap: 1rem;
-    padding: 1rem;
-    transform: translateY(-50%);
-    z-index: 10;
+    display: flex; /* Was already flex, kept */
+    justify-content: flex-end; /* Align to the right */
+    align-items: center; /* Vertically align items */
+    gap: 1rem; /* Kept from original */
+    padding: 0; /* Reset padding */
+    margin-bottom: 1rem; /* Space below logos */
 }
 
 .footer-logos img {
