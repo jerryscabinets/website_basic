@@ -885,14 +885,12 @@ header {
 }
 
 .footer-logos {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    gap: 1rem;
-    padding: 1rem;
-    transform: translateY(-50%);
-    z-index: 10;
+    display: flex; /* Was already flex, kept */
+    justify-content: flex-end; /* Align to the right */
+    align-items: center; /* Vertically align items */
+    gap: 1rem; /* Kept from original */
+    padding: 0; /* Reset padding */
+    margin-bottom: 1rem; /* Space below logos */
 }
 
 .footer-logos img {
