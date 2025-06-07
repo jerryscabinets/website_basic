@@ -28,7 +28,107 @@
     <link rel="icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Device Detection -->
+    <script>
+        function setDeviceClass() {
+            const width = window.innerWidth;
+            document.body.classList.remove('mobile', 'tablet', 'desktop');
+            
+            if (width <= 576) {
+                document.body.classList.add('mobile');
+            } else if (width <= 992) {
+                document.body.classList.add('tablet');
+            } else {
+                document.body.classList.add('desktop');
+            }
+        }
+        
+        // Set initial class
+        document.addEventListener('DOMContentLoaded', setDeviceClass);
+        
+        // Update class on resize
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(setDeviceClass, 250);
+        });
+    </script>
+
     <style>
+        /* Mobile Styles */
+        body.mobile .page-container {
+            padding: 0 20px;
+        }
+        
+        body.mobile .navbar {
+            padding: 0 20px;
+        }
+        
+        body.mobile .logo {
+            width: 150px;
+            margin: 0;
+        }
+        
+        body.mobile .nav-tag {
+            display: none;
+        }
+        
+        body.mobile .mobile-menu-btn {
+            display: flex !important;
+        }
+        
+        body.mobile .nav-links {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: var(--light-cream);
+            padding: 20px;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 101;
+        }
+        
+        body.mobile .nav-links.active {
+            display: flex;
+        }
+        
+        body.mobile .nav-links li {
+            width: 100%;
+            text-align: center;
+        }
+        
+        body.mobile .nav-links a {
+            padding: 10px;
+            display: block;
+            width: 100%;
+        }
+        
+        /* Tablet Styles */
+        body.tablet .page-container {
+            padding: 0 40px;
+        }
+        
+        body.tablet .navbar {
+            padding: 0 40px;
+        }
+        
+        body.tablet .logo {
+            width: 180px;
+        }
+        
+        body.tablet .nav-links {
+            gap: 1.5rem;
+        }
+        
+        body.tablet .nav-links a {
+            font-size: 0.95rem;
+        }
+
         .faq-item {
             margin-bottom: 1.5rem;
             border: 1px solid rgba(0,0,0,0.1);

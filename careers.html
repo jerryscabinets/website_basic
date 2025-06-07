@@ -14,6 +14,45 @@
     <meta property="og:title" content="Careers at Jerry's Cabinets">
     <meta property="og:description" content="Join Jerry's Cabinets team of skilled craftsmen and professionals. Explore career opportunities in custom cabinet making and woodworking in Phoenix, AZ.">
     <meta property="og:url" content="https://jerryscabinets.com/careers.html">
+
+    <!-- Device-specific CSS -->
+    <script>
+        function loadDeviceSpecificCSS() {
+            const width = window.innerWidth;
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            
+            if (width <= 576) {
+                link.href = 'styles/mobile.css';
+            } else if (width <= 992) {
+                link.href = 'styles/tablet.css';
+            }
+            
+            if (link.href) {
+                document.head.appendChild(link);
+            }
+        }
+        
+        // Load CSS on page load
+        window.addEventListener('load', loadDeviceSpecificCSS);
+        
+        // Update CSS when window is resized
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                // Remove existing device-specific CSS
+                const existingCSS = document.querySelector('link[href="styles/mobile.css"], link[href="styles/tablet.css"]');
+                if (existingCSS) {
+                    existingCSS.remove();
+                }
+                
+                // Load new device-specific CSS
+                loadDeviceSpecificCSS();
+            }, 250);
+        });
+    </script>
+
     <style>
         .career-card {
             background: var(--light-cream);
