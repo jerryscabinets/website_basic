@@ -242,7 +242,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
         // Load header
-        fetch('/pages/header.html')
+        fetch('header.html')
             .then(response => response.text())
             .then(data => {
                 const header = document.querySelector('header');
@@ -257,7 +257,7 @@
             });
 
         // Load footer
-        fetch('/pages/footer.html')
+        fetch('footer.html')
             .then(response => response.text())
             .then(data => {
                 const footer = document.querySelector('footer');
