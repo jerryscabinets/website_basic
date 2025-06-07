@@ -1,5 +1,13 @@
 RewriteEngine On
 
+# Ensure HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Remove www
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
 # Redirect /pages/ URLs to root level
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+pages/([^/]+)\.html [NC]
 RewriteRule ^ %1.html [R=301,L]
@@ -8,14 +16,6 @@ RewriteRule ^ %1.html [R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^([^/]+)\.html$ pages/$1.html [L]
-
-# Ensure HTTPS
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# Remove www
-RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
 # Custom error pages
 ErrorDocument 404 /404.html
