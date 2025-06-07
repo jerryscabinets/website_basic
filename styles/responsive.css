@@ -83,6 +83,75 @@
         width: 100% !important;
         margin: 0.5rem 0 !important;
     }
+
+    /* Footer Mobile Styles */
+    .footer {
+        padding: 3rem 20px 2rem !important;
+    }
+
+    .footer .page-container {
+        padding: 0 !important;
+    }
+
+    .footer-logos {
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 1rem !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .footer-logos img {
+        height: 60px !important;
+        width: auto !important;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        text-align: center !important;
+    }
+
+    .footer-column {
+        padding: 0 1rem !important;
+    }
+
+    .footer-column h3 {
+        font-size: 1.2rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .footer-column h3::after {
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+
+    .footer-column ul {
+        margin-bottom: 1rem !important;
+    }
+
+    .footer-column ul li {
+        margin-bottom: 0.5rem !important;
+    }
+
+    .footer-column ul li a {
+        font-size: 0.95rem !important;
+    }
+
+    .footer-column ul li a:hover {
+        transform: none !important;
+    }
+
+    .footer-bottom {
+        text-align: center !important;
+        padding-top: 1.5rem !important;
+        margin-top: 1rem !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .footer-bottom p {
+        font-size: 0.9rem !important;
+        margin: 0 !important;
+    }
 }
 
 /* Tablet styles (577px - 992px) */
@@ -120,5 +189,66 @@
 
     .card {
         padding: 1.5rem !important;
+    }
+
+    /* Footer Tablet Styles */
+    .footer {
+        padding: 4rem 40px 2rem !important;
+    }
+
+    .footer .page-container {
+        padding: 0 !important;
+    }
+
+    .footer-logos {
+        justify-content: center !important;
+        gap: 2rem !important;
+        margin-bottom: 3rem !important;
+    }
+
+    .footer-logos img {
+        height: 70px !important;
+        width: auto !important;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 3rem !important;
+    }
+
+    .footer-column {
+        text-align: center !important;
+    }
+
+    .footer-column h3 {
+        font-size: 1.3rem !important;
+        margin-bottom: 1.2rem !important;
+    }
+
+    .footer-column h3::after {
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+
+    .footer-column ul {
+        margin-bottom: 1.5rem !important;
+    }
+
+    .footer-column ul li {
+        margin-bottom: 0.8rem !important;
+    }
+
+    .footer-column ul li a {
+        font-size: 1rem !important;
+    }
+
+    .footer-bottom {
+        text-align: center !important;
+        padding-top: 2rem !important;
+        margin-top: 2rem !important;
+    }
+
+    .footer-bottom p {
+        font-size: 0.95rem !important;
     }
 } 
