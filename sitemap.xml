@@ -8,32 +8,32 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://jerryscabinets.com/index.html</loc>
-    <lastmod>2023-10-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://jerryscabinets.com/pages/service-areas.html</loc>
+    <loc>https://jerryscabinets.com/service-areas.html</loc>
     <lastmod>2023-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jerryscabinets.com/pages/values.html</loc>
+    <loc>https://jerryscabinets.com/values.html</loc>
     <lastmod>2023-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jerryscabinets.com/pages/warranty.html</loc>
+    <loc>https://jerryscabinets.com/warranty.html</loc>
     <lastmod>2023-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jerryscabinets.com/pages/careers.html</loc>
+    <loc>https://jerryscabinets.com/careers.html</loc>
     <lastmod>2023-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jerryscabinets.com/faq.html</loc>
+    <lastmod>2023-10-27</lastmod> <!-- Assuming same lastmod for now, can be updated if file changed more recently -->
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
