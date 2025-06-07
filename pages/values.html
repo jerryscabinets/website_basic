@@ -98,14 +98,15 @@
     <!-- Footer -->
     <footer class="footer"></footer>
     <script>
-        fetch('footer.html')
+        // Load footer
+        fetch('/pages/footer.html')
             .then(response => response.text())
             .then(data => {
-                const footerElement = document.querySelector('footer.footer');
-                if (footerElement) {
-                    footerElement.outerHTML = data;
+                const footer = document.querySelector('footer');
+                if (footer) {
+                    footer.outerHTML = data;
                 } else {
-                    console.error('Footer element not found to replace.');
+                    console.error('Footer element not found');
                 }
             })
             .catch(error => {

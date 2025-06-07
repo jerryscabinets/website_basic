@@ -345,7 +345,8 @@
     <!-- Footer -->
     <footer class="footer"></footer>
     <script>
-        fetch('footer.html')
+        // Load footer
+        fetch('/pages/footer.html')
             .then(response => response.text())
             .then(data => {
                 const footer = document.querySelector('footer');
