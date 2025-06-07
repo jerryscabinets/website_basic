@@ -898,10 +898,10 @@ header {
 
 /* Footer Styles */
 .footer {
-    padding: 2rem 0 1rem;
-    width: 100%;
     background-color: var(--dark-brown);
-    position: relative;
+    color: var(--white);
+    padding: 4rem 0 2rem;
+    margin-top: 4rem;
 }
 
 .footer .page-container {
@@ -909,42 +909,37 @@ header {
 }
 
 .footer-logos {
-    display: flex; /* Was already flex, kept */
-    justify-content: flex-end; /* Align to the right */
-    align-items: center; /* Vertically align items */
-    gap: 1rem; /* Kept from original */
-    padding: 0; /* Reset padding */
-    margin-bottom: 1rem; /* Space below logos */
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
 }
 
 .footer-logos img {
     height: 80px;
     width: auto;
-    opacity: 0.9;
-    transition: opacity 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .footer-logos img:hover {
-    opacity: 1;
+    transform: scale(1.05);
 }
 
 .footer-content {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    align-items: start;
+    gap: 3rem;
+    margin-bottom: 3rem;
 }
 
 .footer-column {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+    min-width: 200px;
 }
 
 .footer-column h3 {
     color: var(--caramel);
     font-size: 1.2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     position: relative;
     padding-bottom: 0.5rem;
 }
@@ -954,7 +949,7 @@ header {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 40px;
+    width: 50px;
     height: 2px;
     background-color: var(--caramel);
 }
@@ -963,11 +958,10 @@ header {
     list-style: none;
     padding: 0;
     margin: 0;
-    flex: 1;
 }
 
 .footer-column ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .footer-column ul li:last-child {
@@ -975,10 +969,10 @@ header {
 }
 
 .footer-column ul li a {
-    color: var(--light-cream);
-    text-decoration: none;
-    transition: color 0.3s ease;
+    color: var(--white);
+    transition: all 0.3s ease;
     display: inline-block;
+    padding: 0.25rem 0;
 }
 
 .footer-column ul li a:hover {
@@ -987,15 +981,15 @@ header {
 }
 
 .footer-bottom {
-    margin-top: 1rem;
-    padding-top: 1rem;
+    text-align: center;
+    padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-bottom p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
     margin: 0;
-    text-align: center;
-    color: var(--light-cream);
 }
 
 /* Ensure images are responsive */
