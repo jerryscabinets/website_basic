@@ -3,39 +3,39 @@
 
   <url>
     <loc>https://jerryscabinets.com/</loc>
-    <lastmod>2023-10-27</lastmod>
+    <lastmod>2024-03-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://jerryscabinets.com/service-areas.html</loc>
-    <lastmod>2023-10-27</lastmod>
+    <lastmod>2024-03-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jerryscabinets.com/values.html</loc>
-    <lastmod>2023-10-27</lastmod>
+    <lastmod>2024-03-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jerryscabinets.com/warranty.html</loc>
-    <lastmod>2023-10-27</lastmod>
+    <lastmod>2024-03-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jerryscabinets.com/careers.html</loc>
-    <lastmod>2023-10-27</lastmod>
+    <lastmod>2024-03-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jerryscabinets.com/faq.html</loc>
-    <lastmod>2023-10-27</lastmod> <!-- Assuming same lastmod for now, can be updated if file changed more recently -->
+    <lastmod>2024-03-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
 
 </urlset>
