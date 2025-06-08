@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- Include Common Meta Tags -->
     <script>
-        fetch('meta.html') // Fetches meta.html from the same /pages/ directory
+        fetch('/pages/meta.html') // Fetches meta.html from the /pages/ directory
             .then(response => response.text())
             .then(data => {
                 const parser = new DOMParser();
