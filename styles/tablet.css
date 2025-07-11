@@ -93,6 +93,23 @@
         gap: 2rem;
     }
 
+    /* Logos Overlap */
+    .logos-overlap {
+        margin-top: -1.5rem;
+        margin-bottom: -1.5rem;
+    }
+
+    .logos-overlap .footer-logos {
+        padding: 1.75rem 0;
+        border-radius: 12px 12px 0 0;
+        background-color: var(--dark-brown);
+        box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .footer {
+        margin-top: 0;
+    }
+
     .footer-content {
         grid-template-columns: repeat(2, 1fr);
     }

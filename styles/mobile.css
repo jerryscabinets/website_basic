@@ -183,9 +183,23 @@
         padding: 0.8rem;
     }
 
+    /* Logos Overlap */
+    .logos-overlap {
+        margin-top: -1rem;
+        margin-bottom: -1rem;
+    }
+
+    .logos-overlap .footer-logos {
+        padding: 1.5rem 0;
+        border-radius: 10px 10px 0 0;
+        background-color: var(--dark-brown);
+        box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+    }
+
     /* Footer */
     .footer {
         padding: 3rem 20px 2rem; /* Adjusted padding to align with page-container */
+        margin-top: 0;
     }
 
     .footer-logos {

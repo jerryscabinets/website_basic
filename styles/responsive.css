@@ -84,6 +84,17 @@
         margin: 0.5rem 0 !important;
     }
 
+    /* Logos Overlap Mobile Styles */
+    .logos-overlap {
+        margin-top: -1rem !important;
+        margin-bottom: -1rem !important;
+    }
+
+    .logos-overlap .footer-logos {
+        padding: 1.5rem 0 !important;
+        border-radius: 10px 10px 0 0 !important;
+    }
+
     /* Footer Mobile Styles */
     .footer {
         padding: 3rem 20px 2rem !important;
@@ -189,6 +200,17 @@
 
     .card {
         padding: 1.5rem !important;
+    }
+
+    /* Logos Overlap Tablet Styles */
+    .logos-overlap {
+        margin-top: -1.5rem !important;
+        margin-bottom: -1.5rem !important;
+    }
+
+    .logos-overlap .footer-logos {
+        padding: 1.75rem 0 !important;
+        border-radius: 12px 12px 0 0 !important;
     }
 
     /* Footer Tablet Styles */
