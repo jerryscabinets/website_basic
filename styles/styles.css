@@ -901,22 +901,20 @@ header {
 .logos-overlap {
     position: relative;
     z-index: 10;
-    margin-top: -2rem;
-    margin-bottom: -2rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: var(--dark-brown);
 }
 
 .logos-overlap .footer-logos {
-    background-color: var(--dark-brown);
     padding: 2rem 0;
-    border-radius: 15px 15px 0 0;
-    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer Styles */
 .footer {
     background-color: var(--dark-brown);
     color: var(--white);
-    padding: 6rem 0 2rem;
+    padding: 0 0 2rem;
     margin-top: 0;
 }
 
