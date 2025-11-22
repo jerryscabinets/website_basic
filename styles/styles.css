@@ -916,7 +916,7 @@ header {
 .footer {
     background-color: var(--dark-brown);
     color: var(--white);
-    padding: 4rem 0 2rem;
+    padding: 6rem 0 2rem;
     margin-top: 0;
 }
 
