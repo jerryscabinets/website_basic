@@ -183,16 +183,6 @@
         padding: 0.8rem;
     }
 
-    /* Logos Overlap */
-    .logos-overlap {
-        margin-top: 0;
-        margin-bottom: 0;
-        background-color: var(--dark-brown);
-    }
-
-    .logos-overlap .footer-logos {
-        padding: 1.5rem 0;
-    }
 
     /* Footer */
     .footer {
