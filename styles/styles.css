@@ -276,29 +276,6 @@ header {
     background: rgba(0, 0, 0, 0.6);
 }
 
-.carousel-play-pause-btn {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background: rgba(0, 0, 0, 0.3);
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    color: var(--white);
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 3;
-}
-
-.carousel-play-pause-btn:hover {
-    background: rgba(0, 0, 0, 0.6);
-}
-
 .carousel-controls {
     position: absolute;
     bottom: 20px;
@@ -643,14 +620,6 @@ header {
     transform: translateY(0);
 }
 
-.gallery-ribbon.expanded .gallery-item {
-    max-height: 200px; /* Or any desired height */
-}
-
-.gallery-item-metadata {
-    display: none; /* Hide metadata by default */
-}
-
 .gallery-item-metadata h3 {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
@@ -928,23 +897,11 @@ header {
     outline: none;
 }
 
-.error-message {
-    color: var(--secondary-color);
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-    display: block;
-}
-
-.form-group input.error,
-.form-group textarea.error {
-    border-color: var(--secondary-color);
-}
-
 /* Footer Styles */
 .footer {
     background-color: var(--dark-brown);
     color: var(--white);
-    padding: 2rem 0 2rem;
+    padding: 4rem 0 2rem;
     margin-top: 0;
 }
 
