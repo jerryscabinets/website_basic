@@ -897,24 +897,11 @@ header {
     outline: none;
 }
 
-/* Logos Overlap Section */
-.logos-overlap {
-    position: relative;
-    z-index: 10;
-    margin-top: 0;
-    margin-bottom: 0;
-    background-color: var(--dark-brown);
-}
-
-.logos-overlap .footer-logos {
-    padding: 2rem 0;
-}
-
 /* Footer Styles */
 .footer {
     background-color: var(--dark-brown);
     color: var(--white);
-    padding: 0 0 2rem;
+    padding: 2rem 0 2rem;
     margin-top: 0;
 }
 
